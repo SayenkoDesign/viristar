@@ -1,0 +1,12 @@
+// Five Stars
+
+
+.five-stars {
+	&__text {
+		color: var(--primary);
+		font-family: Montserrat;
+		font-size: rem-calc(23);
+		font-weight: 600;
+		line-height: 1;
+	}
+}

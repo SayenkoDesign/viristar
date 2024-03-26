@@ -1,0 +1,84 @@
+// Button
+
+@use '../base' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+@import "../bootstrap";
+
+
+:root {
+    --btn-padding-block: 14px;
+    --btn-padding-inline: 20px;
+    --btn-line-height: 1.66666667;
+    --btn-font-size: #{rem-calc(16)};
+    --btn-font-weight: 700;
+    --btn-font-style: normal;
+    --btn-text-decoration: none;
+    --btn-text-transform: uppercase;
+    --btn-letter-spacing: 1.02px;
+    --btn-border-width: 0;
+    --btn-border-style: none;
+    --btn-border-radius: 10px;
+    --btn-border-color: none;
+}
+
+
+.gb-button {
+    @include gb-button;
+}
+
+
+.gb-button[class*="icon"] {
+	
+    --btn-font-size: inherit;
+	--btn-padding-block: 0;
+    --btn-padding-inline: 0;
+    --btn-border-radius: 0;
+    min-width: none;
+
+}
+
+// Primary
+.gb-button {
+	
+    --btn-background: var(--action);
+    --btn-text-color: white;
+    min-width: 186px;
+
+	&:hover {
+		--btn-background-hover: var(--accent);
+        --btn-text-color-hover: white;
+	}
+}
+
+// Secondary
+.gb-button-secondary {
+	--btn-background: var(--accent);
+    --btn-text-color: white;
+
+	&:hover {
+		--btn-background-hover: var(--action);
+        --btn-text-color-hover: white;
+	}
+}
+
+// Phone
+.gb-button-phone {
+	--btn-background: var(--light-grey);
+    --btn-text-color: var(--action);
+
+	&:hover {
+		--btn-background-hover: var(--base);
+    	--btn-text-color-hover: white;
+	}
+}
+
+
+// Accent
+
+// Base - Optional
+
+// Black - Optional
+
+// White - Optional
+

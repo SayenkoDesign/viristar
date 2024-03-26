@@ -1,0 +1,60 @@
+// Content
+
+// Remove default alignwide and alignfull as we are using our own grid system
+.entry-content .alignwide, 
+body:not(.no-sidebar) .entry-content .alignfull {
+    margin-left: unset;
+	margin-right: unset;
+	max-width: unset;
+	width: min( calc(var(--content-width) + (var(--feature-width, 100px) * 2)), 100% - 2 * var(--gutter, 30px));
+	margin-inline: auto;
+}
+
+.no-sidebar .entry-content .alignfull {
+    margin-left: unset;
+	margin-right: unset;
+	max-width: unset;
+	width: unset;
+}
+
+.entry-content .alignfeatured {
+    margin-left: unset;
+	margin-right: unset;
+	max-width: unset;
+	width: min( calc(var(--content-width) + (var(--feature-max-width, 100px) * 2)), 100% - 2 * var(--gutter, 30px));
+	margin-inline: auto;
+}
+
+.entry-content .alignnarrow {
+    margin-left: unset;
+	margin-right: unset;
+	max-width: unset;
+	width: min( calc(var(--content-width) - (var(--content-narrow-width, 100px) * 2)), 100% - 2 * var(--gutter, 30px));
+	margin-inline: auto;
+}
+
+
+// Entire Site
+.grid-container {
+	max-width: 100%;
+	width: min( var(--content-width), 100%);
+}
+
+body .site {
+	&.grid-container {
+		max-width: 100%;
+		width: auto;	
+	}
+
+	.site-content {
+		padding-inline: 0;
+	}
+}
+
+.content-grid {
+	--full: minmax(var(--gutter), 1fr);
+    padding-inline: 0;
+    column-gap: 0 !important;
+    display: grid !important;
+    grid-template-columns: [full-start] var(--full) [feature-max-start] minmax(0, var(--feature-max-width, 100px)) [feature-start] minmax(0, var(--feature-width, 50px)) [content-start] min(var(--content-width), 100% - var(--gutter) * 2) [content-end] minmax(0, var(--feature-width, 50px)) [feature-end] minmax(0, var(--feature-max-width, 100px)) [feature-max-end] var(--full) [full-end];
+}

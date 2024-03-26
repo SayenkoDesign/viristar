@@ -1,0 +1,52 @@
+// Gravity Forms
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+body .gform_wrapper.gform_wrapper {
+
+    .gfield_label {
+        color: var(--primary);
+        font-family: Georgia;
+        font-weight: 700;
+        font-size: rem-calc(21);
+    }
+
+    .ginput_container_select {
+        position: relative;
+        //z-index: 1;
+
+        select {
+            -webkit-appearance: none;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 8px;
+            width: 20px;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='13' viewBox='0 0 20 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.31854 1.37387C1.10998 1.59454 1 1.89679 1 2.18713C1 2.47748 1.10998 2.77915 1.31854 2.99967L9.47954 11.6291C9.68811 11.8496 9.96271 11.9659 10.2486 11.9659C10.5339 11.9659 10.8085 11.8496 11.0177 11.6291L19.1786 2.99967C19.6071 2.54658 19.6071 1.82696 19.1786 1.37387C18.7501 0.920786 18.0695 0.920786 17.641 1.37387L10.2486 9.19001L2.8562 1.37387C2.42767 0.93269 1.73581 0.93269 1.31854 1.37387Z' fill='%23252B33' stroke='white'/%3E%3C/svg%3E%0A");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            //z-index: -1;
+        }
+    }
+
+    .gform_footer {
+        .button {
+            min-width: 165px;
+        }
+    }
+
+    .gform_confirmation_wrapper {
+        margin-bottom: 20px;
+    }
+
+    .gfield {
+        &.privacy-policy {
+            font-size: rem-calc(10);
+        }
+    }
+}

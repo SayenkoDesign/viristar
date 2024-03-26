@@ -1,0 +1,31 @@
+{
+    "name": "acf/home-hero",
+    "title": "Home Hero Block",
+    "description": "This is the home hero block, you can add a heading, text and buttons within the block.",
+    "style":[ "file:./style.css" ],
+    "script": "",
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": ["home", "hero"],
+    "acf": {
+        "mode": "preview",
+		"renderTemplate": "index.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "jsx": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}

@@ -1,0 +1,18 @@
+// Typography
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+// Headings 320px - 1366px
+
+:root {
+	--text: #{rem-calc(16)};
+	--text-line-height: 1.6875;
+	--text-letter-spacing: 0.335px;
+	--text-margin-bottom: 1.5em;
+
+	--h1: #{rem-calc(44)};  // 44px
+	--h2: #{rem-calc(36)}; // 36px
+	--h3: #{rem-calc(24)}; // 24px
+	--h4: #{rem-calc(21)};// 21px
+	--h5: #{rem-calc(19)}; // 19px
+}

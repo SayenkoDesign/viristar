@@ -1,0 +1,18 @@
+{
+    "/dist/scripts/project.js": "/dist/scripts/project.js",
+    "/blocks/slider/style.css": "/blocks/slider/style.css",
+    "/blocks/home-hero/style.css": "/blocks/home-hero/style.css",
+    "/blocks/articles/style.css": "/blocks/articles/style.css",
+    "/dist/styles/editor-style.css": "/dist/styles/editor-style.css",
+    "/dist/styles/style.css": "/dist/styles/style.css",
+    "/blocks/testimonials/style.css": "/blocks/testimonials/style.css",
+    "/dist/images/footer.svg": "/dist/images/footer.svg",
+    "/dist/images/home-hero.png": "/dist/images/home-hero.png",
+    "/dist/images/image-background.svg": "/dist/images/image-background.svg",
+    "/dist/images/placeholder-image.png": "/dist/images/placeholder-image.png",
+    "/dist/images/placeholder.jpg": "/dist/images/placeholder.jpg",
+    "/dist/images/stars.svg": "/dist/images/stars.svg",
+    "/blocks/home-hero/dist/images/placeholder.jpg": "/blocks/home-hero/dist/images/placeholder.jpg",
+    "/dist/splide/splide-core.min.css": "/dist/splide/splide-core.min.css",
+    "/dist/splide/splide.min.js": "/dist/splide/splide.min.js"
+}

@@ -1,0 +1,76 @@
+// Gallery
+
+body .wp-block-gallery {
+    &.gallery-1-2,
+	&.gallery-2-1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+		gap: 20px;
+
+        .wp-block-image {
+            width: 100%!important;
+
+			picture {
+				height: 150px;
+
+				@media (min-width: 768px) {
+					height: 300px;
+				}
+			}
+        }
+    }
+
+	&.gallery-1-2 {
+
+		.wp-block-image {
+			img {
+				aspect-ratio: 1;
+			}
+		}
+
+        .wp-block-image:first-child {
+            grid-row-start: span 2;
+
+			img {
+
+				aspect-ratio: 1 / 2;
+
+				@supports not (aspect-ratio: auto) {
+					height: 300px;
+
+					@media (min-width: 768px) {
+						height: 620px;
+					}
+				}
+			}
+        }
+    }
+
+	&.gallery-2-1 {
+
+		.wp-block-image {
+			img {
+				aspect-ratio: 1;
+			}
+		}
+
+        .wp-block-image:nth-child(2) {
+            grid-row-start: span 2;
+
+			img {
+
+				aspect-ratio: 1 / 2;
+
+				@supports not (aspect-ratio: auto) {
+
+					height: 300px;
+
+					@media (min-width: 768px) {
+						height: 620px;
+					}
+				}
+			}
+        }
+    }
+}

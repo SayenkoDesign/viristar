@@ -1,0 +1,22 @@
+.background-wrapper {
+	> * {
+		@include object-cover;
+	}
+
+	> .plyr {
+		position: absolute!important;
+	}
+
+	.plyr__video-wrapper {
+		height: 100%;
+
+		.plyr {
+			object-fit: cover;
+		}
+	}
+
+	.plyr__poster  {
+		background-size: cover;
+	}
+
+}

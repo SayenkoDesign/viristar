@@ -1,0 +1,45 @@
+// Button
+
+@mixin link-cover() {
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 3;
+	}
+}
+
+
+@mixin gb-button {
+	padding-block: var(--btn-padding-block);
+    padding-inline: var(--btn-padding-inline);
+    line-height: var(--btn-line-height);
+    font-size: var(--btn-font-size);
+    font-weight: var(--btn-font-weight);
+    font-style: var(--btn-font-style);
+    text-decoration: var(--btn-text-decoration);
+    text-transform: var(--btn-text-transform);
+    letter-spacing: var(--btn-letter-spacing);
+    border-width: var(--btn-border-width);
+    border-style: var(--btn-border-style);
+    border-radius: var(--btn-border-radius);
+    text-align: center;
+	display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--btn-background);
+    color: var(--btn-text-color);
+    border-color: var(--btn-border-color);
+    transition: all var(--btn-transition-duration) ease;
+
+    // Hover
+    &:hover {
+        background: var(--btn-background-hover);
+        border-color: var(--btn-border-color-hover);
+        color: var(--btn-text-color-hover);
+        text-decoration: var(--btn-text-decoration-hover);
+    }
+}

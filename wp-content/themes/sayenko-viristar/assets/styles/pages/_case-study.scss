@@ -1,0 +1,40 @@
+// Post
+
+.single-case_study {
+    article {
+        max-width: 780px;
+        margin: 0 auto;
+
+        padding-top: 40px;
+        padding-bottom: 90px;
+
+        .featured-image {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .featured-image {
+        margin: 40px auto 0 !important;
+        position: relative;
+
+        overflow: hidden;
+        border-radius: 0 0 10px 10px;
+        margin-bottom: 20px!important;
+
+        svg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 3;
+        }
+    }
+
+    .solution-links {
+        display: none;
+    }
+
+   
+
+}

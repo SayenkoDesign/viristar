@@ -1,0 +1,10 @@
+// Background
+
+@mixin object-cover {
+	position: absolute;
+	object-fit: cover;
+	object-position: 50% 50%;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}

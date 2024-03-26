@@ -1,0 +1,10 @@
+// Close 
+
+
+.btn-close {
+	&:hover,
+	&:focus {
+		background-color: transparent;
+		color: $green-alt;
+	}
+}

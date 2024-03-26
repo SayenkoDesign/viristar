@@ -1,0 +1,24 @@
+// Home Hero
+@use '../base' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+@import "../bootstrap";
+
+
+.partners {
+
+	&__content {
+		padding-block: 100px;
+	}
+
+	&__wave {
+		z-index: 2; /* Keeps the curve above the background but under the content */
+		//align-self: end; /* Aligns the curve to the bottom */
+		width: 100%;
+		overflow: hidden;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
+
+}

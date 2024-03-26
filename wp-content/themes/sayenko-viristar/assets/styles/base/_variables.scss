@@ -1,0 +1,26 @@
+// Variables
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+// Fonts - clamp generator https://clamp-generator.netlify.app/
+
+:root {
+
+	--viewport-width: calc(100vw - var(--scrollbarWidth));
+
+	--image-border-radius: 15%;
+
+	// Content
+	--content-width: var(--container-width, 1200px); // --container-width is pulled from core/theme.php in </head> from the Customizer
+	--content-narrow-width: 175px;
+	--feature-width: 50px;
+	--feature-max-width: 100px;
+	--gutter: 30px;
+	--gutter-lg: 90px;
+
+
+	--entry-header-margin-block: .5em;
+	--entry-header-margin-inline: auto;
+	--archive-header-margin-block: 0 .5em;
+	--archive-header-margin-inline: auto;
+}

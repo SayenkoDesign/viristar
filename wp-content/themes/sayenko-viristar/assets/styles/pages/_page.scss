@@ -1,0 +1,14 @@
+// Page
+.page,
+.single {
+
+	.entry-header:not(:empty) {
+		margin-bottom: 50px;
+		text-align: center;
+
+		.entry-title {
+			margin-bottom: 1.375rem;
+		}
+	}
+	
+}

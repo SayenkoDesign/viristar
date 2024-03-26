@@ -1,0 +1,29 @@
+{
+    "name": "acf/testimonials",
+    "title": "Testimonials",
+    "description": "Testimonials slider block",
+    "style":[ "splide","file:./style.css" ],
+    "script": ["splide"],
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": ["testimonial"],
+    "acf": {
+        "mode": "preview",
+		"renderTemplate": "index.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "jsx": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    }
+}

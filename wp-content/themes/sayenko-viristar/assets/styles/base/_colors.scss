@@ -1,0 +1,24 @@
+// Colors
+
+:root {
+
+	--dark-navy: #0B2543;
+	--navy: #003C71;
+	--teal: #87A7CE;
+	--sky-blue: #69AFE0;
+	--sky-dark: #7A98BC;
+	--green: #0A8543;
+	--dark-green: #09763C;
+	--off-white: #FDFCFA;
+
+	// Theme Colors
+	--base: var(--dark-navy);
+	--primary: var(--navy);
+	--secondary: var(--teal);
+	--secondary-alt: var(--sky-blue);
+	--action: var(--green);
+	--accent: var(--dark-green);
+	--accent-alt: var(--sky-dark);
+	
+	--background: var(--off-white);
+}

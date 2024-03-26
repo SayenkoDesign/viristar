@@ -1,0 +1,11 @@
+// Grid
+
+@mixin block-grid( $columns: 1, $gap: 20px ) {
+	
+	--cols: #{$columns};
+	--gap: #{$gap};
+   	
+	display: grid;
+	grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+	column-gap: var(--gap);
+}

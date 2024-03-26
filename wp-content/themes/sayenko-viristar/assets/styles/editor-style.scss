@@ -1,0 +1,33 @@
+// Editor Style
+
+@use 'base' as *;
+@use 'utilities/functions' as *;
+@use 'utilities/mixins' as *;
+@use "bootstrap" as *;
+
+@use "patterns";
+@use "components/button-group";
+@use "elements/button";
+
+.site-footer {
+
+	background-color: var(--primary);
+
+	.footer-grid {
+
+		margin-inline: auto;
+		width: min( var(--content-width), 100%);
+
+		@include media-breakpoint-up(lg) {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: var(--gutter);
+		}
+	}
+
+	.site-info {
+		background-color: inherit;
+
+		color: white;
+	}
+}

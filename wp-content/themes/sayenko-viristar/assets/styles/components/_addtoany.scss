@@ -1,0 +1,86 @@
+// Add to Any
+
+.single {
+
+    .social-share {
+        //display: none;
+        margin-top: 50px;
+    }
+
+    .share-title {
+        font-size: rem-calc(16);
+
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .a2a_kit {
+
+        a {
+            background-color: transparent !important;
+            border-radius: 50% !important;
+            color: #888A92;
+            border: 1px solid #888A92;
+            width: 39px;
+            height: 39px;
+            display: flex!important;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+
+            &:hover {
+                color: black;
+                border: 1px solid black;
+            }
+        }
+    }
+
+    .a2a_vertical_style {
+
+        border-radius: 0!important;
+        padding: 10px;
+
+        .share-title {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        top: 30%;
+        left: 0;
+
+    }
+
+
+    .a2a_default_style {
+
+        display: flex;
+        justify-content: center;
+        
+        @media (max-width: 979px) {
+            display: flex;
+            justify-content: center;
+        }
+        
+        
+
+        > a {
+            margin-right: 10px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @media (min-width: 980px) {
+        .a2a_vertical_style {
+            //display: block!important;
+        }
+
+        .social-share {
+           // display: none!important;
+        }
+    }
+}
+
+

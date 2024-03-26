@@ -1,0 +1,58 @@
+// Theme
+
+@function str-replace($string, $search, $replace: '') {
+	$index: str-index($string, $search);
+  
+	@if $index {
+	  @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+  
+	@return $string;
+  }
+
+
+
+@mixin link-arrow-icon($color: $grey) {
+
+	$color: str-replace(#{$color}, '#', '');
+
+	&:after {
+		content: '';
+		display: block;
+		background-image: url("data:image/svg+xml,%3Csvg height='14' viewBox='0 0 9 14' width='9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m.24246249 12.9727157c.15744654.1488124.37310687.2272843.58027337.2272843s.42241249-.0784719.57975545-.2272843l6.15719555-5.82298409c.15734296-.14881242.24031314-.34474715.24031314-.5487152 0-.20357618-.08297018-.3995109-.24031314-.54881316l-6.15719555-5.82288615c-.32328332-.30575613-.83674549-.30575613-1.16002882 0-.32328332.30575614-.32328332.79138036 0 1.0971365l5.57692219 5.27456281-5.57692219 5.27456279c-.31478949.3057562-.31478949.7994137 0 1.0971365z' fill='%23#{$color}' fill-rule='evenodd' transform='translate(.303997)'/%3E%3C/svg%3E");
+		background-size: contain;
+		width: 9px;
+		height: 14px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+		margin-top: 1px;
+	}
+}
+
+
+
+@mixin checklist() {
+	
+	@include list-reset;
+
+	li {
+		padding-left: 17px;
+		position: relative;
+		min-height: 20px;
+		margin-bottom: 5px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 8px;
+			left: 0;
+			width: 9px;
+			height: 9px;
+			background-color: $grey;
+			display: block;
+			border-radius: 50%;
+		}
+	}
+}

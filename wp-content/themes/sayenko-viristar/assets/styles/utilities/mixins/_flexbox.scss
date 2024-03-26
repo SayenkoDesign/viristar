@@ -1,0 +1,16 @@
+// Flexbox
+
+@mixin flex-grid( $gap: 0) {
+	display:flex;
+	flex-wrap: wrap;
+
+	--cols: 1;
+	--gap: #{$gap};
+	--gap-count: calc( var(--cols) - 1 );
+   
+	column-gap: var(--gap);
+
+	> * {
+		flex-basis: calc((100% / var(--cols)) - (var(--gap) / var(--cols) * (var(--cols) - 1)));
+	}
+}

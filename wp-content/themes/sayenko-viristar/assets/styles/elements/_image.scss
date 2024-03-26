@@ -1,0 +1,65 @@
+// Images
+
+.gb-block-image {
+
+	&:has(.gb-image-background-right) {
+		--image-offset: 12%;
+
+		img {
+			width: 100%;
+			border-radius: var(--image-border-radius);
+            aspect-ratio: 620/544;
+            object-fit: cover;
+		}
+
+		img {
+			grid-area: 1/1;
+		}
+
+	}
+
+	&:has(img.gb-image-background-right) {
+
+		display: grid;
+		max-width: 620px;
+		padding-right: var(--image-offset);
+		padding-bottom: var(--image-offset);
+
+		&:before {
+			content: '';
+			grid-area: 1/1;
+			position: relative;
+			display: block;
+			width: 100%;
+			height: 100%;
+			border-radius: var(--image-border-radius);
+			background-color: var(--primary);
+			transform: translate(var(--image-offset), var(--image-offset));
+			z-index: -1;
+		}
+	}
+
+	&:has(picture.gb-image-background-right) {
+		picture {
+			display: grid;
+			max-width: 620px;
+			padding-right: var(--image-offset);
+			padding-bottom: var(--image-offset);
+
+			&:before {
+				content: '';
+				grid-area: 1/1;
+				position: relative;
+				display: block;
+				width: 100%;
+				height: 100%;
+				border-radius: var(--image-border-radius);
+				background-color: var(--primary);
+				transform: translate(var(--image-offset), var(--image-offset));
+				z-index: -1;
+			}
+		}
+	}
+
+
+}

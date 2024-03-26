@@ -1,0 +1,28 @@
+// Theme
+
+:root {
+	--wp--style--block-gap: initial!important;
+
+	--site-header-height: 70px;
+}
+
+.grid-container {
+	max-width: var(--content-width);
+}
+
+blockquote {
+	border: none!important;
+	padding: 0!important;
+
+	cite {
+		font-style: normal;
+	}
+}
+
+.wp-caption,
+.wp-caption-custom {
+	font-size: rem-calc(14);
+	font-style: italic;
+	line-height: 1.2;
+	margin-top: 12px;
+}

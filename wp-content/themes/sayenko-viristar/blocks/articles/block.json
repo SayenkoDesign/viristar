@@ -1,0 +1,30 @@
+{
+    "name": "acf/articles",
+    "title": "Home Articles",
+    "description": "home articles block",
+    "style": ["articles"],
+    "script": "",
+    "category": "blocks",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": ["home", "articles"],
+    "acf": {
+        "mode": "auto",
+		"renderTemplate": "index.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}

@@ -1,0 +1,95 @@
+/**
+ * Forms
+ * ======================================== */
+
+ $form-border-color: #979797;
+ $form-border-color-hover: #979797;
+ // Forms
+
+
+ body form {
+	input[type="text"],
+	input[type="url"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="password"],
+	input[type="file"],
+	textarea,
+	select {
+		font-size: rem-calc(16);
+		font-weight: 500;
+	}
+
+	input[type="text"],
+	input[type="url"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="password"] {
+		border: solid 1px $form-border-color;
+		padding: 16px 8px 16px 24px !important;
+
+		&:focus {
+			border-color: $form-border-color-hover !important;
+		}
+	}
+
+	textarea {
+		border: 1px solid $form-border-color;
+		padding: 16px 8px 16px 24px !important;
+		width: 100%;
+
+		&:focus {
+			border-color: $form-border-color-hover !important;
+		}
+	}
+
+	select {
+	   border: 1px solid $form-border-color;
+	   padding: 16px 5ch 16px 24px !important;
+		&:focus {
+			border-color: $form-border-color-hover !important;
+		}
+
+		-webkit-appearance: none;
+		width: 100%;
+	}
+
+	::placeholder {
+        color: inherit !important;
+        font-size: rem-calc(16) !important;
+        line-height: 1.25 !important;
+        padding-left: 0;
+		font-weight: 500;
+    }
+
+ }
+
+
+ 
+
+.select-wrapper,
+.select-wrap {
+	position: relative;
+	z-index: 1;
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 25px;
+		width: 20px;
+		height: 100%;
+		background-image: url("data:image/svg+xml,%3Csvg fill='none' height='13' viewBox='0 0 20 13' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath clip-rule='evenodd' d='m1.31854 1.37387c-.20856.22067-.31854.52292-.31854.81326 0 .29035.10998.59202.31854.81254l8.161 8.62943c.20857.2205.48317.3368.76906.3368.2853 0 .5599-.1163.7691-.3368l8.1609-8.62943c.4285-.45309.4285-1.17271 0-1.6258-.4285-.453084-1.1091-.453084-1.5376 0l-7.3924 7.81614-7.3924-7.81614c-.42853-.44118-1.12039-.44118-1.53766 0z' fill='%23252b33' fill-rule='evenodd' stroke='%23fff'/%3E%3C/svg%3E");
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	select {
+		-webkit-appearance: none;
+		width: 100%;
+		border-radius: 50px;
+	 }
+ }

@@ -1,0 +1,17 @@
+// Page
+
+body:not(.full-width-content) {
+    &.page,
+    &.single {
+        .entry-header {
+            width: min(var(--content-width), 100% - 2 * var(--gutter));
+            margin-inline: auto;
+        }
+    }
+}
+
+.entry-content
+    > *:not(.alignfull):not(.alignwide):not(.alignfeatured):not(.alignnarrow) {
+    width: min(var(--content-width), 100% - 2 * var(--gutter));
+    margin-inline: auto;
+}

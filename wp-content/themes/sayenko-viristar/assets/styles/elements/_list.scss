@@ -1,0 +1,32 @@
+// List
+
+.page {
+
+	.entry-content {
+		
+		ul.green {
+			list-style-type: none;
+			margin-left: 0;
+			
+			
+			li {
+				font-size: rem-calc(14);
+				margin-bottom: 36px;
+				min-height: 30px;
+				padding-left: 54px;
+				position: relative;
+
+				&::before {
+					content: '';
+					position: absolute;
+					left: 0;
+					width: 30px;
+					height: 30px;
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='none'%3E%3Cpath fill='%2379a65a' d='M15 30a15.02 15.02 0 0 0 15-15 14.87 14.87 0 0 0-.594-4.182 1.25 1.25 0 1 0-2.399.702A12.41 12.41 0 0 1 27.5 15c0 6.892-5.608 12.5-12.5 12.5S2.5 21.892 2.5 15 8.108 2.5 15 2.5c2.505 0 4.915.732 6.969 2.118a1.25 1.25 0 0 0 1.398-2.073C20.898.88 18.005 0 15 0A15.02 15.02 0 0 0 0 15a15.02 15.02 0 0 0 15 15zM27.866 2.866L15 15.732l-4.116-4.116a1.25 1.25 0 0 0-1.768 1.768l5 5c.244.244.564.366.884.366a1.25 1.25 0 0 0 .884-.366l13.75-13.75a1.25 1.25 0 0 0-1.768-1.768z'/%3E%3C/svg%3E");
+					
+				}
+			}
+		}
+	}
+		
+}

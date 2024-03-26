@@ -1,0 +1,22 @@
+// About
+
+.page-template-about {
+
+}
+
+.about-hero {
+	overflow: hidden;
+}
+
+.about-our-why {
+
+	overflow: hidden;
+	> .gb-inside-container {
+		background-color: rgba(236,58,90,0.8);
+		
+		a {
+			border: none!important;
+		}
+	}
+	
+}

@@ -1,0 +1,31 @@
+// Styles
+
+// npx mix watch
+@import 'bootstrap';
+
+@import 'base';
+
+// Functions
+@import 'utilities/functions';
+// Mixins
+@import 'utilities/mixins';
+
+
+// Plugins
+@import 'plugins';
+
+// @import 'theme';
+
+// Structure
+@import 'structure';
+
+// Components
+@import 'components'; 
+
+// Patterns
+@import "patterns";
+
+// Elements
+@import 'elements';
+
+@import 'pages';

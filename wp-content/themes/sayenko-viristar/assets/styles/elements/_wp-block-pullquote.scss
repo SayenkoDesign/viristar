@@ -1,0 +1,38 @@
+// Pull Quote
+
+.wp-block-pullquote {
+	padding: 0;
+
+	font-family: Georgia;
+	font-size: 24px;
+	font-style: italic;
+	letter-spacing: 0;
+	line-height: 1.225;
+
+	blockquote {
+		border: 0;
+		padding: 0;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 0;
+		max-width: 800px;
+	}
+
+	p {
+		font-family: inherit;
+		font-style: inherit;
+		font-size: inherit;
+		line-height: inherit;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 40px;
+
+		p {
+			font-family: inherit;
+			font-style: inherit;
+			font-size: inherit;
+			line-height: inherit;
+		}
+	}
+}

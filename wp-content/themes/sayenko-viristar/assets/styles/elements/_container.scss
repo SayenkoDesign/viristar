@@ -1,0 +1,9 @@
+// Containers
+
+.entry-content section {
+	//padding-block: var(--spacing-md);
+}
+
+.entry-content > section:first-of-type {
+	//padding-block: 0 var(--spacing-md);
+}

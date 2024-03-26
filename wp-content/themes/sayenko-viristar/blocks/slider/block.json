@@ -1,0 +1,29 @@
+{
+    "name": "acf/slider",
+    "title": "Slider Block",
+    "description": "The slider block let's you choose posts to add the slider.",
+    "style":[ "splide","file:./style.css" ],
+    "script": ["splide"],
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": ["slider"],
+    "acf": {
+        "mode": "preview",
+		"renderTemplate": "index.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "jsx": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    }
+}
