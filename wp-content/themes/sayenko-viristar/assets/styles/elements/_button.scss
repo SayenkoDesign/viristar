@@ -1,16 +1,10 @@
 // Button
 
-@use '../base' as *;
-@use '../utilities/functions' as *;
-@use '../utilities/mixins' as *;
-@import "../bootstrap";
-
-
 :root {
-    --btn-padding-block: 14px;
+    --btn-padding-block: 10px;
     --btn-padding-inline: 20px;
     --btn-line-height: 1.66666667;
-    --btn-font-size: #{rem-calc(16)};
+    --btn-font-size: #{rem-calc(20)};
     --btn-font-weight: 700;
     --btn-font-style: normal;
     --btn-text-decoration: none;
@@ -18,7 +12,7 @@
     --btn-letter-spacing: 1.02px;
     --btn-border-width: 0;
     --btn-border-style: none;
-    --btn-border-radius: 10px;
+    --btn-border-radius: 8px;
     --btn-border-color: none;
 }
 
@@ -51,34 +45,56 @@
 	}
 }
 
-// Secondary
-.gb-button-secondary {
-	--btn-background: var(--accent);
-    --btn-text-color: white;
-
-	&:hover {
-		--btn-background-hover: var(--action);
-        --btn-text-color-hover: white;
-	}
+.gb-button-sky {
+    @include gb-button-sky;
 }
 
-// Phone
-.gb-button-phone {
-	--btn-background: var(--light-grey);
-    --btn-text-color: var(--action);
-
-	&:hover {
-		--btn-background-hover: var(--base);
-    	--btn-text-color-hover: white;
-	}
+.gb-button-sky-alt {
+    @include gb-button-sky-alt;
 }
 
+.gb-button-navy {
+    @include gb-button-navy;
+}
 
-// Accent
+.gb-button-navy-alt {
+    @include gb-button-navy-alt;
+}
 
-// Base - Optional
+.gb-button-link {
+    display: inline-flex;
+    font-size: rem-calc(14);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 192.857%;
+    letter-spacing: 0.335px;
+    position: relative;
+    text-decoration: none;
 
-// Black - Optional
+    color: var(--primary);
 
-// White - Optional
+    &:has(span) {
+        padding-right: 15px;
+    }
 
+    span {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        color: var(--green);
+    }
+
+    &:hover {
+        color: var(--secondary);
+    }
+}
+
+.gb-social-icon {
+    background-color: #0c0033;
+}

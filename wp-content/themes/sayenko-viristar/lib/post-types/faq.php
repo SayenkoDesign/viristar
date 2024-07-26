@@ -12,6 +12,7 @@ add_action('init', function () {
 		'supports' => array(
 			'title',
 			'editor',
+			'page-attributes',
 		),
 		'taxonomies' => array(),
 		'public' => true,

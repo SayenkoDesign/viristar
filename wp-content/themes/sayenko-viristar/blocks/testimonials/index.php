@@ -25,7 +25,7 @@ get_template_part(sprintf('blocks/%s/components/%s', $block->get_name(), 'splide
 
 if(!$is_preview):
 
-
+	$number_of_testimonials = get_field('number_of_testimonials') ?: 3;
 ?>
 <script>
 (function (document, window, $) {
@@ -41,13 +41,42 @@ if(!$is_preview):
 		pauseOnFocus: true,
 		pagination: true,
 		arrows: true,
-		height: "auto",
-		autoHeight: true
+		//height: "auto",
+		//autoHeight: true,
+		perPage: <?php echo $number_of_testimonials;?>,
+		perMove: 1,
+		//gap: '1rem',
+		breakpoints: {
+			1500: {
+				arrows: false,
+			},
+			1023: {
+				perPage: 2,
+				//gap: '1rem',
+			},
+			639: {
+				perPage: 1,
+				//gap: '0',
+			},
+		},
 		});
   		  
 
+	// hide paginaiton and arrows if not needed
+	splide.on( 'overflow', function ( isOverflow ) {
+	// Reset the carousel position
+	splide.go( 0 );
+
+	splide.options = {
+		arrows    : isOverflow,
+		pagination: isOverflow,
+		drag      : isOverflow,
+		clones    : isOverflow ? undefined : 0, // Toggle clones
+	};
+	} );
 	  
-	  splide.mount();
+	  
+	splide.mount();
 	  
 	  
 	  /* var toggleButton = splide.root.querySelector( '.my-toggle-button' );

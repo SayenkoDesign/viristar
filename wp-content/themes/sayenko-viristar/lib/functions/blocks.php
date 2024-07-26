@@ -16,3 +16,20 @@ function acf_should_wrap_innerblocks( $wrap, $name ) {
     }
     return true;
 }
+
+/**
+ * Register our custom block style
+ *
+ * @return void
+ */
+function wp_dev_register_block_style() {
+
+	register_block_style(
+		'core/list',
+		array(
+			'name'  => 'columns-2', // .is-style-check
+			'label' => 'Two Columns',
+		)
+	);
+}
+add_action( 'init', 'wp_dev_register_block_style' );

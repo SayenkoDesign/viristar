@@ -30,16 +30,67 @@
 	display: inline-flex;
     justify-content: center;
     align-items: center;
-    background: var(--btn-background);
+    background-color: var(--btn-background);
     color: var(--btn-text-color);
     border-color: var(--btn-border-color);
     transition: all var(--btn-transition-duration) ease;
 
     // Hover
     &:hover {
-        background: var(--btn-background-hover);
+        background-color: var(--btn-background-hover);
         border-color: var(--btn-border-color-hover);
         color: var(--btn-text-color-hover);
         text-decoration: var(--btn-text-decoration-hover);
     }
+}
+
+@mixin gb-button-sky() {
+    --btn-background: var(--sky-dark);
+    --btn-text-color: white;
+
+	&:hover {
+		--btn-background-hover: var(--sky-dark-hover);
+        --btn-text-color-hover: white;
+	}
+}
+
+@mixin gb-button-sky-alt() {
+    --btn-background: transparent;
+    --btn-text-color: white;
+    --btn-border-width: 2px;
+    --btn-border-style: solid;
+    --btn-border-radius: 8px;
+    --btn-border-color: var(--sky-dark);
+    --btn-padding-block: 12px;
+
+	&:hover {
+		--btn-background-hover: transparent;
+        --btn-text-color-hover: var(sky-dark);
+        --btn-border-color-hover: white;
+	}
+}
+
+@mixin gb-button-navy() {
+    --btn-background: var(--dark-navy);
+    --btn-text-color: white;
+
+	&:hover {
+		--btn-background-hover: var(--primary);
+        --btn-text-color-hover: white;
+	}
+}
+
+@mixin gb-button-navy-alt() {
+    --btn-background: transparent;
+    --btn-text-color: var(--primary);
+    --btn-border-width: 2px;
+    --btn-border-style: solid;
+    --btn-border-radius: 8px;
+    --btn-border-color: var(--primary);
+    --btn-padding-block: 12px;
+
+	&:hover {
+		--btn-background-hover: var(--primary);
+        --btn-text-color-hover: white;
+	}
 }

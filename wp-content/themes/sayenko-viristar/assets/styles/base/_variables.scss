@@ -10,13 +10,21 @@
 
 	--image-border-radius: 15%;
 
+	--max-width: 1600px;
+
 	// Content
-	--content-width: var(--container-width, 1200px); // --container-width is pulled from core/theme.php in </head> from the Customizer
+	--content-width: var(--container-width, 1260px); // --container-width is pulled from core/theme.php in </head> from the Customizer
 	--content-narrow-width: 175px;
 	--feature-width: 50px;
 	--feature-max-width: 100px;
-	--gutter: 30px;
-	--gutter-lg: 90px;
+
+	--gutter-sm: 16px;
+	--gutter-md: 32px;
+	--gutter-lg: 64px;
+	--gutter-xl: 80px;
+	--gutter-xxl: 96px;
+
+	--gutter: var(--gutter-md);
 
 
 	--entry-header-margin-block: .5em;

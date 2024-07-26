@@ -24,29 +24,8 @@ if ($is_preview) {
 
 // Open the block
 echo $block->before_render();
-?>
 
-<div class="header">
-	<?php
-	$title = get_field('title');
-	echo _s_format_string($title, 'h2', ['class' => '']);
-	?>
-	<div class="header__content">
-		<?php
-		
-		the_field('text');
-		$permalink = get_post_type_archive_link('post');
-		?>
-		<p class="header__link"><a href="<?php echo $permalink; ?>" class="link-arrow-icon">All Articles</a></p>
-	</div>
-</div>
-
-
-<?php
 get_template_part(sprintf('blocks/%s/components/%s', $block->get_name(), 'grid'), NULL, ['block' => $block]);
-?>
-
-<?php
 
 // close the block
 echo $block->after_render();

@@ -17,7 +17,7 @@ add_filter('walker_nav_menu_start_el', 'wrap_menu_item_text_in_span', 10, 4);
 
 function wrap_menu_item_text_in_span($item_output, $item, $depth, $args) {
     // Check if this is the primary menu. Adjust 'primary' to your specific theme location
-    if ($args->theme_location == 'primary') {
+    if ($args->theme_location == 'primary' || $args->theme_location == 'secondary') {
         // Use regex to find the menu link text and wrap it in a span
         $item_output = preg_replace('/(<a.*?>)(.*?)(<\/a>)/i', '$1<span>$2</span>$3', $item_output);
     }

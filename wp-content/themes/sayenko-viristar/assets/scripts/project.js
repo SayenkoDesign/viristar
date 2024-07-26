@@ -7,14 +7,20 @@ cssHasPseudo(document);
 //import jqueryMatchHeight from 'jquery-match-height';
 
 import general from './modules/general';
-
+import course from './modules/course';
+import footer from './modules/footer';
 //import blog from './modules/blog';
+
+// Bootsrap
+import tabs from 'bootstrap/js/dist/tab';
+import modal from 'bootstrap/js/dist/modal';
+import collapse from 'bootstrap/js/dist/collapse';
 
 
 document.addEventListener('DOMContentLoaded', function () {
 	general.init();
-	//blog.init();
-
+	// course.init();
+	footer.init();
 	updateScrollbarWidth();
   }
 );

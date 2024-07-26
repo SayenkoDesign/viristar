@@ -37,9 +37,15 @@ add_filter( 'option_generate_settings', function( $settings ) {
         ],
         [
             'name' => __( 'Accent Alt', 'generatepress' ),
-            'slug' => 'accent',
+            'slug' => 'accent-alt',
             'color' => '#7A98BC',
         ],
+        [
+            'name' => __( 'Muted Blue', 'generatepress' ),
+            'slug' => 'muted-blue',
+            'color' => '#E7EDF3',
+        ],
+        
         [
             'name' => __( 'Off White', 'generatepress' ),
             'slug' => 'off-white',

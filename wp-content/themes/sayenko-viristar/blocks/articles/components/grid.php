@@ -21,24 +21,58 @@ if ($loop->have_posts()) :
 			$index = $loop->current_post;
 
 		?>
-			<div class="grid__item">
-				<div class="grid__thumbnail">
-					<?php echo get_the_post_thumbnail(get_the_ID(), 'medium'); ?>
-				</div>
-				<div class="grid__content">
-					<?php
-					//echo generate_do_post_meta_item('date');
-					?>
-					<h3><a href="<?php the_permalink(); ?>" class="link-cover"><?php the_title(); ?></a></h3>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php generate_do_microdata('article'); ?>>
+			<div class="inside-article">
 
-					<div class="read-arrow-container"><span class="read-more">Read More</span></div>
+				<div class="post-image">
+					
+
+					<a href="<?php echo get_the_permalink(get_the_ID()); ?>" aria-hidden="true">
+						<?php
+						the_post_thumbnail('medium');
+						?>
+					</a>
 				</div>
+
+				<div class="post-content">
+					<div <?php generate_do_attr('entry-header'); ?>>
+						<?php
+
+						$params = array(
+							'before' => sprintf(
+								'<h3 class="entry-title"%2$s><a href="%1$s" rel="bookmark">',
+								esc_url(get_permalink()),
+								'microdata' === generate_get_schema_type() ? ' itemprop="headline"' : ''
+							),
+							'after' => '</a></h3>',
+						);
+
+						the_title($params['before'], $params['after']);
+
+						$arrow = _s_get_icon(
+							[
+								'icon'	=> 'link-arrow',
+								'group'	=> 'theme',
+								'class'	=> '',
+								'width' => 8,
+								'height' => 13,
+								'label'	=> false,
+							]
+							);
+						?>
+						
+					</div>
+
+					<div class="link-container"><a href="<?php echo get_permalink();?>" class="gb-button-link" aria-hidden="true">Read More<span><?php echo $arrow;?></span></a></div>
+				</div>
+
+				
+
 			</div>
+		</article>
 		<?php
 
 		endwhile;
-
-		get_template_part(sprintf('blocks/%s/components/%s', $block->get_name(), 'form'), NULL, ['block' => $block] );
 
 		?>
 	</div>

@@ -12,16 +12,16 @@
         "singular_name": "Course",
         "menu_name": "",
         "all_items": "",
-        "add_new": "",
-        "add_new_item": "",
         "edit_item": "",
-        "new_item": "",
         "view_item": "",
         "view_items": "",
+        "add_new_item": "",
+        "add_new": "",
+        "new_item": "",
+        "parent_item_colon": "",
         "search_items": "",
         "not_found": "",
         "not_found_in_trash": "",
-        "parent_item_colon": "",
         "archives": "",
         "attributes": "",
         "featured_image": "",
@@ -40,8 +40,7 @@
         "item_scheduled": "",
         "item_updated": "",
         "item_link": "",
-        "item_link_description": "",
-        "name_admin_bar": ""
+        "item_link_description": ""
     },
     "description": "",
     "public": true,
@@ -64,17 +63,17 @@
     "plural_capability_name": "posts",
     "supports": [
         "title",
+        "editor",
         "thumbnail"
     ],
-    "taxonomies": [],
+    "taxonomies": "",
     "has_archive": false,
     "has_archive_slug": "",
     "rewrite": {
         "permalink_rewrite": "post_type_key",
-        "slug": "",
-        "feeds": false,
-        "pages": true,
-        "with_front": true
+        "with_front": "1",
+        "feeds": "0",
+        "pages": "1"
     },
     "query_var": "post_type_key",
     "query_var_name": "",
@@ -82,5 +81,5 @@
     "delete_with_user": false,
     "register_meta_box_cb": "",
     "enter_title_here": "",
-    "modified": 1710802441
+    "modified": 1721677991
 }

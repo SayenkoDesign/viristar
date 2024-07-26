@@ -38,6 +38,28 @@
             "elements": "",
             "bidirectional": 0,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_669f282ef596e",
+            "label": "Number To Show",
+            "name": "number_of_testimonials",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "This is how many should show in the carousel",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -65,5 +87,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1710807054
+    "modified": 1721706587
 }

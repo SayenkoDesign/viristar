@@ -9,7 +9,7 @@
     "apiVersion": 2,
     "keywords": ["testimonial"],
     "acf": {
-        "mode": "preview",
+        "mode": "edit",
 		"renderTemplate": "index.php"
     },
     "styles": [],

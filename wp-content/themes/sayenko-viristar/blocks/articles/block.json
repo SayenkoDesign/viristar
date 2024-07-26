@@ -4,7 +4,7 @@
     "description": "home articles block",
     "style": ["articles"],
     "script": "",
-    "category": "blocks",
+    "category": "sayenko",
     "icon": "",
     "apiVersion": 2,
     "keywords": ["home", "articles"],

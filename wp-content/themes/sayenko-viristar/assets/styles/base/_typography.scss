@@ -10,9 +10,13 @@
 	--text-letter-spacing: 0.335px;
 	--text-margin-bottom: 1.5em;
 
-	--h1: #{rem-calc(44)};  // 44px
-	--h2: #{rem-calc(36)}; // 36px
-	--h3: #{rem-calc(24)}; // 24px
+	--h1: calc(clamp(#{rem-calc(36)}, 2.66vw + 1.468rem, #{rem-calc(44)}));
+	--h2: calc(clamp(#{rem-calc(30)}, 1.95vw + 2.11rem, #{rem-calc(36)}));
+	--h3: calc(clamp(#{rem-calc(24)}, 1.064vw + 1.287rem, #{rem-calc(24)}));
+
+	// --h1: #{rem-calc(44)};  // 44px
+	// --h2: #{rem-calc(36)}; // 36px
+	// --h3: #{rem-calc(24)}; // 24px
 	--h4: #{rem-calc(21)};// 21px
 	--h5: #{rem-calc(19)}; // 19px
 }

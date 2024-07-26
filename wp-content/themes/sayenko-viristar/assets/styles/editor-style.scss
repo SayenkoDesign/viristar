@@ -1,13 +1,19 @@
 // Editor Style
 
-@use 'base' as *;
-@use 'utilities/functions' as *;
-@use 'utilities/mixins' as *;
-@use "bootstrap" as *;
+@import 'bootstrap';
 
-@use "patterns";
-@use "components/button-group";
-@use "elements/button";
+@import 'base';
+
+// Functions
+@import 'utilities/functions';
+// Mixins
+@import 'utilities/mixins';
+
+@import "patterns";
+@import "components/button-group";
+@import "elements/button";
+@import "elements/image";
+@import "elements/list";
 
 .site-footer {
 

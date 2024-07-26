@@ -1,6 +1,9 @@
 // Bootstrap Modal
 
-
 .modal {
 	z-index: 11000;
+}
+
+.modal-content {
+	--bs-modal-bg: white;
 }

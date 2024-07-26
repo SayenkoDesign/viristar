@@ -5,8 +5,38 @@
         margin-top: 0;
     }
 
-    @include media-breakpoint-up(lg) { 
-        
-     }
+    
 
+}
+
+body .home-subscribe  {
+
+
+    p {
+        line-height: normal;
+    }
+
+    .forminator-ui.forminator-custom-form[data-design=default] {
+        
+        .forminator-input {
+            background: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 400;
+        }
+        
+        .forminator-button-submit {
+            padding: unset;
+            @include gb-button;
+            @include gb-button-navy;
+            width: 100%;
+            max-width: 190px;
+        }
+
+        @include media-breakpoint-up(md) { 
+            display: grid;
+            gap: 8px;
+            grid-template-columns: minmax(280px, 308px) auto;
+        }
+    }
 }

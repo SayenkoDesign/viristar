@@ -1,8 +1,37 @@
 // Spacing
 
 :root {
---spacing-sm: 20px;
---spacing-md: 40px;
---spacing-lg: 80px;
---spacing-xl: 125px;
+	--spacing-xs: 8px;
+	--spacing-sm: 16px;
+	--spacing-md: 32px;
+	--spacing-lg: 64px;
+	--spacing-xl: 80px;
+	--spacing-xxl: 96px;
+
+	--spacing: var(--spacing-md);
+
+
+	.margin-bottom-sm {
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.margin-bottom-md {
+		margin-bottom: var(--spacing-md);
+	}	
+
+	.margin-bottom-lg {
+		margin-bottom: var(--spacing-lg);
+	}	
+
+	.margin-bottom-xl {
+		margin-bottom: var(--spacing-xl);
+	}	
+
+	.margin-bottom-xxl {
+		margin-bottom: var(--spacing-xxl);
+	}
+
+	.margin-bottom {
+		margin-top: var(--spacing-md);
+	}
 }

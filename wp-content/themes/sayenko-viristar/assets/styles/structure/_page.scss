@@ -3,7 +3,7 @@
 body:not(.full-width-content) {
     &.page,
     &.single {
-        .entry-header {
+        header.entry-header {
             width: min(var(--content-width), 100% - 2 * var(--gutter));
             margin-inline: auto;
         }
@@ -12,6 +12,15 @@ body:not(.full-width-content) {
 
 .entry-content
     > *:not(.alignfull):not(.alignwide):not(.alignfeatured):not(.alignnarrow) {
+    width: min(var(--content-width), 100% - 2 * var(--gutter));
+    margin-inline: auto;
+}
+
+
+.content-width.content-width {
+    margin-left: unset;
+	margin-right: unset;
+	max-width: unset;
     width: min(var(--content-width), 100% - 2 * var(--gutter));
     margin-inline: auto;
 }

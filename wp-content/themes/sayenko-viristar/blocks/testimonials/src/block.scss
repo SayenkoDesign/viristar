@@ -1,5 +1,6 @@
 // Styles
 @use "assets/styles/block" as *;
+@use "assets/styles/components/testimonial" as *;
 
 .wp-block-acf-testimonials.acf-block-preview  {
     min-height: 100px;
@@ -22,22 +23,24 @@
 
 .wp-block-acf-testimonials  {
 
-    max-width: 1340px;
+    max-width: 1440px;
 
     margin-inline: auto;
 
-    .quotation-mark {
-        margin-bottom: 24px;
-        text-align: center;
-    }
-
     .splide {
-
         
-
         &__track {
-            max-width: 980px;
+            // max-width: 1200px;
             margin-inline: auto;
+        }
+
+        &__slide {
+            padding: .5rem!important;
+        }
+
+
+        &__slide::before {
+            display: none!important;
         }
 
         &__pagination {
@@ -46,6 +49,10 @@
 
             li {
                 padding: 10px;
+
+                &:before {
+                    display: none;
+                }
             }
 
             button {
@@ -68,11 +75,23 @@
         }
 
         &__arrow {
-            width: 70px;
-            height: 70px;
+            padding: 0;
+            width: 35px;
+            height: 35px;
+            
             border-radius: 50%;
             background-color: white;
             box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.25);
+
+            svg {
+                width: 50%;
+                height: 50%;
+            }
+
+            @include media-breakpoint-up(md) {
+                width: 70px;
+                height: 70px;
+            }
 
             display: flex;
             align-items: center;
@@ -84,119 +103,23 @@
             z-index: 3;
         }
 
+
         &__arrow--prev {
             svg {
                 transform: scaleX(-1);
             }
 
-            left: 0;
+            left: -90px;
         }
 
         &__arrow--next {
-            right: 0;
+            right: -90px;
         }
 
+    }
 
-        .testimonial {
-
-            @include media-breakpoint-up(md) { 
-                display: flex;
-                flex-wrap: wrap;
-                gap: 5px;
-            }
-
-            &__image {
-                flex: 0 0 132px;
-
-                img {
-                    width: 132px;
-                    height: 132px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                    object-position: center top;
-                }
-            }
-
-            &__quote {
-
-                position: relative;
-
-                svg {
-                    margin-bottom: 15px;
-                }
-
-                @include media-breakpoint-up(md) { 
-                    flex: 1;
-                    padding-left: 44px;
-
-                    svg {
-                        position: absolute;
-                        left: 0;
-                        top: 12px;
-                    }
-                }
-            }
-
-
-            &__content {
-
-                p {
-                    font-size: rem-calc(20);
-                    line-height: 1.41666667;
-
-                    @include media-breakpoint-up(md) { 
-                        font-size: rem-calc(34);
-                    }
-                }
-            }
-
-            &__name {
-
-                a {
-                    position: relative;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    
-                    font-family: "Montserrat", sans-serif;
-                    font-size: rem-calc(19);
-                    font-weight: 500;
-                    line-height: 152.632%;
-                    letter-spacing: 0.335px;
-                    text-decoration: none;
-
-                    .button-text {
-                        display: inline-flex;
-                        margin-bottom: 10px;
-                    }
-
-                    @include media-breakpoint-up(md) { 
-                        display: inline-flex;
-                        flex-direction: row;
-                        .button-text {
-                            margin-bottom: 0;
-                        }
-                    }
-
-                    &:after {
-                        content: '';
-                        background-image: url("data:image/svg+xml,%3Csvg fill='none' height='14' viewBox='0 0 28 14' width='28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath clip-rule='evenodd' d='m20.4427 12.9727c.1574.1488.3731.2273.5802.2273.2072 0 .4224-.0785.5798-.2273l6.1572-5.82297c.1573-.14881.2403-.34475.2403-.54871 0-.20358-.083-.39951-.2403-.54882l-6.1572-5.822883c-.3233-.3057561-.8368-.3057561-1.16 0-.3233.305756-.3233.791383 0 1.097133l5.5769 5.27457-5.5769 5.27458c-.3148.3057-.3148.7994 0 1.0971z' fill='%234e7d95' fill-rule='evenodd'/%3E%3Cpath d='m25.9636 6.6-24.6636.3' stroke='%234e7d95' stroke-linecap='square' stroke-width='1.8'/%3E%3C/svg%3E");
-                        background-position: center right;
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        width: 28px;
-                        height: 14px;
-
-                        @include media-breakpoint-up(md) { 
-                            margin-left: 20px;
-                        }
-                       
-                    }
-                }
-    
-            }
-        }
-
+    blockquote {
+       height: 100%;
     }
 
 }

@@ -182,7 +182,24 @@ add_action('generate_before_main_content', function() {
 	
 	
 	add_action( 'generate_after_content', function() {
+
+		
+
+		$arrow = _s_get_icon(
+			[
+				'icon'	=> 'link-arrow',
+				'group'	=> 'theme',
+				'class'	=> '',
+				'width' => 8,
+				'height' => 13,
+				'label'	=> false,
+			]
+			);
+		?>
+		<div class="link-container"><a href="<?php echo get_permalink();?>" class="gb-button-link" aria-hidden="true">Read More<span><?php echo $arrow;?></span></a></div>
+		<?php
 		echo '</div>';
+		
 	});
 
 
