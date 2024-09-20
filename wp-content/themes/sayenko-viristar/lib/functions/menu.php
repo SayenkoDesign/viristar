@@ -1,7 +1,22 @@
 <?php
 // Menu
 
+add_filter( 'generate_search_placeholder', function() {
+    return '';
+});
 
+add_filter('wp_nav_menu_items', 'so68759013_add_menu_item', 10, 2);
+
+function so68759013_add_menu_item($items, $args)
+{   
+    if( $args->theme_location == 'primary' ) {
+        $form = get_search_form(false);
+        // Remove the placeholder attribute from the form
+        $items = sprintf('<li class="menu-item mobile-menu-search-form">%s</li>', $form) . $items;
+    }
+
+    return $items;
+}
 
 /**
  *

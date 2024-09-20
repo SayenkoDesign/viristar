@@ -30,11 +30,11 @@
 
     .site-content {
         padding-top: 60px !important;
-        padding-bottom: 60px !important;
+       // padding-bottom: 60px !important;
 
         @include breakpoint(medium-large) {
             padding-top: 130px !important;
-            padding-bottom: 130px !important;
+           // padding-bottom: 130px !important;
         }
     }
 

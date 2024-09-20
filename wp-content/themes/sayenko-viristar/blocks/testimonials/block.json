@@ -7,7 +7,7 @@
     "category": "sayenko",
     "icon": "",
     "apiVersion": 2,
-    "keywords": ["testimonial"],
+    "keywords": ["viristar", "testimonial"],
     "acf": {
         "mode": "edit",
 		"renderTemplate": "index.php"

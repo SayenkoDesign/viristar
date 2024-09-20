@@ -5,7 +5,7 @@
 add_action('wp_enqueue_scripts', function () {
 	wp_dequeue_style('generate-child');
 	wp_enqueue_style('child-style', THEME_STYLES . '/style.css', []);
-}, 20); // priority 5 to load after parent theme and before geneate blocks custom styles
+}, 5); // priority 5 to load after parent theme and before geneate blocks custom styles
 
 
 add_action('wp_enqueue_scripts', function () {

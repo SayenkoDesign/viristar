@@ -3,7 +3,7 @@
  * ======================================== */
 
  $form-border-color: #979797;
- $form-border-color-hover: #979797;
+ $form-border-color-hover: var(--sky-blue);
  // Forms
 
 
@@ -28,7 +28,7 @@
 	input[type="number"],
 	input[type="password"] {
 		border: solid 1px $form-border-color;
-		padding: 16px 8px 16px 24px !important;
+		padding: 16px !important;
 
 		&:focus {
 			border-color: $form-border-color-hover !important;
@@ -37,7 +37,7 @@
 
 	textarea {
 		border: 1px solid $form-border-color;
-		padding: 16px 8px 16px 24px !important;
+		padding: 16px !important;
 		width: 100%;
 
 		&:focus {
@@ -46,15 +46,17 @@
 	}
 
 	select {
-	   border: 1px solid $form-border-color;
-	   padding: 16px 5ch 16px 24px !important;
-		&:focus {
-			border-color: $form-border-color-hover !important;
-		}
+        padding: 16px 30px 16px 16px !important;
 
-		-webkit-appearance: none;
-		width: 100%;
-	}
+        -webkit-appearance: none;
+
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='11' viewBox='0 0 19 11' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.818542 0.373934C0.60998 0.594597 0.5 0.896848 0.5 1.1872C0.5 1.47754 0.60998 1.77921 0.818542 1.99973L8.97954 10.6291C9.18811 10.8497 9.46271 10.9659 9.74858 10.9659C10.0339 10.9659 10.3085 10.8497 10.5177 10.6291L18.6786 1.99973C19.1071 1.54664 19.1071 0.82702 18.6786 0.373934C18.2501 -0.0791529 17.5695 -0.0791529 17.141 0.373934L9.74858 8.19007L2.3562 0.373934C1.92767 -0.0672487 1.23581 -0.0672487 0.818542 0.373934Z' fill='%23003C71'/%3E%3C/svg%3E");
+
+		background-size: 19px 11px;
+		background-size: 16px 10px;
+        background-position:  calc(100% - 14px) 50%;
+        background-repeat: no-repeat;
+    }
 
 	::placeholder {
         color: inherit !important;
@@ -64,32 +66,4 @@
 		font-weight: 500;
     }
 
- }
-
-
- 
-
-.select-wrapper,
-.select-wrap {
-	position: relative;
-	z-index: 1;
-
-	&:after {
-		content: "";
-		position: absolute;
-		top: 0;
-		right: 25px;
-		width: 20px;
-		height: 100%;
-		background-image: url("data:image/svg+xml,%3Csvg fill='none' height='13' viewBox='0 0 20 13' width='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath clip-rule='evenodd' d='m1.31854 1.37387c-.20856.22067-.31854.52292-.31854.81326 0 .29035.10998.59202.31854.81254l8.161 8.62943c.20857.2205.48317.3368.76906.3368.2853 0 .5599-.1163.7691-.3368l8.1609-8.62943c.4285-.45309.4285-1.17271 0-1.6258-.4285-.453084-1.1091-.453084-1.5376 0l-7.3924 7.81614-7.3924-7.81614c-.42853-.44118-1.12039-.44118-1.53766 0z' fill='%23252b33' fill-rule='evenodd' stroke='%23fff'/%3E%3C/svg%3E");
-		background-size: contain;
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-
-	select {
-		-webkit-appearance: none;
-		width: 100%;
-		border-radius: 50px;
-	 }
  }

@@ -2,7 +2,7 @@
 
 // Structure
 
-@media (min-width: 769px) {
+@media (min-width: 1100px) {
     nav .main-nav .mega-menu {
         position: static;
     }
@@ -68,7 +68,7 @@
 }
 
 // Style
-@media (min-width: 1024px) {
+@media (min-width: 1100px) {
     nav .main-nav .mega-menu {
         > ul > li > a {
             font-size: rem-calc(19);
@@ -207,8 +207,13 @@
 .menu-posts {
     .gb-grid-wrapper {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--spacing-lg);
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+
+        @media (min-width: 1100px) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+        }
 
         a {
             padding: 0 !important;
@@ -237,7 +242,7 @@
 }
 
 
-.mega-menu {
+.site-header .mega-menu {
     > .sub-menu {
         &:before {
             content: '';

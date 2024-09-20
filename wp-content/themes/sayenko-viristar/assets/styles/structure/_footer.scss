@@ -2,12 +2,6 @@
 
 .site-footer {
 
-	@include media-breakpoint-up(xxl) {
-		position: relative;
-		z-index: 0;
-		margin-top: -3vw;
-	}
-
 
 	&__menus {
 
@@ -25,17 +19,28 @@
 		}
 
 		@include media-breakpoint-up(lg) {
-			grid-template-columns: repeat(4, max-content);
+			grid-template-columns: repeat(3, max-content);
+		}
+
+		@include media-breakpoint-up(xxl) {
+			grid-template-columns: repeat(5, max-content);
 		}
 		
 	}
 
 	nav {
 
+		ul {
+			@include list-reset;
+			margin-bottom: var(--spacing-sm);
+		}
+
 		li {
 			margin-bottom: 12px;
 
 			a {
+				color: white;
+
 				&:hover {
 					color: var(--sky-blue)!important;
 				}
@@ -91,6 +96,8 @@
 
 	&__grid {
 
+		padding-top: 32px;
+
 		width: min(1600px - var(--gutter)* 2, 100% - 2* var(--gutter));
 		max-width: 100%;
 		margin-inline: auto;
@@ -101,6 +108,27 @@
 
 		gap: var(--spacing-md);
 		
+	}
+
+	&__copyright {
+		width: min(1600px - var(--gutter)* 2, 100% - 2* var(--gutter));
+		max-width: 100%;
+		margin-block: var(--spacing-md) 0;
+		margin-inline: auto;
+
+		@include media-breakpoint-up(md) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: var(--spacing-md);
+
+			
+		}
+	}
+
+	&__copyright-right {
+		@include media-breakpoint-up(md) {
+			margin-left: auto;
+		}
 	}
 }
 
@@ -119,4 +147,41 @@ body:not(.logged-in) {
 		}
 	}
 
+}
+
+
+.site-footer:has(.footer-wave) {
+
+	//padding-top: var(--spacing-md);
+
+	@include media-breakpoint-up(sm) {
+		//padding-top: 0;
+	}
+
+	@media screen and (min-width: 1600px) {
+		//margin-top: -4%;
+	}
+
+}
+
+/* .site:has(.entry-content > .gb-container.bg--dark:last-child) + .site-footer .footer-wave,
+.site:has(.entry-content > .gb-container.bg--ultra-dark:last-child) + .site-footer .footer-wave {
+    display: none;
+} */
+
+.archive .site-main > *,
+.entry-content > *:last-child > * {
+	position: relative;
+	//z-index: 9;
+}
+
+.site:has(.entry-content > .gb-container.bg--off-white:last-child) + .site-footer {
+	background-color: var(--off-white);
+}
+
+.site:has(.entry-content > .gb-container.bg--dark:last-child) + .site-footer {
+	background-color: var(--navy);
+}
+.site:has(.entry-content > .gb-container.bg--ultra-dark:last-child) + .site-footer {
+    background-color: var(--dark-navy);
 }

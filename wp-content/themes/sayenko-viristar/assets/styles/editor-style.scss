@@ -11,9 +11,20 @@
 
 @import "patterns";
 @import "components/button-group";
+@import "components/grid";
+@import "components/flex-grid";
 @import "elements/button";
 @import "elements/image";
 @import "elements/list";
+
+
+.gb-button-sky-alt {
+    background-color: var(--sky-dark)!important;
+}
+
+.gb-button-navy-alt {
+    background-color: var(--sky-dark)!important;
+}
 
 .site-footer {
 

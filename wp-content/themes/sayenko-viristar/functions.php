@@ -65,6 +65,7 @@ array_map(function ($file) {
 	'lib/core/assets.php',
 	'lib/core/icon.php',
 	'lib/core/theme.php',
+	'lib/core/menu.php',
 	'lib/core/template-tags.php',
 
 	// GeneratePress
@@ -75,6 +76,7 @@ array_map(function ($file) {
 
 	// Woocommerce
 	'lib/woocommerce/hooks.php',
+	'lib/woocommerce/disable-add-to-cart.php',
 
 	// Post Types
 	'lib/post-types/init.php',
@@ -84,6 +86,9 @@ array_map(function ($file) {
 	'lib/functions/post.php',
 
 	// Theme
+	'lib/functions/string.php',
+	'lib/functions/html.php',
+	'lib/functions/acf.php',
 	'lib/functions/gravity-forms.php',
 	'lib/functions/redirects.php',
 	'lib/functions/blocks.php',
@@ -94,8 +99,10 @@ array_map(function ($file) {
 	'lib/functions/course.php',
 	'lib/functions/mega-menu.php',
 	'lib/functions/testimonial.php',
-	'lib/functions/forminator.php',
+	'lib/functions/modal.php',
+	'lib/functions/woocommerce.php',
 
+	'lib/classes/class-course.php',
 	'lib/classes/class-course-grid.php',
 	'lib/classes/class-course-finder.php',
 	
@@ -103,13 +110,13 @@ array_map(function ($file) {
 ]);
 
 
-add_action('generate_after_footer', function() {
+/* add_action('generate_after_footer', function() {
 	if (is_page()) {
 		global $post;
 		echo get_related_pages(get_the_ID());
 	}
 	
-}, 0);
+}, 0); */
 
 function get_related_pages($post_id) {
     // Check if user is logged in and has the correct email domain
@@ -212,7 +219,7 @@ function build_hierarchical_list($pages, $parent_id) {
 
 
 
-add_shortcode ('get_user_certificate_moodle', 'get_user_certificate_moodle');
+/* add_shortcode ('get_user_certificate_moodle', 'get_user_certificate_moodle');
 function get_user_certificate_moodle() {
 	global $current_user;
 	$ch = curl_init();
@@ -244,4 +251,4 @@ function get_user_certificate_moodle() {
 	
 	
 
-}
+} */

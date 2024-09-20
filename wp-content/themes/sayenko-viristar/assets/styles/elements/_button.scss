@@ -4,7 +4,7 @@
     --btn-padding-block: 10px;
     --btn-padding-inline: 20px;
     --btn-line-height: 1.66666667;
-    --btn-font-size: #{rem-calc(20)};
+    --btn-font-size: 0.9375rem;
     --btn-font-weight: 700;
     --btn-font-style: normal;
     --btn-text-decoration: none;
@@ -28,7 +28,7 @@
 	--btn-padding-block: 0;
     --btn-padding-inline: 0;
     --btn-border-radius: 0;
-    min-width: none;
+    min-width: 0;
 
 }
 

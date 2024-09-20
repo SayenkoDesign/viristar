@@ -7,7 +7,7 @@
     "category": "sayenko",
     "icon": "",
     "apiVersion": 2,
-    "keywords": ["home", "articles"],
+    "keywords": ["viristar", "home", "articles"],
     "acf": {
         "mode": "auto",
 		"renderTemplate": "index.php"

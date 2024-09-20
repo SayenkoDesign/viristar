@@ -1,10 +1,45 @@
 // FacetWP
 
+.facetwp-facet {
+    select {
+        width: 100%;
+    }
+}
+
+.facetwp-hidden {
+    display: none!important;
+}
+
 .facetwp-label {
     font-size: rem-calc(16);
     font-weight: 500;
     color: var(--dark-navy);
     margin-bottom: 5px;
+}
+
+.facetwp-label-product_course_category,
+.facetwp-label-product_course,
+.facetwp-label-product_course_finder,
+.facetwp-label-product_course_mode,
+.facetwp-label-product_course_date_range,
+.facetwp-label-product_course_date_month,
+.facetwp-label-recertification {
+    @include visually-hidden;
+}
+
+
+.facetwp-facet {
+    select {
+        -webkit-appearance: none;
+
+        border: 0;
+
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='6' viewBox='0 0 14 6' fill='none'%3E%3Cpath d='M7 6L0.937822 -1.88258e-07L13.0622 8.71687e-07L7 6Z' fill='%23003C71'/%3E%3C/svg%3E");
+
+        background-size: 14px 8px;
+        background-position: calc(100% - 8px) 50%;
+        background-repeat: no-repeat;
+    }
 }
 
 .facetwp-type-fselect {
@@ -35,30 +70,74 @@
     }
 }
 
-.facetwp-type-dropdown,
-.facetwp-sort {
-	position: relative;
-        //z-index: 1;
+/** change width of fselect **/
+.facetwp-type-fselect .fs-wrap,
+.facetwp-type-fselect .fs-dropdown {
+    width: 280px;
 
-        select {
-			border: none;
-			width: auto;
-            -webkit-appearance: none;
-            width: 100%;
+    @include media-breakpoint-up(md) {
+        width: 300px;
+    }
+}
 
-        }
 
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 14px;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='6' viewBox='0 0 14 6' fill='none'%3E%3Cpath d='M7 6L0.937822 -1.88258e-07L13.0622 8.71687e-07L7 6Z' fill='%23003C71'/%3E%3C/svg%3E");
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
 
+.facetwp-type-date_range {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+    margin-bottom: 0!important;
+
+    .facetwp-date {
+        width: 100%;
+        font-size: 0.6875rem;
+        font-weight: 500;
+    }
+}
+
+.facetwp-facet-product_course_date_month {
+    margin-bottom: 0!important;
+}
+
+
+.facetwp-facet-product_course_finder .facetwp-checkbox {
+    background: transparent;
+    padding-left: 0;
+
+    font-size: rem-calc(11);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.335px;
+
+    margin-bottom: 12px;
+}
+
+.facetwp-facet-recertification {
+    margin-top: var(--spacing-md);
+}
+
+
+.facetwp-wrap:has(.facetwp-facet.is-hidden) {
+    display: none;
+}
+
+
+.facetwp-facet-pager_ {
+    text-align: center;
+}
+
+.facetwp-load-more {
+    @include gb-button;
+
+    --btn-background: var(--primary);
+    --btn-background-hover: var(--base);
+    --btn-text-color: white;
+    --btn-text-color-hover: white;
+
+    &.facetwp-hidden {
+        display: none;
+    }
+
+    margin-top: 40px;
 }

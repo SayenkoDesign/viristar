@@ -3,18 +3,21 @@
 .entry-content {
     ul,
     ol {
-        margin-left: 18px;
+        margin-left: 7px;
 
-        li {
-            margin-bottom: 1.2em;
+        li:not([class]):not([role]) {
+            padding-left: 18px;
+            &:not(:last-child) {
+                margin-bottom: 1.2em;
+            }
         }
     }
 
+
     ul {
         list-style-type: none;
-        margin-left: 7px;
 
-        li {
+        li:not([class]):not([role]) {
             padding-left: 1.5em; /* Adjust padding to make space for the bullet */
 			position: relative;
 
@@ -23,7 +26,7 @@
                 content: ""; /* Unicode for bullet */
                 position: absolute;
                 left: 0;
-				top: 0.5em;
+				top: 0.575em;
 				display: block;
                 width: 0.50em;
 				height: 0.50em;
@@ -37,7 +40,7 @@
 .bg--dark,
 .bg--ultra-dark {
 	ul li::before {
-		background-color: white;
+		background-color: white!important;
 	}
 }
 
@@ -45,6 +48,19 @@ ul.is-style-columns-2 {
 
     @include media-breakpoint-up(lg) {
         columns: 2;
+        column-gap: 1.5em;
+    }
+}
+
+ul.is-style-columns-3 {
+
+    @include media-breakpoint-up(lg) {
+        columns: 2;
+        column-gap: 1.5em;
+    }
+
+    @include media-breakpoint-up(xl) {
+        columns: 3;
         column-gap: 1.5em;
     }
 }

@@ -1,9 +1,10 @@
 // Bootstrap Modal
 
 .modal {
-	z-index: 11000;
+	//z-index: 11000;
 }
 
 .modal-content {
 	--bs-modal-bg: white;
+	--bs-modal-padding: 0 var(--spacing-sm) var(--spacing-sm);
 }

@@ -1,5 +1,10 @@
 // Block
-// @forward 'base';
 @forward 'utilities/functions';
 @forward 'utilities/mixins';
-@import "bootstrap";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/helpers/visually-hidden";
+@import "~bootstrap/scss/helpers/position";
+

@@ -3,9 +3,6 @@ import $ from 'jquery';
 import cssHasPseudo from 'css-has-pseudo/browser';
 cssHasPseudo(document);
 
-// jquery match height NMP
-//import jqueryMatchHeight from 'jquery-match-height';
-
 import general from './modules/general';
 import course from './modules/course';
 import footer from './modules/footer';
@@ -19,7 +16,7 @@ import collapse from 'bootstrap/js/dist/collapse';
 
 document.addEventListener('DOMContentLoaded', function () {
 	general.init();
-	// course.init();
+	course.init();
 	footer.init();
 	updateScrollbarWidth();
   }

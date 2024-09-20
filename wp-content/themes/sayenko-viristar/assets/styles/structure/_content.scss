@@ -10,7 +10,7 @@ body:not(.no-sidebar) .entry-content .alignfull {
 	margin-inline: auto;
 }
 
-.no-sidebar .entry-content .alignfull {
+body.no-sidebar .entry-content .alignfull {
     margin-left: unset;
 	margin-right: unset;
 	max-width: unset;
