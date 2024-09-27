@@ -1,0 +1,58 @@
+// Clients
+
+.post-type-archive-client {
+	.entry-header {
+		@include visually-hidden;
+	}
+
+	.site-main {
+
+		padding-top: 60px;
+
+        .facetwp-template {
+            
+            width: 100%;
+
+            @include media-breakpoint-up(sm) {
+                @include block-grid(2, var(--spacing-sm));
+            }
+
+            @include media-breakpoint-up(lg) {
+                @include block-grid(5, var(--spacing-lg));
+            }
+
+            > * {
+                margin-bottom: 90px;
+            }
+        }
+
+		article {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			.post-image {
+				margin-block: 0;
+			}
+
+			img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 180px;
+			}
+		}
+    }
+
+
+	.facetwp-type-pager {
+		text-align: center;
+	}
+
+	.facetwp-load-more {
+		@include gb-button;
+		@include gb-button-navy-alt;
+	}
+
+}

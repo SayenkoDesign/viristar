@@ -1,0 +1,76 @@
+{
+    "key": "group_669e821e21783",
+    "title": "Product: Hero Image",
+    "fields": [
+        {
+            "key": "field_669e821e31f51",
+            "label": "Image Position X",
+            "name": "image_position_x",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "0-100 (Default: 50)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": 100,
+            "placeholder": 50,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_669e821e31f5d",
+            "label": "Image Position Y",
+            "name": "image_position_y",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "0-100 (Default: 50)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": 100,
+            "placeholder": 50,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1726523250
+}

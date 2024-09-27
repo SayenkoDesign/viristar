@@ -1,0 +1,30 @@
+{
+    "name": "acf/instructor",
+    "title": "Instructor",
+    "description": "Instructor block",
+    "style": "instructor",
+    "script": "",
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": ["viristar", "instructor"],
+    "acf": {
+        "mode": "edit",
+		"renderTemplate": "index.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}

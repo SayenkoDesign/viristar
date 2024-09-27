@@ -1,0 +1,30 @@
+{
+    "name": "acf/team",
+    "title": "About - Team",
+    "description": "About Team block",
+    "style": "team",
+    "script": "",
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": ["viristar", "about", "team"],
+    "acf": {
+        "mode": "edit",
+		"renderTemplate": "index.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}

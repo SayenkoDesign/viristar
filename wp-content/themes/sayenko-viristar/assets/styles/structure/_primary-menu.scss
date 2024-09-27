@@ -1,0 +1,100 @@
+// Menu
+
+@media (min-width: 1100px) {
+    /*  nav:not(.toggled) .main-nav li.menu-item-has-children.sfHover > ul,
+    nav:not(.toggled) .main-nav li.menu-item-has-children:hover > ul {
+        &::before {
+            content: "";
+            height: 80px;
+            top: 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+    } */
+
+    .menu-bar-items {
+        display: none !important;
+    }
+
+    .mobile-menu-search-form {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+}
+
+body .main-navigation .main-nav > ul {
+    > .menu-item-button {
+        > a {
+            @include gb-button;
+            --btn-background: var(--action);
+            --btn-font-size: #{rem-calc(14)};
+            --btn-padding-block: 4px;
+            --btn-padding-inline: 12px;
+
+            --btn-text-color: white;
+
+            &:hover {
+                --btn-background-hover: var(--accent);
+                --btn-text-color-hover: white !important;
+            }
+        }
+    }
+
+    > .menu-item-button--sky {
+        > a {
+            @include gb-button-sky;
+        }
+    }
+}
+
+.menu-bar-items {
+    padding-left: 10px;
+
+    a {
+        line-height: 1 !important;
+        //padding: 0 5px!important;
+    }
+
+    svg {
+        width: auto;
+        height: auto;
+    }
+}
+
+body .main-navigation {
+    .gp-icon svg {
+        width: auto;
+        height: auto;
+    }
+
+    .gp-icon {
+        &.shopping-cart svg {
+            width: 25px;
+        }
+    }
+
+    .number-of-items {
+        background-color: var(--accent-alt) !important;
+        top: -15px !important;
+        left: -12px;
+    }
+
+    .menu-toggle {
+        line-height: 1;
+
+        .hamburger {
+            width: 39px;
+            height: 22px;
+        }
+    }
+
+    > .menu-item-button--sky {
+        > a {
+            @include gb-button-sky;
+        }
+    }
+}

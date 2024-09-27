@@ -1,0 +1,146 @@
+// Flex-Grid
+
+.flex-grid-2,
+.flex-grid-3,
+.flex-grid-4 {
+
+
+	--cols: 1;
+	--gap: var(--gutter-md);
+	--gap-count: calc( var(--cols) - 1 );
+
+	--flex-grid-padding: var(--gutter-sm);
+
+	@include media-breakpoint-up(lg) {
+		--flex-grid-padding: 30px;
+	}
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    justify-content: center;
+	
+
+	> .gb-container,
+	  .item {
+		// margin-bottom: var(--gutter-sm);
+		position: relative;
+		flex-basis: calc((100% / var(--cols)) - (var(--gap) / var(--cols) * (var(--cols) - 1)));
+		display: flex;
+		flex-direction: column;
+
+		&:not(:has(img)) {
+			padding-top: var(--gutter-sm);
+			@include media-breakpoint-up(md) {
+				padding-top: 30px;
+			}
+		}
+	}
+
+	img {
+		margin-bottom: var(--gutter-sm);
+		@include media-breakpoint-up(md) {
+			margin-bottom: 30px;
+		}
+	}
+	
+	
+	ul,
+	p,
+	.gb-button:not([class*="icon"]) {
+		&:last-child {
+			margin-bottom: var(--flex-grid-padding);
+		}
+	}
+
+	.gb-button:not([class*="icon"]) {
+		margin-top: auto;
+		flex: 0 0 auto;
+		align-self: flex-start;
+		width: auto;
+	}
+}
+
+.flex-grid-shadow {
+
+	--column-shadow-offset: 20%;
+
+	> .gb-container {
+
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.25);
+		border-radius: 0 0 8px 8px;
+
+		/*
+		&:before {
+			content: '';
+			box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.25);
+			width: 100%;
+			height: calc(100% - var(--column-shadow-offset));
+			position: absolute;
+			inset: 0;
+			left: 0;
+			top: var(--column-shadow-offset);
+			z-index: -1;
+		}
+		*/
+		
+	}
+
+	h3,
+	h4,
+	p,
+	ul {
+
+		margin-left: auto!important;
+		margin-inline: auto;
+		width: calc(100% - 2 * var(--flex-grid-padding));
+	}
+
+	ul li {
+		padding-left: calc(1.5em + 7px)!important;
+		&:before {
+			left: 7px!important;
+		}
+	}
+
+	.gb-button {
+		margin-left: var(--flex-grid-padding);
+	}
+
+}
+
+
+@include media-breakpoint-up(md) {
+    .flex-grid-2 {
+        --cols: 2;
+    }
+
+    .flex-grid-3 {
+        --cols: 3;
+    }
+    
+    .flex-grid-4 {
+        --cols: 2;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .flex-grid-2 {
+        --cols: 2;
+    }
+
+    .flex-grid-3 {
+        --cols: 3;
+    }
+    
+    
+}
+
+@include media-breakpoint-up(xl) {
+    .flex-grid-4 {
+        --cols: 4;
+    }
+}

@@ -1,0 +1,95 @@
+// Secondary Menu
+
+.secondary-navigation.secondary-navigation {
+
+    position: relative;
+    z-index: 9999;
+
+    padding-bottom: 8px;
+
+	@media screen and (max-width: 1024px) {
+		display: none!important;
+	}
+
+    .menu-toggle {
+        display: none;
+    }
+
+	.icon-search {
+		color: white;
+	}
+
+	.menu-bar-item > a {
+		line-height: 28px;
+	}
+}
+
+
+.secondary-menu {
+
+	padding-top: 6px;
+
+    .gp-icon svg {
+        width: auto;
+        height: auto;
+    }
+
+    .gp-icon {
+        &.shopping-cart svg {
+            width: 25px;
+        }
+    }
+
+    .number-of-items {
+        background-color: var(--accent-alt)!important;
+        top: -15px!important;
+        left: -12px;
+    }
+
+    .menu-item-button {
+    
+        > a {
+            padding: unset;
+
+            @include gb-button;
+            --btn-background: var(--action);
+            --btn-font-size: #{rem-calc(14)};
+            --btn-padding-block: 2px;
+            --btn-padding-inline: 4px;
+
+            --btn-text-color: white;
+			line-height: 24px!important;
+
+            &:hover {
+                --btn-background-hover: var(--accent);
+                --btn-text-color-hover: white !important;
+            }
+        }
+
+    }
+
+    > .menu-item-button--sky {
+        > a {
+            @include gb-button-sky;
+        }
+    }
+
+    .menu-item-user {
+        a {
+            display: inline-flex;
+            align-items: center;
+            font-size: rem-calc(15);
+            font-weight: 600;
+
+            span {
+                //@include visually-hidden;
+                padding-left: 10px;
+            }
+
+            svg {
+                order: -1;
+
+            }
+        }
+    }
+}

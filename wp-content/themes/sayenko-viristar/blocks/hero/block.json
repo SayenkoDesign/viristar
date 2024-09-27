@@ -1,0 +1,35 @@
+{
+    "name": "acf/hero",
+    "title": "Hero Block",
+    "description": "This is the hero block, you can add a heading, text and buttons within the block.",
+    "style":[ "file:./style.css" ],
+    "script": "",
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": ["viristar", "hero"],
+    "acf": {
+        "mode": "preview",
+		"renderTemplate": "index.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "jsx": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "styles": [
+        { "name": "default", "label": "Default", "isDefault": true },
+        { "name": "overlay", "label": "Overlay" }
+    ],
+    "attributes": {
+    }
+}

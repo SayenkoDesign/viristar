@@ -6,5 +6,35 @@
 
 .modal-content {
 	--bs-modal-bg: white;
-	--bs-modal-padding: 0 var(--spacing-sm) var(--spacing-sm);
+	--bs-modal-padding: var(--gutter) var(--gutter);
+
+	
+}
+
+.modal-fullscreen {
+
+	.btn-close {
+		--btn-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='27' viewBox='0 0 27 27' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.8641 13.4983L26.4937 2.86863C27.1688 2.19359 27.1688 1.17999 26.4937 0.503902C25.8176 -0.167967 24.8083 -0.167967 24.1322 0.503902L13.4983 11.1378L2.86863 0.503902C2.19359 -0.167967 1.17999 -0.167967 0.503902 0.503902C-0.167967 1.17999 -0.167967 2.19359 0.503902 2.86863L11.1378 13.4983L0.503902 24.1322C-0.167967 24.8083 -0.167967 25.8176 0.503902 26.4937C1.17999 27.1688 2.19359 27.1688 2.86863 26.4937L13.4983 15.8641L24.1322 26.4937C24.8083 27.1688 25.8176 27.1688 26.4937 26.4937C27.1688 25.8176 27.1688 24.8083 26.4937 24.1322L15.8641 13.4983Z' fill='%23003C71'/%3E%3C/svg%3E");
+
+		--bs-btn-close-color: var(--navy);
+
+		--bs-btn-close-opacity: 1;
+		--bs-btn-close-hover-opacity: 1;
+		--bs-btn-close-focus-shadow: none;
+		--bs-btn-close-focus-opacity: 1;
+		--bs-btn-close-disabled-opacity: 1;
+		width: 27px;
+		height: 27px;
+	}
+
+	.modal-body {
+		margin-block: auto;
+	}
+
+	.modal-text {
+		max-width: 800px;
+		margin-inline: auto;
+		
+	}
+	
 }

@@ -1,0 +1,17 @@
+// Styles for block
+@use "assets/styles/block" as *;
+
+.wp-block-acf-product-other-course-dates.acf-block-preview {
+    min-height: 100px;
+    background-color: var(--light-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wp-block-acf-product-other-course-dates {
+    
+   
+    
+}

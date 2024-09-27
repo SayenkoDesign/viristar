@@ -1,0 +1,307 @@
+// Single Product
+
+.single-product {
+
+    .site-content {
+        padding-top: var(--spacing-lg)!important;
+    }
+
+    &:has(.wp-block-acf-product-hero) {
+        .site-content {
+            padding-top: 0!important;
+        }
+    }
+
+    .entry-content
+        > *:not(.alignfull):not(.alignwide):not(.alignfeatured):not(.alignnarrow) {
+        width: min(var(--content-width), 100% - 2 * var(--gutter));
+        margin-inline: auto;
+    }
+
+    .grid-2-1 {
+        gap: var(--gutter-lg);
+    }
+
+
+    @include media-breakpoint-up(lg) {
+        .grid-2-1 > div:first-child > * {
+            
+            max-width: calc(100% - var(--gutter-xl));
+
+            h1 {
+                max-width: 70%;
+            }
+
+        }
+    }
+
+    h1 {
+        color: var(--navy);
+    }
+
+    form {
+
+        display: flex;
+        flex-wrap: wrap;
+        //align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        > * {
+            margin-bottom: 0;
+        }
+
+        a,
+        .qty {
+            min-height: 44px!important;
+            height: 44px!important;
+            border: none!important;
+            width: 45px!important;
+        }
+
+        a {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .quantity {
+            background-color: #d9d9d9!important;
+            border-radius: 8px;
+            gap: 1px;
+        }
+
+        .qty {
+            font-weight: 900;
+            max-width: 100%!important;
+            min-height: 0!important;
+            border-left: 1px solid var(--navy)!important;
+            border-right: 1px solid var(--navy)!important;
+        }
+    }
+   
+}
+
+.single-product--has-course-type {
+
+
+    .cart {
+        text-align: center;
+
+        .gb-button {
+            // width: 100%;
+        }
+
+        &.external {
+            //margin-top: var(--spacing-lg);
+        }
+    }
+
+
+    .product-details {
+        @include media-breakpoint-up(xxl) {
+            margin-top: calc(var(--gutter) * -1);
+            position: relative;
+            z-index: 9;
+        }
+    }
+
+    .course-description {
+        background-color: var(--navy);
+        padding: 28px 28px 28px 28px;
+
+        margin-bottom: var(--spacing-lg);
+
+        position: relative;
+        z-index: 3;
+
+        @include media-breakpoint-up(lg) {
+            top: -100px;
+            position: relative;
+        }
+
+        @include media-breakpoint-up(xl) {
+            top: -130px;
+            position: relative;
+        }
+
+        &__details {
+            @include media-breakpoint-up(md) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--gutter-md);
+            }
+        }
+
+        h3 {
+            color: white;
+            margin-top: 3rem;
+            margin-bottom: 1.5em;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
+
+        h4 {
+            color: var(--sky-dark);
+            margin-bottom: var(--spacing-md);
+        }
+
+        h5 {
+            color: var(--sky-dark);
+            font-weight: 700;
+            font-size: 0.75rem;
+            margin-bottom: .25em;
+            letter-spacing: var(-text-letter-spacing);
+        }
+
+        ul {
+            list-style-type: none;
+            margin-left: 0;
+
+            li {
+                &::before {
+                    display: none!important;
+                }
+
+                margin-left: 0;
+                padding-left: 0!important;
+            }
+        }
+
+        p,
+        li {
+            color: white;
+            font-size: 0.75rem;
+            letter-spacing: 0.335px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        ul,
+        p {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .live-sessions {
+            li {
+                font-weight: 500;
+            }
+        }
+
+        a:not([class]),
+        .link-arrow {
+            color: var(--sky-dark);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.335px;
+        }
+
+        .full-course-details,
+        .time-zone {
+            text-align: center;
+        }
+
+        .time-zone {
+            margin-top: var(--spacing-md);
+        }
+    }
+}
+
+.single-product {
+
+    .tabs {
+
+        .nav-tabs {
+            position: sticky;
+            z-index: 100;
+            top: 0;
+        }
+    }
+    
+    .wp-block-acf-testimonials {
+        display: none;
+    }
+    
+    /* Show the testimonial block inside the active tab */
+    .entry-content:has(.tab-pane.active .wp-block-acf-testimonials) {
+        .tab-pane.active .wp-block-acf-testimonials {
+            display: block;
+        }
+    }
+
+    /* Show testimonial blocks outside of tabs only if there's no active tab with testimonials */
+    .entry-content:not(:has(.tab-pane.active .wp-block-acf-testimonials)) .wp-block-acf-testimonials:not(.tab-pane .wp-block-acf-testimonials) {
+        display: block;
+    }
+}
+
+.single-product {
+
+    .external-product-url-description {
+        padding-top: var(--spacing-xs);
+        text-align: center;
+    }
+
+    .host-course {
+        padding-top: var(--spacing-md);
+        text-align: center;
+
+        a {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.335px;
+        }
+    }
+
+    .vs-add-to-cart {
+        .cart {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+    }
+}
+
+.single-product:not(.single-product--has-course-type),
+.vs-add-to-cart {
+    .gb-button {
+        width: auto!important;
+    }
+}
+
+.single-product:not(.single-product--has-course-type) {
+    .posted_in {
+        display: none;
+    }
+
+    .vs-add-to-cart {
+        display: none!important;
+    }
+}
+
+
+ 
+
+.single-product--has-course-type {
+    .product-footer-add-to-cart {
+
+        width: min(var(--content-width), 100% - 2 * var(--gutter));
+        margin-inline: auto;
+        margin-block: var(--spacing-lg);
+
+        @include media-breakpoint-down(sm) {
+            position: sticky;
+            bottom: 0;
+            z-index: 99;
+            margin-block: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+
+            .gb-button {
+                flex: 1;
+            }
+            
+        }
+    }
+}
+
+

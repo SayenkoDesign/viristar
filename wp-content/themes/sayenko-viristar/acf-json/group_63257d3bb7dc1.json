@@ -1,0 +1,191 @@
+{
+    "key": "group_63257d3bb7dc1",
+    "title": "Partner Details",
+    "fields": [
+        {
+            "key": "field_6325aceb3cbd1",
+            "label": "Company Name",
+            "name": "company_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6325adf40da65",
+            "label": "Type of Business",
+            "name": "type_of_business",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_6325ade20da64",
+            "label": "How did you hear about us",
+            "name": "how_did_you_hear_aboutus",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Instagram": "Instagram",
+                "Facebook": "Facebook",
+                "Newspaper": "Newspaper",
+                "Friends": "Friends"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "max": "",
+            "ui": 0,
+            "return_format": "value",
+            "prepend": "",
+            "append": "",
+            "ajax": 0,
+            "placeholder": "",
+            "allow_custom": 0,
+            "search_placeholder": "",
+            "min": ""
+        },
+        {
+            "key": "field_63257d836ac51",
+            "label": "Agreement",
+            "name": "partner_agreement",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "return_format": "url",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "upload_folder": "",
+            "multiple": 0,
+            "library": "all",
+            "preview_style": "default",
+            "placeholder": "Select",
+            "button_label": "Add File",
+            "stylised_button": 0,
+            "file_count": 0,
+            "min": "",
+            "max": ""
+        },
+        {
+            "key": "field_632ab815ebcab",
+            "label": "Useful Resources",
+            "name": "useful_resources",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_repeater_stylised_button": 0,
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add File",
+            "sub_fields": [
+                {
+                    "key": "field_632ab825ebcac",
+                    "label": "Upload File",
+                    "name": "upload_file",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "uploader": "",
+                    "return_format": "url",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "upload_folder": "",
+                    "multiple": 0,
+                    "max": "",
+                    "library": "all",
+                    "preview_style": "default",
+                    "placeholder": "Select",
+                    "button_label": "Add File",
+                    "stylised_button": 0,
+                    "file_count": 0,
+                    "min": "",
+                    "parent_repeater": "field_632ab815ebcab"
+                }
+            ],
+            "rows_per_page": 20
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "user_role",
+                "operator": "==",
+                "value": "partner"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1726523553
+}

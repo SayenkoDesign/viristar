@@ -1,0 +1,68 @@
+{
+    "key": "group_66abfa42581be",
+    "title": "Location",
+    "fields": [
+        {
+            "key": "field_66abfa42e6712",
+            "label": "Map",
+            "name": "map",
+            "aria-label": "",
+            "type": "google_map",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "center_lat": "46.4519675",
+            "center_lng": "3.3221324",
+            "height": 400,
+            "acfe_google_map_zooms": {
+                "zoom": "2",
+                "min_zoom": "0",
+                "max_zoom": "21"
+            },
+            "acfe_google_map_marker_icon": "",
+            "acfe_google_map_marker_width": 50,
+            "acfe_google_map_type": "roadmap",
+            "acfe_google_map_disable_ui": 0,
+            "acfe_google_map_disable_zoom_control": 0,
+            "acfe_google_map_disable_map_type": 0,
+            "acfe_google_map_disable_fullscreen": 0,
+            "acfe_google_map_disable_streetview": 0,
+            "acfe_google_map_style": "",
+            "acfe_google_map_key": "",
+            "zoom": "2",
+            "acfe_google_map_marker_height": 50
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "location"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1726523584
+}

@@ -1,0 +1,31 @@
+{
+    "name": "acf/course-grid",
+    "title": "Course Grid",
+    "description": "Course Grid.",
+    "style":[ "file:./style.css" ],
+    "script": "",
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": ["viristar", "course grid"],
+    "acf": {
+        "mode": "edit",
+		"renderTemplate": "index.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "jsx": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}

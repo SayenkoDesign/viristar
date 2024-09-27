@@ -1,0 +1,31 @@
+{
+    "name": "acf/find-a-course",
+    "title": "Find a Course Block",
+    "description": "Fid a Course block.",
+    "style":[ "file:./style.css" ],
+    "script": "",
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": ["viristar", "home", "find", "course"],
+    "acf": {
+        "mode": "preview",
+		"renderTemplate": "index.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "jsx": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}

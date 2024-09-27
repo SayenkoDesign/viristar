@@ -1,0 +1,37 @@
+// Course View
+
+.course-view-wrap {
+	
+	display: inline-grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 18px;
+
+	> span {
+
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+
+		color: var(--disabled);
+		font-weight: 700;
+		letter-spacing: 1.02px;
+		font-size: rem-calc(20);
+		text-transform: uppercase;
+		
+		&.active {
+			color: var(--action);
+		}
+	}
+
+	svg {
+		margin-right: 10px;
+	}
+
+	.course-view__list.active {
+		color: #D86E2E;
+
+		svg {
+			color: var(--action);
+		}
+	}
+}

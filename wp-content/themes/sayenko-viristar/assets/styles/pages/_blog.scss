@@ -32,15 +32,26 @@
         }
     }
 
-    @include media-breakpoint-up(lg) {
+    .page-header {
+        .category-select {
+            margin-bottom: var(--spacing-md);
+        }
+    }
+
+    @include media-breakpoint-up(md) {
         .page-header {
             display: grid;
             grid-template-columns: auto 280px;
             gap: var(--spacing-sm);
-            margin-bottom: 30px;
+            margin-bottom: 0;
 
             .page-title {
                 padding-left: 0;
+            }
+
+            .category-select {
+                margin-left: auto;
+                margin-bottom: 0;
             }
         }
     }

@@ -164,9 +164,9 @@ dist/
 /webpack
 
 # ignore all themes
-wp-content/themes
-!/wp-content/themes/sayenko-*
-!/wp-content/themes/viristar-*
+#wp-content/themes
+#!/wp-content/themes/sayenko-*
+#!/wp-content/themes/viristar-*
 
 # Ignore all plugins
 wp-content/plugins

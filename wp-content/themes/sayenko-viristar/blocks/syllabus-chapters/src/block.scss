@@ -1,0 +1,83 @@
+// Styles
+@import "assets/styles/block";
+
+.wp-block-acf-syllabus-chapters.acf-block-preview {
+    min-height: 100px;
+    position: relative;
+
+    &:before {
+        border: 1px dashed #000;
+        bottom: 0.5px;
+        box-shadow: inset 0 0 0 1px #fff;
+        content: "";
+        left: 0.5px;
+        opacity: 0.8;
+        position: absolute;
+        right: 0.5px;
+        top: 0.5px;
+        transition: opacity 0.5s ease;
+    }
+}
+
+.wp-block-acf-syllabus-chapters {
+
+    padding-left: 1rem;
+
+    &:not(:has(.chapter-grid)) .chapters {
+        display: grid;
+            grid-template-columns: 1fr;
+
+            @include media-breakpoint-up(md) {
+                grid-template-columns: 1fr max-content;
+                gap: 0 var(--gutter-md);
+            }
+    }
+    .chapters {
+
+        span {
+            padding-left: 18px;
+            position: relative;
+            display: inline-flex;
+
+            &::before {
+                content: '';
+                width: 14px;
+                height: 14px;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cg clip-path='url(%23clip0_3533_4256)'%3E%3Cpath d='M11.0832 0H2.96021C2.29865 0 1.71777 0.544234 1.71777 1.18843V13.2047C1.71777 13.4204 1.77779 13.6001 1.87451 13.7389C1.99019 13.9049 2.17644 14.0001 2.37616 14C2.56499 14 2.76603 13.9159 2.95169 13.7574L6.5859 10.6717C6.69814 10.5759 6.85937 10.5209 7.02701 10.5209C7.19457 10.5209 7.35547 10.5759 7.46804 10.672L11.0901 13.7569C11.2764 13.916 11.4636 14.0001 11.6521 14.0001C11.9709 14.0001 12.2816 13.7542 12.2816 13.2048V1.18843C12.2816 0.544234 11.7447 0 11.0832 0Z' fill='%2387A7CE'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_3533_4256'%3E%3Crect width='14' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: absolute;
+                top: 0.4em;
+                left: 0;
+
+            }
+        }
+    }
+
+    .chapter-title {
+        padding-left: 1.5em; /* Adjust padding to make space for the bullet */
+        position: relative;
+
+        &::before {
+            background-color: var(--navy);
+            content: ""; /* Unicode for bullet */
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            display: block;
+            width: 0.5em;
+            height: 0.5em;
+            border-radius: 50%;
+        }
+
+        
+    }
+
+    .chapter-grid {
+        @include media-breakpoint-up(md) {
+            display: grid;
+            grid-template-columns: 1fr min-content;
+            gap: var(--gutter-md);
+        }
+    }
+}

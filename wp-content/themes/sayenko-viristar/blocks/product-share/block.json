@@ -1,0 +1,31 @@
+{
+    "name": "acf/product-share",
+    "title": "Product Share",
+    "description": "Product Share block",
+    "style":[ "file:./style.css" ],
+    "script": "",
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": ["viristar", "product", "share"],
+    "acf": {
+        "mode": "edit",
+		"renderTemplate": "index.php",
+        "postTypes": ["product"]
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}

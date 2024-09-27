@@ -7,7 +7,6 @@
     "/dist/styles/style.css": "/dist/styles/style.css",
     "/blocks/testimonials/style.css": "/blocks/testimonials/style.css",
     "/blocks/team/style.css": "/blocks/team/style.css",
-    "/blocks/tabbed-strip/style.css": "/blocks/tabbed-strip/style.css",
     "/blocks/syllabus-topics/style.css": "/blocks/syllabus-topics/style.css",
     "/blocks/syllabus-chapters/style.css": "/blocks/syllabus-chapters/style.css",
     "/blocks/product-tabs/style.css": "/blocks/product-tabs/style.css",
@@ -18,6 +17,7 @@
     "/blocks/product-hero/style.css": "/blocks/product-hero/style.css",
     "/blocks/product-details/style.css": "/blocks/product-details/style.css",
     "/blocks/navigation/style.css": "/blocks/navigation/style.css",
+    "/blocks/instructor/style.css": "/blocks/instructor/style.css",
     "/blocks/hero/style.css": "/blocks/hero/style.css",
     "/blocks/find-a-course/style.css": "/blocks/find-a-course/style.css",
     "/blocks/faq/style.css": "/blocks/faq/style.css",
@@ -47,7 +47,6 @@
     "/blocks/product-map/dist/images/marker-active.svg": "/blocks/product-map/dist/images/marker-active.svg",
     "/blocks/product-map/dist/images/marker.svg": "/blocks/product-map/dist/images/marker.svg",
     "/blocks/product-map/dist/images/pin.png": "/blocks/product-map/dist/images/pin.png",
-    "/blocks/product-other-course-dates/dist/images/placeholder.jpg": "/blocks/product-other-course-dates/dist/images/placeholder.jpg",
     "/dist/splide/splide-core.min.css": "/dist/splide/splide-core.min.css",
     "/dist/splide/splide.min.js": "/dist/splide/splide.min.js"
 }

@@ -1,0 +1,196 @@
+// Find Course
+
+.page-template-find-course {
+
+
+    .site-main:has(.entry-content:empty) {
+        display: none;
+    }
+
+    .entry-header {
+        @include visually-hidden;
+    }
+
+    .courses {
+        width: min(
+            calc(var(--content-width) + (var(--feature-width, 100px) * 2)),
+            100% - 2 * var(--gutter, 30px)
+        );
+        margin-inline: auto;
+
+        @include media-breakpoint-up(lg) {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: 306px auto;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+
+            h3 {
+                text-wrap: normal;
+            }
+        }
+
+        .sidebar {
+            &__title {
+                background-color: var(--base);
+                padding: 20px 30px;
+
+                h3 {
+                    color: white;
+                    margin-bottom: 0;
+                }
+            }
+
+            &__content {
+                background-color: var(--primary);
+                padding: 30px;
+            }
+
+            margin-bottom: var(--spacing-md);
+        }
+
+        &__sidebar {
+            .facetwp-label {
+                color: white;
+            }
+
+            .facetwp-facet {
+                ::placeholder {
+                    font-size: rem-calc(11);
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 1.5;
+                    letter-spacing: 0.335px;
+                }
+
+                select,
+                input {
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 1.5;
+                    letter-spacing: 0.335px;
+                }
+            }
+
+            .tabs {
+                margin-bottom: 40px;
+            }
+
+            .facetwp-type-proximity {
+                display: flex;
+
+                input,
+                select {
+                    border: 0;
+                    font-size: rem-calc(11);
+                }
+
+                .facetwp-radius {
+                    background-color: #d9d9d9;
+                }
+            }
+
+            .facetwp-facet-product_course_category,
+            .facetwp-facet-product_course_finder,
+            .facetwp-facet-product_course_mode {
+                select {
+                    border: 0;
+                    background-color: transparent;
+                    color: white;
+                    padding-left: 0;
+                    padding-right: 19px;
+
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='6' viewBox='0 0 14 6' fill='none'%3E%3Cpath d='M7 6L0.937822 -1.88258e-07L13.0622 8.71687e-07L7 6Z' fill='white'/%3E%3C/svg%3E");
+
+                    background-size: 14px 8px;
+                    background-position: calc(100% - 8px) 50%;
+                    background-repeat: no-repeat;
+                }
+            }
+
+            .facetwp-label-product_course_date_month {
+                select {
+                }
+            }
+
+            .facetwp-facet input.facetwp-search,
+            .facetwp-facet input.facetwp-location {
+                min-width: 0;
+            }
+
+            @include media-breakpoint-up(lg) {
+                .facetwp-facet input.facetwp-location {
+                    max-width: 160px;
+                }
+            }
+
+            .facetwp-checkbox {
+                color: white;
+
+                font-size: rem-calc(11);
+                font-style: normal;
+                font-weight: 500;
+                line-height: 1.5;
+                letter-spacing: 0.335px;
+
+                margin-bottom: 12px;
+            }
+
+            .reset {
+                @include gb-button;
+                @include gb-button-sky;
+            }
+        }
+    }
+}
+
+.courses__sidebar .tabs {
+
+    .nav-tabs {
+        display: flex;
+        align-items: center;
+       
+        width: 100%;
+
+        
+
+        &:before {
+            content: "Dates";
+            color: white;
+            font-size: 1rem;
+            display: block;
+            padding: 0 10px;
+            position: relative;
+            //left: -30px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            justify-content: flex-end;
+
+            &:before {
+                left: -30px;
+            }
+        }
+
+        button {
+            background-color: white;
+            font-size: 0.6875rem;
+            font-weight: 500;
+            color: black;
+            padding: 5px 10px;
+            min-height: 32px;
+
+            &.active {
+                background-color: var(--sky-dark);
+                color: white;
+            }
+        }
+    }
+
+    .tab-pane {
+        background-color: white;
+        padding: 24px 12px;
+    }
+}
