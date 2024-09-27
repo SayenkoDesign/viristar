@@ -1,0 +1,17 @@
+// Styles
+@use "assets/styles/block" as *;
+
+.wp-block-acf-find-a-course.acf-block-preview {
+    min-height: 100px;
+    background-color: var(--light-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wp-block-acf-course-grid {
+    
+   
+    
+}

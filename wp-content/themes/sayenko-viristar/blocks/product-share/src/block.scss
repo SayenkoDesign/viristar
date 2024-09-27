@@ -1,0 +1,27 @@
+// Styles
+@import 'assets/styles/block';
+
+.wp-block-acf-product-share.acf-block-preview {
+    min-height: 100px;
+    background-color: var(--light-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wp-block-acf-product-share {
+    .social-share {
+        .a2a_kit {
+            display: flex;
+            gap: var(--gutter-sm);
+            margin-top: var(--spacing-sm);
+
+            a {
+                background-color: var(--navy)!important;
+                color: white;
+                border: none;
+            }
+        }
+    }
+}

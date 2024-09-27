@@ -1,0 +1,15 @@
+// Error 404
+
+.error404 {
+	.inside-article {
+		padding-block: var(--spacing-lg);
+
+		.entry-header,
+		.entry-content {
+			width: min(var(--content-width), 100% - 2 * var(--gutter));
+			margin-inline: auto;
+
+			text-align: center;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+// bootsrap Tabs
+
+.nav-tabs {
+	@include list-reset;
+
+	li {
+		
+	}
+}
+
+.tab-content {
+    > .tab-pane {
+        display: none;
+    }
+
+	>.active {
+		display: block;
+	}
+
+	.fade {
+		transition: opacity .15s linear;
+	}
+}

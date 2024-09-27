@@ -1,0 +1,32 @@
+{
+    "name": "acf/product-hero",
+    "title": "Product Hero",
+    "description": "This is the hero block, you can add a heading, text and buttons within the block.",
+    "style":[ "file:./style.css" ],
+    "script": "",
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": ["viristar", "product", "hero"],
+    "acf": {
+        "mode": "preview",
+		"renderTemplate": "index.php",
+        "postTypes": ["product"]
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "jsx": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}

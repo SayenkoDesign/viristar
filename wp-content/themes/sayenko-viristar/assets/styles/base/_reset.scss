@@ -1,0 +1,20 @@
+// Reset
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+	word-break: break-word;
+}
+
+p,
+li,
+figcaption {
+	//max-width: 65ch;
+	text-wrap: pretty;
+	word-break: break-word;
+}

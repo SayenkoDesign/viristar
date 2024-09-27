@@ -1,0 +1,46 @@
+// Testimonials Archive
+
+
+.post-type-archive-testimonial {
+	.facetwp-template {
+		display: grid;
+		column-gap: 17px;
+
+		@include media-breakpoint-up(md) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media-breakpoint-up(lg) {
+			grid-template-columns: repeat(3, 1fr);
+
+			blockquote {
+				grid-column: span 1;  // Default span for all items
+
+				// Single blockquote spans 2 columns
+				&:only-child {
+					grid-column: span 2;
+				}
+
+
+				// Items that span 2 columns
+				&:nth-child(10n+2),
+				&:nth-child(10n+6) {
+					grid-column: span 2;
+				}
+			}
+		}
+	}
+
+	.facetwp-type-pager {
+		text-align: center;
+	}
+
+	.facetwp-load-more {
+		@include gb-button;
+		@include gb-button-navy-alt;
+	}
+
+	blockquote {
+		margin-bottom: 30px;
+	}
+}

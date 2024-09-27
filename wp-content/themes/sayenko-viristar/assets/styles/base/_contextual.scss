@@ -1,0 +1,27 @@
+// Contextual Colors
+
+.bg {
+	&--dark {
+	  background-color: var(--navy);
+	  
+	  > *:not([class^="wp-block-acf"]) {
+		color: white;
+	  }
+  
+	  [class^="wp-block-acf"] {
+		color: initial;
+	  }
+	}
+  
+	&--ultra-dark {
+	  background-color: var(--dark-navy);
+	  
+	  > *:not([class^="wp-block-acf"]) {
+		color: white;
+	  }
+  
+	  [class^="wp-block-acf"] {
+		color: initial;
+	  }
+	}
+  }

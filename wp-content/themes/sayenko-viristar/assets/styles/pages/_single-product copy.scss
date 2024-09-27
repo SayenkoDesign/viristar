@@ -1,0 +1,315 @@
+// Single Product
+
+.single-product {
+    .site-content {
+        flex-direction: column;
+
+        padding-top: 0;
+
+        .hero {
+            --wave-offset: 16.839199%;
+            position: relative;
+
+            .hero__background::after {
+                background-image: linear-gradient(
+                    180deg,
+                    #000 0%,
+                    rgba(0, 0, 0, 0) 15%
+                ); // 45%
+                content: "";
+                inset: 0;
+                position: absolute;
+            }
+
+            .hero {
+                display: grid;
+                position: relative;
+
+                &__background {
+
+                    .hero-image {
+                        aspect-ratio: 7 / 3;
+                    }
+
+                    img {
+                        object-fit: cover;
+                        object-position: var(--image-position-x, "50%")
+                            var(--image-position-y, "50%");
+                       width: 100%;
+                       height: 100%;
+                    }
+                }
+
+                &__wave {
+                    z-index: 2; /* Keeps the curve above the background but under the content */
+                    //align-self: end; /* Aligns the curve to the bottom */
+                    width: 100%;
+                    overflow: hidden;
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 0;
+                    padding-top: var(--wave-offset);
+
+                    svg {
+                        position: absolute;
+                        top: 2px;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .product-summary {
+
+        width: min(var(--content-width), 100% - 2 * var(--gutter));
+        margin-inline: auto;
+
+        position: relative;
+        z-index: 999;
+
+        h1,
+        h3 {
+            color: var(--navy);
+        }
+
+        
+
+        @include media-breakpoint-up(md) {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--gutter);
+
+            .summary {
+                max-width: calc(100% - var(--gutter-xl));
+
+                h1 {
+                    max-width: 70%;
+                }
+            }
+
+            .summary-sidebar {
+                top: -100px;
+                position: relative;
+                z-index: 999;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-top: calc(var(--gutter) * -1);
+        }
+
+        
+    }
+
+    .cart {
+        justify-content: center;    
+    }
+    
+
+    .single_add_to_cart_button {
+        all: unset;
+        @include gb-button;
+
+        --btn-background: var(--action);
+        --btn-text-color: white;
+        min-width: 186px;
+
+        &:hover {
+            --btn-background-hover: var(--accent);
+            --btn-text-color-hover: white;
+        }
+    }
+
+    .social-share {
+        .a2a_kit {
+            display: flex;
+            gap: var(--gutter-sm);
+            margin-top: var(--spacing-sm);
+
+            a {
+                background-color: var(--navy)!important;
+                color: white;
+                border: none;
+            }
+        }
+    }
+
+}
+
+.single-product {
+    .course-description {
+        background-color: var(--navy);
+        padding: 28px 28px 28px 28px;
+
+        &__details {
+            @include media-breakpoint-up(md) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--gutter-md);
+            }
+        }
+
+        h3 {
+            color: white;
+            margin-top: 3rem;
+            margin-bottom: 1.5em;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
+
+        h5 {
+            color: var(--sky-dark);
+            font-weight: 700;
+            font-size: 0.75rem;
+            margin-bottom: .25em;
+            letter-spacing: var(-text-letter-spacing);
+        }
+
+        ul {
+            list-style-type: none;
+            margin-left: 0;
+
+            li {
+                &::before {
+                    display: none;
+                }
+
+                margin-left: 0;
+                padding-left: 0;
+            }
+        }
+
+        p,
+        li {
+            color: white;
+            font-size: 0.75rem;
+            letter-spacing: 0.335px;
+        }
+
+        .live-sessions {
+            li {
+                font-weight: 500;
+            }
+        }
+
+        a {
+            color: var(--sky-dark);
+            text-decoration: none;
+        }
+
+        .full-course-details,
+        .time-zone {
+            text-align: center;
+        }
+
+        .time-zone {
+            margin-top: var(--spacing-md);
+        }
+    }
+}
+
+.single-product {
+
+    .product > .accordion {
+        width: min(var(--content-width), 100% - 2 * var(--gutter));
+        margin-inline: auto;
+    }
+
+    .tabs {
+        display: none;
+        overflow-x: hidden;
+    }
+
+    .product > .accordion,
+    .tabs {
+        margin-top: 1.5rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+
+        .product >  .accordion {
+            display: none;
+        }
+
+        .tabs {
+            display: block;
+        }
+    }
+
+    .nav-tabs,
+    .tab-content {
+        width: min(var(--content-width), 100% - 2 * var(--gutter));
+        margin-inline: auto;
+    }
+
+    .nav-tabs {
+        background-color: var(--navy);
+        position: relative;
+
+        display: flex;
+        gap: 10px;
+
+        &:before {
+            content: '';
+            background-color: inherit;
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            width: 100vw;
+            height: 100%;
+            z-index: -1;
+        }
+
+        li {
+            margin: 0;
+            padding-inline: 0;
+
+            button {
+                background: transparent;
+
+                border-top: 3px solid transparent;
+
+                padding: 20px;
+
+                &.active {
+                    border-top: 3px solid var(--sky-dark)
+                }
+
+                &:hover {
+                    color: var(--sky-dark);
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        padding-block: var(--gutter-lg);
+    }
+}
+
+
+/* .single-product .embed-responsive {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+}
+
+.single-product .embed-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} */

@@ -1,0 +1,141 @@
+// Mobile Header
+
+#mobile-header.toggled .main-nav > ul {
+    display: flex!important;
+}
+
+#mobile-header {
+
+
+    .mobile-menu-search-form {
+       padding: 20px var(--gutter);
+
+       .search-form {
+            display: flex;
+
+            button {
+                order: -1;
+                padding: 0;
+                background-color: transparent;
+                margin-right: 10px;
+            }
+
+            label {
+                width: 100%;
+            }
+
+            .search-field {
+                border: 0;
+                border-bottom: 1px solid white;
+                padding: 0;
+                width: 100%;
+                color: white;
+            }
+
+            ::placeholder {
+                color: white;
+            }
+       }
+    }
+
+
+    .site-logo.mobile-header-logo {
+
+        padding-block: 25px;
+        img {
+            height: 46px;
+        }
+    }
+
+    .site-logo {
+        margin-left: var(--gutter) !important;
+    }
+
+    //&.main-navigation .main-nav ul li a, 
+    &.main-navigation .menu-toggle, .main-navigation .menu-bar-items,
+    //&.main-navigation .main-nav ul li a, 
+    &.main-navigation .menu-toggle, 
+    &.main-navigation .menu-bar-items {
+        color: black;
+
+        .icon-menu-bars {
+            min-width: 32px;
+        }
+    }
+
+    &.main-navigation .main-nav ul li a,
+    &.main-navigation .main-nav ul li a {
+        color: white;
+    }
+
+    .cart-contents>span.number-of-items {
+        color: white;
+    }
+
+    #mobile-menu {
+
+        &.main-nav {
+            background-color: var(--dark-navy);
+        }
+
+        li {
+            a:not(.gb-button) {
+                padding-left: var(--gutter);
+            }
+
+            &:not(.menu-item-button) a {
+                padding-block: 5px;
+            }
+
+        }
+        
+
+        li.menu-item-button {
+            
+            a {
+                background-color: var(--sky-dark);
+                border-radius: 0;
+                color: white;
+                text-align: center;
+                line-height: 60px;
+                padding-block: 0;
+                width: 100%;
+            }
+        }
+
+
+       
+
+        .sub-menu {
+            background-color: var(--navy);
+
+            li {
+                a {
+                    color: white;
+                    line-height: 40px;
+                }
+            }
+
+            .sub-menu {
+                background-color: var(--dark-navy);
+            }
+        }
+
+        .menu-block-content {
+            padding-block: 15px;
+            padding-inline: var(--gutter);
+
+            h3 {
+                color: white;
+            }
+
+            p {
+                color: white;
+            }
+
+            .gb-social-icon {
+                padding: 0!important;
+            }
+        }
+    }
+}

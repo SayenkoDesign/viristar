@@ -1,0 +1,29 @@
+{
+    "name": "acf/clients",
+    "title": "Clients",
+    "description": "Clients slider block",
+    "style":[ "splide","file:./style.css" ],
+    "script": ["splide"],
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": ["viristar", "clients", "logos"],
+    "acf": {
+        "mode": "edit",
+		"renderTemplate": "index.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "jsx": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    }
+}

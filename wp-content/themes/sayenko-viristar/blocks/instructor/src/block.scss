@@ -1,0 +1,55 @@
+// Styles
+@import "assets/styles/block";
+
+.wp-block-acf-instructor.acf-block-preview {
+    min-height: 100px;
+    background-color: var(--light-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wp-block-acf-instructor {
+
+
+    h3 {
+        margin-bottom: 10px;
+        font-size: rem-calc(19);
+        font-weight: 700;
+    }
+
+    .instructor {
+
+        @include media-breakpoint-up(md) {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--gutter-lg);
+        }
+        
+        img {
+            display: block;
+            object-fit: cover;
+            object-position: center top;
+            aspect-ratio: 1/1;
+        }
+
+        &__details {
+            background-color: var(--navy);
+            padding: 24px;
+
+            h3 {
+                color: white;
+            }
+        }
+
+        &__position {
+            color: var(--sky-blue);
+            font-weight: 500;
+            letter-spacing: 0.335px;
+        }
+    }
+
+    
+
+}

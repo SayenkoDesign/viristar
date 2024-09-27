@@ -1,0 +1,30 @@
+{
+    "name": "acf/content-tab",
+    "title": "Content Tab",
+    "description": "Content Tab block",
+    "style":[ "file:./style.css" ],
+    "script": [],
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": ["content", "tab"],
+    "acf": {
+        "mode": "preview",
+		"renderTemplate": "index.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": false,
+        "jsx": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "parent": [ "acf/content-tabs" ]
+}
