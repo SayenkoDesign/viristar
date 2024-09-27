@@ -1,8 +1,7 @@
 // Lists
 
 .entry-content {
-    ul,
-    ol {
+    ul {
         margin-left: 7px;
 
         li:not([class]):not([role]) {
@@ -10,6 +9,14 @@
             &:not(:last-child) {
                 margin-bottom: 1.2em;
             }
+        }
+    }
+
+    ol {
+        margin-left: 24px;
+
+        li {
+                margin-bottom: 1.2em;
         }
     }
 

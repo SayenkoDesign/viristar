@@ -196,7 +196,7 @@ function update_products_on_location_change_and_reindex_facetwp($post_id) {
 		$link,
 		$classes,
         esc_attr( $target ),
-		esc_html( $title )
+		$title
 	);
 
 	if ( $echo ) {

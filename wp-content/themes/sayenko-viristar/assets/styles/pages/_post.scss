@@ -16,7 +16,8 @@
 
     .entry-content {
 
-
+        width: min(var(--content-width), 100% - 2 * var(--gutter));
+        margin-inline: auto;
 
         .wp-block-image {
             margin-bottom: 30px;

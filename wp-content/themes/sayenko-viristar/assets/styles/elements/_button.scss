@@ -98,3 +98,22 @@
 .gb-social-icon {
     background-color: #0c0033;
 }
+
+.link-arrow {
+
+    position: relative;
+    padding-right: 11px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 8px;
+        height: 13px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='13' viewBox='0 0 8 13' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.19539 11.8106C1.32227 11.9346 1.49606 12 1.66301 12C1.82996 12 2.00342 11.9346 2.13021 11.8106L7.09206 6.95811C7.21885 6.8341 7.28571 6.67082 7.28571 6.50085C7.28571 6.3312 7.21885 6.16792 7.09206 6.0435L2.13021 1.1911C1.86969 0.936301 1.45591 0.936301 1.19539 1.1911C0.93487 1.44589 0.93487 1.85058 1.19539 2.10538L5.68961 6.50085L1.19539 10.8963C0.941715 11.1511 0.941715 11.5625 1.19539 11.8106Z' fill='%230A8543' stroke='%230A8543'/%3E%3C/svg%3E");
+    }
+}
