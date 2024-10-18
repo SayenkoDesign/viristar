@@ -50,7 +50,7 @@ class Course_Finder {
 
         }
         
-        echo facetwp_display('facet', 'product_course_category');
+        // echo facetwp_display('facet', 'product_course_category');
 
         echo facetwp_display('facet', 'product_course_finder');
 

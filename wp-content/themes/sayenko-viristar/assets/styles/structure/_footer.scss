@@ -12,18 +12,44 @@
 		@include media-breakpoint-up(sm) {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			grid-gap: var(--spacing-md);
+			gap: var(--spacing-md);
 
 			align-content: space-around;
 			justify-content: space-between;
 		}
 
 		@include media-breakpoint-up(lg) {
-			grid-template-columns: repeat(3, max-content);
+			grid-template-columns: repeat(4, 1fr);
+			gap: var(--spacing-lg);
 		}
 
 		@include media-breakpoint-up(xxl) {
-			grid-template-columns: repeat(5, max-content);
+
+			grid-template-columns: 1fr 1fr 2fr 1fr;
+			gap: var(--spacing-lg);
+
+			&-group {
+			
+				display: grid;
+				grid-template-columns: repeat(2,1fr);
+				gap: var(--spacing-lg);
+			}
+		}
+
+		> .gb-container {
+			margin-bottom: 32px;
+			padding-bottom: 12px;
+			border-bottom: .5px solid rgba(#D7D5D5,0.5);
+
+			&:last-child {
+				margin-bottom: 0;
+				border-bottom: 0;
+			}
+
+			@include media-breakpoint-up(sm) {
+				padding-bottom: 0;
+				border-bottom: 0;
+			}
 		}
 		
 	}

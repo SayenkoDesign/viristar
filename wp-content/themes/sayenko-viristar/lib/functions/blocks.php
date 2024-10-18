@@ -2,6 +2,9 @@
 
 // Blocks
 
+add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+
+
 // ACF Blocks: Alter message for all ACF blocks that contain no ACF fields
 
 function no_fields_message($message) {
@@ -17,8 +20,13 @@ function no_fields_message($message) {
 
 add_action( 'wp_enqueue_scripts', function() {
 	
-	wp_register_script( 'splide', get_url( 'splide/splide.min.js' ), ['jquery'], '', false );
-    wp_register_style( 'splide', get_url( 'splide/splide-core.min.css' ) );
+	wp_register_script( 'splide', get_theme_file_uri( 'dist/scripts/splide.js' ), ['jquery'], '', ['in_footer' => true, 'strategy' => 'defer'] );
+	
+	wp_register_style( 'splide', get_theme_file_uri( 'dist/styles/splide.css' ) );
+
+    wp_register_style( 'splide-theme', get_theme_file_uri( 'dist/styles/splide.css' ) );
+
+
 }, 10 );
 
 

@@ -1,9 +1,10 @@
 {
     "/dist/scripts/project.js": "/dist/scripts/project.js",
-    "/blocks/content-tab/style.css": "/blocks/content-tab/style.css",
+    "/dist/scripts/splide.js": "/dist/scripts/splide.js",
     "/blocks/clients/style.css": "/blocks/clients/style.css",
     "/blocks/articles/style.css": "/blocks/articles/style.css",
     "/dist/styles/editor-style.css": "/dist/styles/editor-style.css",
+    "/dist/styles/splide.css": "/dist/styles/splide.css",
     "/dist/styles/style.css": "/dist/styles/style.css",
     "/blocks/testimonials/style.css": "/blocks/testimonials/style.css",
     "/blocks/team/style.css": "/blocks/team/style.css",
@@ -16,6 +17,7 @@
     "/blocks/product-map/style.css": "/blocks/product-map/style.css",
     "/blocks/product-hero/style.css": "/blocks/product-hero/style.css",
     "/blocks/product-details/style.css": "/blocks/product-details/style.css",
+    "/blocks/partners/style.css": "/blocks/partners/style.css",
     "/blocks/navigation/style.css": "/blocks/navigation/style.css",
     "/blocks/instructor/style.css": "/blocks/instructor/style.css",
     "/blocks/hero/style.css": "/blocks/hero/style.css",
@@ -24,6 +26,7 @@
     "/blocks/faq-manual/style.css": "/blocks/faq-manual/style.css",
     "/blocks/course-grid/style.css": "/blocks/course-grid/style.css",
     "/blocks/content-tabs/style.css": "/blocks/content-tabs/style.css",
+    "/blocks/content-tab/style.css": "/blocks/content-tab/style.css",
     "/dist/images/footer.svg": "/dist/images/footer.svg",
     "/dist/images/home-hero.png": "/dist/images/home-hero.png",
     "/dist/images/image-background.svg": "/dist/images/image-background.svg",
@@ -46,7 +49,5 @@
     "/blocks/product-map/dist/images/m5.png": "/blocks/product-map/dist/images/m5.png",
     "/blocks/product-map/dist/images/marker-active.svg": "/blocks/product-map/dist/images/marker-active.svg",
     "/blocks/product-map/dist/images/marker.svg": "/blocks/product-map/dist/images/marker.svg",
-    "/blocks/product-map/dist/images/pin.png": "/blocks/product-map/dist/images/pin.png",
-    "/dist/splide/splide-core.min.css": "/dist/splide/splide-core.min.css",
-    "/dist/splide/splide.min.js": "/dist/splide/splide.min.js"
+    "/blocks/product-map/dist/images/pin.png": "/blocks/product-map/dist/images/pin.png"
 }

@@ -139,49 +139,49 @@
     z-index: 1020;
   }
 }
-.wp-block-acf-clients.acf-block-preview {
-  min-height: 100px;
-  background-color: var(--light-grey);
+.wp-block-acf-partners.acf-block-preview {
+  min-height: 200px;
+  background-color: #979797;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.wp-block-acf-clients {
+.wp-block-acf-partners {
   margin-inline: auto;
 }
-.wp-block-acf-clients .splide {
+.wp-block-acf-partners .splide {
   padding-inline: 35px;
 }
 @media (min-width: 768px) {
-  .wp-block-acf-clients .splide {
+  .wp-block-acf-partners .splide {
     padding-inline: 70px;
   }
 }
-.wp-block-acf-clients .splide__track {
+.wp-block-acf-partners .splide__track {
   max-width: 1072px;
   margin-inline: auto;
 }
-.wp-block-acf-clients .splide__list {
+.wp-block-acf-partners .splide__list {
   align-items: stretch;
 }
-.wp-block-acf-clients .splide__slide {
+.wp-block-acf-partners .splide__slide {
   padding: 0 !important;
 }
-.wp-block-acf-clients .splide__slide:before {
+.wp-block-acf-partners .splide__slide:before {
   display: none !important;
 }
-.wp-block-acf-clients .splide__pagination {
+.wp-block-acf-partners .splide__pagination {
   margin-top: 24px;
 }
-.wp-block-acf-clients .splide__pagination li {
+.wp-block-acf-partners .splide__pagination li {
   padding: 10px;
 }
-.wp-block-acf-clients .splide__pagination li:before {
+.wp-block-acf-partners .splide__pagination li:before {
   display: none;
 }
-.wp-block-acf-clients .splide__pagination button {
+.wp-block-acf-partners .splide__pagination button {
   background-color: transparent;
   border: 2px solid var(--primary);
   border-radius: 50%;
@@ -189,10 +189,10 @@
   height: 14px;
   padding: 0;
 }
-.wp-block-acf-clients .splide__pagination button:hover, .wp-block-acf-clients .splide__pagination button.is-active {
+.wp-block-acf-partners .splide__pagination button:hover, .wp-block-acf-partners .splide__pagination button.is-active {
   background-color: var(--primary);
 }
-.wp-block-acf-clients .splide__arrow {
+.wp-block-acf-partners .splide__arrow {
   padding: 0;
   width: 35px;
   height: 35px;
@@ -207,28 +207,28 @@
   transform: translateY(-50%);
   z-index: 3;
 }
-.wp-block-acf-clients .splide__arrow svg {
+.wp-block-acf-partners .splide__arrow svg {
   width: 50%;
   height: 50%;
 }
 @media (min-width: 992px) {
-  .wp-block-acf-clients .splide__arrow {
+  .wp-block-acf-partners .splide__arrow {
     margin-top: -30px;
   }
 }
 @media (min-width: 1200px) {
-  .wp-block-acf-clients .splide__arrow {
+  .wp-block-acf-partners .splide__arrow {
     width: 70px;
     height: 70px;
   }
 }
-.wp-block-acf-clients .splide__arrow--prev {
+.wp-block-acf-partners .splide__arrow--prev {
   left: -15px;
 }
-.wp-block-acf-clients .splide__arrow--prev svg {
+.wp-block-acf-partners .splide__arrow--prev svg {
   transform: scaleX(-1);
 }
-.wp-block-acf-clients .splide__arrow--next {
+.wp-block-acf-partners .splide__arrow--next {
   right: -15px;
 }
 

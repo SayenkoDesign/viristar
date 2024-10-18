@@ -1,1 +1,18 @@
-import '@splidejs/splide/css/core';
+// Splide
+@import '@splidejs/splide/css/core';
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// Functions
+@import 'utilities/functions';
+// Mixins
+@import 'utilities/mixins';
+
+// Custom settings
+
+// hide arrows if not enough items
+.splide:not(.is-overflow) .splide__arrows {
+    display: none;
+}

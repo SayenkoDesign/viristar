@@ -1,9 +1,19 @@
 // FacetWP
 
 .facetwp-facet {
+
+    opacity: 1!important;
+
     select {
         width: 100%;
     }
+}
+
+.facetwp-type-fselect.is-loading .fs-label-wrap, 
+.facetwp-type-fselect.is-loading .fs-search, 
+.facetwp-type-fselect.is-loading .fs-no-results, 
+.facetwp-type-fselect.is-loading .fs-options {
+    opacity: 1!important;
 }
 
 .facetwp-hidden {
@@ -74,12 +84,80 @@
 .facetwp-type-fselect .fs-wrap,
 .facetwp-type-fselect .fs-dropdown {
     width: 280px;
+    max-width: 100%;
 
     @include media-breakpoint-up(md) {
         width: 300px;
     }
 }
 
+
+.facetwp-type-fselect {
+
+	.fs-label-wrap {
+		border: 1px solid var(--navy);
+	}
+
+	.fs-open .fs-label-wrap {
+		border-bottom: 0;
+	}
+
+	.fs-open .fs-dropdown {
+		border-top: 0;
+	}
+
+    .fs-dropdown {
+        // position: relative;
+        border: 1px solid var(--navy);
+
+        &.fs-hidden {
+            //display: block;
+            //position: relative;
+        }
+
+        .fs-search {
+            display: none;
+        }
+
+        .fs-options {
+            //overflow: visible;
+            //max-height: none;
+        }
+
+		padding-block: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .fs-label-wrap {
+        .fs-label {
+            padding: 11px 27px 11px 8px;
+        }
+
+        .fs-arrow {
+            right: 10px;
+        }
+    }
+}
+
+.facetwp-facet .fs-wrap.multiple .fs-option.selected .fs-checkbox i {
+    background-color: var(--navy);
+}
+
+.facetwp-type-fselect .fs-option  {
+	padding: 3px 8px 4px 8px; /* compensates for the extra label line-height */
+  }
+
+  .fs-wrap.multiple .fs-option .fs-checkbox i  {
+	bottom: auto !important;
+	top: 0.25em !important; /* sets the checkbox to the top instead of the middle */
+  }
+
+  .facetwp-type-fselect .fs-option .fs-option-label {
+	white-space: normal !important; /* wraps labels */
+	word-break: normal; /* prevents words from breaking */
+	line-height: 1.3em; /* add line-height to wrapped labels */
+
+	font-size: rem-calc(12);
+  }
 
 
 .facetwp-type-date_range {

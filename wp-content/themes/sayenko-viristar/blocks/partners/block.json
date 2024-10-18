@@ -1,0 +1,15 @@
+{
+    "name": "acf/partners",
+    "title": "Partners",
+    "description": "Partners slider block",
+    "style":[ "splide","file:./style.css" ],
+    "script": ["splide"],
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": ["viristar", "partners"],
+    "acf": {
+        "mode": "auto",
+		"renderTemplate": "index.php"
+    }
+}
