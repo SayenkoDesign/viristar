@@ -1,20 +1,51 @@
 <?php
+$display = 3;
+$posts_per_page = 15;
 
-$number_of_testimonials = get_field('number_of_testimonials');
+
+$source = get_field('source') ?: 'All';
+$source = strtolower($source);
+
+$category = get_field('testimonial_category');
 
 $post_ids = get_field('posts');
-$posts_per_page = !empty($post_ids) ? count($post_ids) : 15;
+
+$orderby = get_field('orderby') ?: 'Random';
+$orderby = strtolower($orderby);
+
+$number_of_testimonials = get_field('number_of_testimonials');
 
 $args = array(
     'post_type' => 'testimonial',
     'order' => 'ASC',
-    'orderby' => 'rand',
     'posts_per_page' => $posts_per_page,
 );
 
-if (!empty($post_ids)) {
-    $args['orderby'] = 'post__in';
+if ('random' === $orderby) {
+    // Generate a seed based on the current time
+    $seed = time();
+    
+    // Add randomization to the query arguments
+    $args['orderby'] = 'RAND(' . $seed . ')';
+    // Remove the 'order' parameter as it's not relevant for random ordering
+    unset($args['order']);
+}
+
+if('category' === $source && !empty($category)) {
+    $category = (array)$category;  // Ensure it's an array
+    $args['tax_query'] = array(
+        array(
+            'taxonomy' => 'testimonial_category',
+            'field' => 'term_id',
+            'terms' => $category,
+        ),
+    );
+} elseif( 'selected' === $source && !empty($post_ids) ) {
+    $posts_per_page = count($post_ids) > 0 ? count($post_ids) : 15;
+
     $args['post__in'] = $post_ids;
+    $args['posts_per_page'] = $posts_per_page;
+    $args['orderby'] = 'post__in';
 }
 
 $modals = [];
@@ -23,12 +54,36 @@ $loop = new WP_Query($args);
 $actual_post_count = $loop->post_count;
 
 if ($actual_post_count > 0) :
-    $number_of_testimonials = min($number_of_testimonials ?: 3, $actual_post_count);
+    
+    if (!empty($number_of_testimonials)) {
+        $display = $number_of_testimonials;
+    }
+
+    $display = min($display, $actual_post_count);
+
+
+    $type = ($actual_post_count > 2 &&  $display > 2) ? 'loop' : 'slide';
+    
+    $data_splide = [
+        'type' => $type,
+        'perPage' => $display,
+        'breakpoints' => [
+            979 => [
+                'perPage' => ($display < 2) ? $display : 2,
+                'pagination' => false,
+            ],
+            767 => [
+                'perPage' => 1,
+            ]
+        ],
+    ];
 
     if ($loop->have_posts()) :
     ?>
 
-    <div class="splide" aria-label="Success Stories Slider">
+<div class="splide-container">
+<div id="<?php echo wp_unique_id('splidejs-');?>" class="splide" data-splide="<?php echo esc_attr(json_encode($data_splide)); ?>" aria-label="Testimonials Slider">
+
       <div class="splide__track">
         <ul class="splide__list">
             <?php
@@ -91,73 +146,9 @@ if ($actual_post_count > 0) :
             <button class="my-toggle-button" type="button">Pause</button>
       </div>
     </div>
+</div>
     <?php
     echo join('', $modals);
-    ?>
-
-    <script>
-    (function (document, window, $) {
-        const splideElements = document.querySelectorAll('.splide');
-        const splideInstances = new Map();
-
-        splideElements.forEach(element => {
-            const splideInstance = initializeSplide(element);
-            splideInstances.set(element, splideInstance);
-        });
-
-        document.querySelectorAll('button[data-bs-toggle="tab"]').forEach(tabButton => {
-            tabButton.addEventListener('shown.bs.tab', function (event) {
-                const tabContent = document.querySelector(event.target.getAttribute('data-bs-target'));
-                const tabSplides = tabContent.querySelectorAll('.splide');
-
-                tabSplides.forEach(splideElement => {
-                    const splideInstance = splideInstances.get(splideElement);
-                    if (splideInstance) {
-                        splideInstance.refresh();
-                    }
-                });
-            });
-        });
-
-        function initializeSplide(element) {
-            const actualPostCount = <?php echo $actual_post_count; ?>;
-            const numberOfTestimonials = <?php echo $number_of_testimonials; ?>;
-
-            const splide = new Splide(element, {
-                type: actualPostCount > numberOfTestimonials ? "loop" : "slide",
-                autoplay: false,
-                rewind: false,
-                speed: 500,
-                interval: 3000,
-                pauseOnHover: true,
-                pauseOnFocus: true,
-                pagination: actualPostCount > 1,
-                arrows: actualPostCount > numberOfTestimonials,
-                perPage: numberOfTestimonials,
-                perMove: numberOfTestimonials,
-                breakpoints: {
-                    1500: {
-                        // arrows: false,
-                    },
-                    1280: {
-                        perMove: Math.min(2, actualPostCount),
-                        perPage: Math.min(2, actualPostCount),
-                        pagination: false,
-                    },
-                    979: {
-                        perMove: 1,
-                        perPage: 1
-                    },
-                },
-            });
-
-            splide.mount();
-            return splide;
-        }
-
-    }(document, window, jQuery));
-    </script>
-    <?php
     endif; // end if ($loop->have_posts())
 endif; // end if ($actual_post_count > 0)
 

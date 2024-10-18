@@ -3,7 +3,7 @@
     "title": "Testimonials",
     "description": "Testimonials slider block",
     "style":[ "splide","file:./style.css" ],
-    "script": ["splide"],
+    "viewScript": ["splide"],
     "category": "sayenko",
     "icon": "",
     "apiVersion": 2,

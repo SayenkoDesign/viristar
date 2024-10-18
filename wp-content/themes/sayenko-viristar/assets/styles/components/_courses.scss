@@ -109,6 +109,7 @@
 			.label {
 				font-weight: 700;
 				text-transform: capitalize;
+				color: var(--navy);
 			}
 		}
 
@@ -189,6 +190,10 @@
 			p:last-of-type {
 				margin-bottom: 0;
 			}
+
+			.time-zone {
+				margin-bottom: var(--text-margin-bottom)!important;
+			}
 		}
 
 		&__buttons {
@@ -201,6 +206,8 @@
 				text-decoration: none;
 			}
 		}
+
+		
 	}
 }
 

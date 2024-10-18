@@ -61,7 +61,7 @@ $length = $args['length'];
 
 // Add the logo
 
-echo _s_format_string( wp_get_attachment_image( $logo, 'thumbnail' ), 'figure', ['class' => 'testimonial__logo'] );
+echo _s_format_string( wp_get_attachment_image( $logo, 'thumbnail' ), 'div', ['class' => 'testimonial__logo'] );
 ?>
 
 </blockquote>

@@ -20,8 +20,16 @@ $block = new ACF_Block($block, $content, $is_preview);
 // Open the block
 echo $block->before_render();
 
+if($is_preview):
+	?>
+	<span class="preview-label">Click to edit <?php echo ucwords( $block->get_readable_name() ); ?> Block</span>
+	<?php 
+else:
+
 
 get_template_part(sprintf('blocks/%s/components/%s', $block->get_name(), 'splide'));
+
+endif;
 
 // close the block
 echo $block->after_render();

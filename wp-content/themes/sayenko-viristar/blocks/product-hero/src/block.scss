@@ -77,12 +77,13 @@
 
         &__content {
             //margin-bottom: var(--wave-offset);
-            margin-bottom: 6%;
+            margin-bottom: 10%;
             max-width: 500px;
-            padding-block: 75px 25px;
+            padding-block: 75px 50px;
 
             @include media-breakpoint-up(lg) {
                 padding-block: 25px;
+                margin-bottom: 6%;
             }
     
 

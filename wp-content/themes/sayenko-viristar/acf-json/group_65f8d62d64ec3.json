@@ -3,6 +3,70 @@
     "title": "Block: Testimonials",
     "fields": [
         {
+            "key": "field_6705402feb95d",
+            "label": "Source",
+            "name": "source",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "All": "All",
+                "Category": "Category",
+                "Selected": "Selected"
+            },
+            "default_value": "Category",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_67053fd3eb95c",
+            "label": "Category",
+            "name": "category",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6705402feb95d",
+                        "operator": "==",
+                        "value": "Category"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "testimonial_category",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "checkbox",
+            "min": "",
+            "max": "",
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_65f8d62d1415b",
             "label": "Posts",
             "name": "posts",
@@ -10,7 +74,15 @@
             "type": "relationship",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6705402feb95d",
+                        "operator": "==",
+                        "value": "Selected"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -35,9 +107,34 @@
             },
             "min": "",
             "max": "",
+            "allow_in_bindings": 1,
             "elements": "",
             "bidirectional": 0,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_6705477ceb95e",
+            "label": "Order By",
+            "name": "orderby",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Default": "Default",
+                "Random": "Random"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
         },
         {
             "key": "field_669f282ef596e",
@@ -45,7 +142,7 @@
             "name": "number_of_testimonials",
             "aria-label": "",
             "type": "number",
-            "instructions": "This is how many should show in the carousel",
+            "instructions": "This is how many should be visible at a time. Default is 3",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -54,9 +151,10 @@
                 "id": ""
             },
             "default_value": "",
-            "min": "",
-            "max": "",
-            "placeholder": "",
+            "min": 1,
+            "max": 3,
+            "allow_in_bindings": 1,
+            "placeholder": 3,
             "step": "",
             "prepend": "",
             "append": ""
@@ -87,5 +185,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1726523513
+    "modified": 1728416339
 }

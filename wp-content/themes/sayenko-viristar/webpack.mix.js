@@ -63,36 +63,18 @@ mix.autoload({
 	jquery: ['$', 'window.jQuery'],
 });
 
-mix.js('assets/scripts/project.js', 'dist/scripts')
+mix
+	.js('assets/scripts/project.js', 'dist/scripts')
 	.sass('assets/styles/style.scss', 'dist/styles')
+
+	mix.js('assets/scripts/splide.js', 'dist/scripts')
+	.sass('assets/styles/splide.scss', 'dist/styles')
+
 	.sass( 'assets/styles/editor-style.scss', 'dist/styles' )
 	.options({ processCssUrls: true })
 	.copyWatched('assets/images/**', 'dist/images', { base: 'assets/images' })
 
 ;
-
-// GSAP
-// mix.js('assets/scripts/gsap.js', 'dist/scripts');
-
-// FancyBox
-/* mix.js('assets/scripts/fancybox.js', 'dist/scripts')
-	.sass('assets/styles/fancybox.scss', 'dist/styles'); */
-
-// PLYR - for videos
-/* mix.js('assets/scripts/plyr.js', 'dist/scripts')
-	.sass('assets/styles/plyr.scss', 'dist/styles'); */
-
-// FacetWP add infoBox
-/* mix.scripts('assets/scripts/infobox.js', 'dist/scripts/infobox.js');
- */
-
-
-// Splide
-mix.copy('node_modules/@splidejs/splide/dist/css/splide-core.min.css', 'dist/splide')
-.copy('node_modules/@splidejs/splide/dist/js/splide.min.js', 'dist/splide');
-
-/*mix.js('assets/scripts/slick.js', 'dist/scripts')
-	.sass('assets/styles/slick.scss', 'dist/styles'); */
 
 
 // Blocks - CSS

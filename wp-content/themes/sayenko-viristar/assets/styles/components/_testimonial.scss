@@ -1,8 +1,9 @@
 // Testimonial
 
 blockquote.testimonial {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows:1fr 150px;
 	padding: 0;
 	background-color: var(--light-blue);
 	border-radius: 10px;
@@ -14,6 +15,7 @@ blockquote.testimonial {
 	
 	cite {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 15px;
 		order: -1;
 		margin-bottom: 60px;
@@ -38,7 +40,7 @@ blockquote.testimonial {
 	.testimonial__content {
 		display: flex;
 		flex-direction: column;
-		padding: 40px 30px;
+		padding: 40px 30px 40px 15px;
 
 		.gb-button-link {
 			font-size: rem-calc(16);
@@ -68,20 +70,15 @@ blockquote.testimonial {
 
 	.testimonial__logo {
 		background-color: white;
-		height: 150px;
-		margin-top: auto;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		display: grid;
+		place-content: center;
 		border-radius: 0 0 10px 10px;
+		padding: var(--spacing-sm);
 
 		img {
-			display: block;
-			margin: 0 auto;
+    		max-height: calc(150px - var(--spacing-sm) * 2);
 			height: auto;
 			width: auto;
-			max-height: calc(100% - var(--spacing-md));
-			max-width: calc(100% - var(--spacing-md));
 		}
 	}
 	

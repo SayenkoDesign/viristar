@@ -34,7 +34,7 @@ if(! empty($location)) {
 }
 
 $live_sessions = get_field('live_sessions', $product_id);
-$live_sessions = strip_tags(str_replace('<br />', ' ', $live_sessions));
+$live_sessions = strip_tags(str_replace('<br />', ', ', $live_sessions));
 $live_session_times = 'Live Sessions';
 
 $instructor = get_field('instructor', $product_id);
@@ -71,7 +71,7 @@ if( 'risk-management' == $course_category) {
 		//'course_name',
 		'month_year',
 		'start_date',
-		//'live_session_times',
+		'live_sessions',
 		'tuition',
 		'location'
 	];
@@ -180,20 +180,36 @@ $arrow = _s_get_icon(
 	
 
 	<?php
+
+	$live_sessions_data = '';
+
 	foreach( $list_meta as $key) {
 		$value = ${$key} ?? '';
+
+		if( 'live_sessions' == $key ) {
+			$live_sessions_data = $value;
+			continue;
+		}
+
 		printf( '<div class="list__%s">%s</div>', $key, $value);
 	}
 	?>
 
 	</div>
 
+	<?php 
+	if( !empty($live_sessions_data) && ! empty($time_zone_modal)) {
+		
+		echo _s_format_string($live_sessions_data, 'p' );;
+		echo $time_zone_modal;
+	}
+	?>
+
 	<div class="list__buttons">
 
 			<?php
 			if(! empty($external_product_url)) {
 				$add_to_cart = $external_product_url;
-		
 			}
 
 			printf('<div><a href="%s" class="gb-button">Enroll Now</a></div>', $add_to_cart);

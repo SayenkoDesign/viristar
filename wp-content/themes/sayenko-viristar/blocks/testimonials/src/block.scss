@@ -16,30 +16,36 @@
 
     position: relative;
 
-    padding-inline: 10px;
-
-    --splide-arrow-offset: 0;
+    --splide-arrow-offset: 20px;
 
     @include media-breakpoint-up(sm) {
-        --splide-arrow-offset: 7rem;
+        --splide-arrow-offset: 3rem;
     }
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xl) {
         --splide-arrow-offset: 6rem;
     }
 
-    @include media-breakpoint-up(xxl) {
-        --splide-arrow-offset: 6rem;
+
+    .splide:not(.is-overflow) {
+        --splide-arrow-offset: 0;
     }
 
-    max-width: 1500px;
+    
 
     margin-inline: auto;
+    overflow: hidden;
+
+    .splide-container {
+        overflow: hidden;
+        max-width: 100%;
+    }
 
     .splide {
         
-        display: flex;
-        flex-direction: column;
+        max-width: 100%;
+        overflow: hidden;
+
 
         &__track {
             margin-inline: auto;
@@ -48,6 +54,8 @@
             @include media-breakpoint-up(sm) {
                 width: min( 100% - 2 * var( --splide-arrow-offset), 100% - 2 * var(--gutter));
             }
+
+            overflow: hidden;
         }
 
         &__slide {
@@ -87,19 +95,22 @@
         }
 
         &__arrows {
-            display: flex;
-            justify-content: space-between;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
+            @include media-breakpoint-up(sm) {
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: calc(100% - 15px);
+            }
         }
 
         &__arrow {
             padding: 0;
             width: 35px;
             height: 35px;
-            
+            position: relative;
             border-radius: 50%;
             background-color: white;
             box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.25);
@@ -109,7 +120,7 @@
                 height: 50%;
             }
 
-            @include media-breakpoint-up(md) {
+            @include media-breakpoint-up(xl) {
                 width: 70px;
                 height: 70px;
             }
@@ -120,6 +131,12 @@
 
          
             z-index: 3;
+
+            @include media-breakpoint-down(sm) {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
         }
 
 
@@ -128,11 +145,19 @@
                 transform: scaleX(-1);
             }
 
+            @include media-breakpoint-down(sm) {
+                left: 20px;
+            }
+
             //left: -90px;
         }
 
         &__arrow--next {
            // right: -90px;
+
+           @include media-breakpoint-down(sm) {
+            right: 20px;
+            }
         }
 
     }

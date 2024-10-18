@@ -16,7 +16,22 @@ if (!empty($post_ids)) {
 }
 
 
+$data_splide = [
+	'type' => 'loop',
+	'perPage' => 5,
+	'gap' => '4rem',
+	'breakpoints' => [
 
+		979 => [
+			'perPage' => 3,
+			'gap' => '2rem',
+			'pagination' => false,
+		],
+		639 => [
+			'perPage' => 2,
+		]
+	],
+];
 
 // Use $loop, a custom variable we made up, so it doesn't overwrite anything
 $loop = new WP_Query($args);
@@ -27,8 +42,7 @@ if ($loop->have_posts()) :
 
 ?>
 
-
-<div class="splide" aria-label="Clients Slider">
+<div id="<?php echo wp_unique_id('splidejs-');?>" class="splide" data-splide="<?php echo esc_attr(json_encode($data_splide)); ?>" aria-label="Clients Slider">
   <div class="splide__track">
     <ul class="splide__list">
 		<?php

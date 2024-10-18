@@ -1,9 +1,9 @@
 // Styles
 @use "assets/styles/block" as *;
 
-.wp-block-acf-clients.acf-block-preview  {
-    min-height: 100px;
-    background-color: var(--light-grey);
+.wp-block-acf-partners.acf-block-preview  {
+    min-height: 200px;
+    background-color: #979797;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,7 @@
 }
 
 
-.wp-block-acf-clients  {
+.wp-block-acf-partners  {
 
     margin-inline: auto;
 
