@@ -35,7 +35,7 @@ function modal_content($post_id = NULL) {
 	if (get_post_field('post_content', $post_id)) :
 		?>
 			<div class="modal" id="modal-<?php echo $post_id; ?>" tabindex="-1" aria-labelledby="TimeModal" aria-hidden="true" style="display: none;">
-				<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen">
+				<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
 					<div class="modal-content">
 						<div class="modal-header">
 							<h1 id="TimeModal" class="visually-hidden">Modal</h1>
