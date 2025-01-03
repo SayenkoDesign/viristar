@@ -18,6 +18,52 @@
 }
 
 .wp-block-acf-find-a-course {
+    position: relative;
+    background-color: var(--off-white);
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding-top: 32%; // This should match your image's aspect ratio (height/width * 100)
+        background: linear-gradient(
+                180deg,
+                #fdfcfa 0.27%,
+                hsla(0, 0%, 100%, 0) 87.51%
+            ),
+            url("images/course-lines.png");
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+
+    .wave {
+        position: relative;
+        z-index: 2;
+        //margin-top: -50px; // Overlap with title section if needed
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    .wrapper {
+        position: relative;
+        z-index: 2;
+    }
+
+    .wrapper {
+        h2 {
+            text-align: center;
+        }
+    }
+
     .filters-wrapper {
         text-align: center;
     }
@@ -49,7 +95,8 @@
                 }
 
                 .facetwp-dropdown {
-                    padding-right: 2ch;
+                    padding-left: 18px;
+                    padding-right: 18px;
                 }
             }
 
@@ -61,7 +108,6 @@
             display: inline-flex;
             justify-content: space-between;
             gap: 18px;
-            padding: 0 18px;
             max-width: 780px;
 
             border-radius: 8px;
@@ -72,25 +118,16 @@
             > div:not(.facetwp-submit) {
                 margin-bottom: 0;
                 flex: 0 1 auto;
-                padding: 11px 0 11px 0;
                 margin-top: 0;
             }
 
             .facetwp-dropdown {
-                padding: 0;
+                padding-left: 3ch;
                 padding-right: 3ch;
             }
 
-            .facetwp-facet-product_course_category {
-                width: 16ch;
-            }
-
             .facetwp-facet-product_course {
-                width: 19ch;
-            }
-
-            .facetwp-facet-product_course_mode_select {
-                width: 19ch;
+                // width: 19ch;
             }
 
             .fwp-submit span {
@@ -104,37 +141,13 @@
     }
 }
 
-.find-a-course {
-    position: relative;
-
-    img {
-        position: relative;
-    }
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-            180deg,
-            #fdfcfa 0.27%,
-            rgba(255, 255, 255, 0) 87.51%
-        );
-    }
-
+.wp-block-acf-find-a-course {
     .view-all {
         display: none;
     }
 
-    .wp-block-acf-find-a-course.facetwp-visible + .view-all {
+    .wp-block-acf-find-a-course.facetwp-visible .view-all {
         display: block;
-    }
-
-    .facetwp-facet {
-        margin-top: 12px;
-        margin-bottom: 12px;
+        margin-top: 60px;
     }
 }
