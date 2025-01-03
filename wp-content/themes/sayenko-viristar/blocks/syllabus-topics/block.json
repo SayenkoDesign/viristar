@@ -2,15 +2,21 @@
     "name": "acf/syllabus-topics",
     "title": "Syllabus Topics",
     "description": "syllabus topics",
-    "style": "syllabus-topics",
+    "style": [
+        "file:./style.css"
+    ],
     "script": "",
     "category": "sayenko",
     "icon": "",
     "apiVersion": 2,
-    "keywords": ["viristar", "syllabus", "topics"],
+    "keywords": [
+        "viristar",
+        "syllabus",
+        "topics"
+    ],
     "acf": {
         "mode": "auto",
-		"renderTemplate": "index.php"
+        "renderTemplate": "index.php"
     },
     "styles": [],
     "supports": {
@@ -25,6 +31,5 @@
         "alignText": false,
         "fullHeight": false
     },
-    "attributes": {
-    }
+    "attributes": {}
 }

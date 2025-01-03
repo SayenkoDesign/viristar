@@ -41,9 +41,9 @@ class Course {
      */
     public function get_title(): string {
         if (!$this->course_id) {
-            return 'No course associated with this product';
+            return false;
         }
-        return \get_the_title($this->course_id) ?: 'Untitled Course';
+        return \get_the_title($this->course_id) ?: false;
     }
 	
 

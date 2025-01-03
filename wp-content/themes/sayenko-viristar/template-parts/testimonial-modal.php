@@ -1,5 +1,16 @@
 
-<div class="modal testimonial-modal" id="testimonial-modal-<?php the_ID(); ?>" tabindex="-1" aria-labelledby="testimonialModal" aria-hidden="true">
+<?php
+$full = $args['full'];
+
+if (empty($full)) {
+    return;
+}
+
+$image = $args['image'];
+$logo = $args['logo'];
+$details = $args['details'];
+?>
+<div class="modal testimonial-modal" id="testimonial-modal-<?php the_ID();?>" tabindex="-1" aria-labelledby="testimonialModal" aria-hidden="true">
 	<div class="modal-dialog modal-xl modal-dialog-centered">
 		<div class="modal-content">
 		<div class="modal-header" data-bs-theme="dark">
@@ -10,35 +21,27 @@
 	<?php
 
 ?>
-<blockquote id="<?php the_ID(); ?>" <?php post_class();?> <?php generate_do_microdata('article');?>>
+<blockquote id="<?php the_ID();?>" <?php post_class();?> <?php generate_do_microdata('article');?>>
 <div class="testimonial__content">
 <?php
+echo $image;
 
-	$teaser = $args['teaser'];
-	$full = $args['full'];
-	$image = $args['image'];
-	$logo = $args['logo'];
-	$details = $args['details'];
-	$word_count = $args['word_count'];
-	$length = $args['length'];
+echo _s_format_string($full, 'div', ['class' => '']);
 
-	echo _s_format_string( $full, 'div', ['class' => ''] );
+printf('<cite><p>%s</p>%s</cite>',
+    get_the_title(),
+    $details
+);
 
-	printf('<cite>%s<div><p>%s</p>%s</div></cite>',
-		$image,
-		get_the_title(),
-		$details
-	);
-
-	
 ?>
 </div>
 <?php
 
-
 // Add the logo
 
-echo _s_format_string( wp_get_attachment_image( $logo, 'thumbnail' ), 'figure', ['class' => 'testimonial__logo'] );
+$logo = wp_get_attachment_image($logo, 'thumbnail');
+$logo = _s_format_string($logo, 'div', ['class' => 'testimonial__logo-wrapper']);
+echo _s_format_string($logo, 'div', ['class' => 'testimonial__logo']);
 ?>
 
 </blockquote>

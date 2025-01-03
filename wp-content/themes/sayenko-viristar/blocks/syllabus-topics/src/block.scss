@@ -20,18 +20,26 @@
 }
 
 .wp-block-acf-syllabus-topics {
-    
+    h3 {
+        color: var(--navy);
+        font-size: var(--h4);
+    }
+
     .topics {
-        max-width: 400px;
+        //max-width: 400px;
         display: grid;
-        grid-template-columns: max-content 100%;
+        grid-template-columns: max-content 1fr;
         gap: 0 var(--gutter-md);
 
         h4 {
             font-size: 1rem;
-            line-height: 27px;
+            line-height: 1.6875;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
         }
     }
 
-    margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-md);
 }

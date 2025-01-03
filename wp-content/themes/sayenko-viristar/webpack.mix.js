@@ -66,8 +66,9 @@ mix.autoload({
 mix
 	.js('assets/scripts/project.js', 'dist/scripts')
 	.sass('assets/styles/style.scss', 'dist/styles')
+	.sass('assets/styles/acf.scss', 'dist/styles')
 
-	mix.js('assets/scripts/splide.js', 'dist/scripts')
+	.js('assets/scripts/splide.js', 'dist/scripts')
 	.sass('assets/styles/splide.scss', 'dist/styles')
 
 	.sass( 'assets/styles/editor-style.scss', 'dist/styles' )

@@ -1,7 +1,7 @@
 // Styles
 @use "assets/styles/block" as *;
 
-.wp-block-acf-articles.acf-block-preview  {
+.wp-block-acf-articles.acf-block-preview {
     min-height: 100px;
     background-color: var(--light-grey);
     display: flex;
@@ -10,20 +10,18 @@
     text-align: center;
 }
 
-
-.wp-block-acf-articles  {
-
-	.grid {
-		@include media-breakpoint-up(md) {
-			@include block-grid(3, var(--spacing-sm));
-		}
+.wp-block-acf-articles {
+    .grid {
+        @include media-breakpoint-up(md) {
+            @include block-grid(3, var(--spacing-sm));
+        }
 
         article {
             margin-bottom: var(--spacing-md);
         }
 
-		.entry-header {
-			width: auto;
-		}
-	}
+        .entry-header {
+            width: auto;
+        }
+    }
 }

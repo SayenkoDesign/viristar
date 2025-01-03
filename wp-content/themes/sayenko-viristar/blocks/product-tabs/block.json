@@ -2,16 +2,23 @@
     "name": "acf/product-tabs",
     "title": "Product Tabs",
     "description": "Product Tabs block",
-    "style":[ "file:./style.css" ],
+    "style": [
+        "file:./style.css"
+    ],
     "script": [],
     "category": "sayenko",
     "icon": "",
     "apiVersion": 2,
-    "keywords": ["product", "tabs"],
+    "keywords": [
+        "product",
+        "tabs"
+    ],
     "acf": {
         "mode": "preview",
-		"renderTemplate": "index.php",
-        "postTypes": ["product"]
+        "renderTemplate": "index.php",
+        "postTypes": [
+            "product"
+        ]
     },
     "styles": [],
     "supports": {

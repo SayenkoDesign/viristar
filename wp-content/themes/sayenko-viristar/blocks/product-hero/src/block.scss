@@ -34,7 +34,9 @@
         padding-bottom: 6%;
 
         .hero-image {
-            aspect-ratio: 1440/ 580;
+            img {
+                aspect-ratio: 1440/ 580;
+            }
         }
 
 
@@ -57,7 +59,7 @@
             img {
 
                 object-fit: cover;
-                object-position: var(--image-position-x, '50%') var(--image-position-y, '50%');
+                object-position: var(--image-position-x, 50%) var(--image-position-y, 50%);
                 width: 100%;
                 height: 100%;
             }

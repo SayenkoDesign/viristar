@@ -1,8 +1,7 @@
 // Post
 
 .single-post {
-
-    --content-width: 980px;
+    --content-width: 754px;
 
     .site-content {
         padding-top: 90px;
@@ -15,12 +14,31 @@
     }
 
     .entry-content {
-
         width: min(var(--content-width), 100% - 2 * var(--gutter));
         margin-inline: auto;
 
-        .wp-block-image {
+        figure {
+            margin-top: 40px;
             margin-bottom: 30px;
+            text-align: center;
+
+            figcaption {
+                margin-top: 12px;
+                color: #6f6f6f;
+                font-size: rem-calc(14);
+            }
+        }
+
+        figure + span[style*="6f6f6f"] {
+            margin-top: -12px !important;
+        }
+
+        p[style*="6f6f6f"] {
+            margin-top: -12px !important;
+        }
+
+        span[style*="b7b7b7"] {
+            font-size: var(--h4);
         }
     }
 
@@ -40,8 +58,6 @@
         align-items: center;
         gap: 30px;
 
-        
-
         a {
             font-size: rem-calc(18);
             text-decoration: none;
@@ -57,154 +73,38 @@
 
         .nav-next {
             text-align: right;
-
-           
         }
     }
 
-    
-
     .related-posts {
-
+        --content-width: 1024px;
         width: min(var(--content-width), 100% - 2 * var(--gutter));
         margin-block: 90px 0;
         margin-inline: auto;
 
-
         .grid {
-
             margin-top: 60px;
-            
-            @include media-breakpoint-up(md) { 
+
+            @include media-breakpoint-up(md) {
                 @include block-grid(2, 18px);
             }
 
-            @include media-breakpoint-up(lg) { 
+            @include media-breakpoint-up(lg) {
                 @include block-grid(3, 18px);
             }
 
             > * {
                 margin-bottom: 90px;
             }
-
-            
         }
 
-        article {
-            padding-bottom: 0 !important;
-    
-            .post-content {
-                display: flex;
-                flex-direction: column;
-                
-                
-            }
-    
-            .post-image {
-                overflow: hidden;
-                margin-bottom: 20px!important;
-    
-                a {
-                    z-index: -1;
-    
-                    img {
-                        transition: all .2s ease-in-out;
-                    }
-    
-                    &:hover {
-                        img {
-                            transform: scale(1.2);
-                        }
-                    }
-                }
-    
-                svg {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    z-index: 3;
-                }
-    
-            }
-    
-            .entry-header {
-                display: flex;
-                flex-direction: column;
-                width: auto;
-                
-                .entry-meta {
-                    margin-block: 0 0.5em;
-                    order: -1;
-                }
-    
-                .entry-title {
-                    margin-bottom: 24px;
-                }
+        .post-content {
+            display: flex;
+            flex-direction: column;
 
-                a:hover {
-                    color: var(--action);
-                }
-            }
-    
-            .entry-summary {
-                @include visually-hidden;
-            }
-    
-            footer {
-                margin-top: 0;
-            }
-    
-            .read-more {
-                @include visually-hidden;
-            }
-    
-            .post-categories {
-                @include list-reset;
-    
-                li {
-                    display: inline-flex;
-                    margin-bottom: 10px;
-                    padding-right: 10px;
-                }
-    
-                a {
-                    color: var(--action);
-                    border-radius: 50px;
-                    padding: 5px 10px;
-                    border: 1px solid var(--action);
-                    text-decoration: none;
-    
-                    &:hover {
-                       background-color: var(--action); 
-                       color: white;
-                    }
-                }
-            }
-    
-        }
-    
-    
-    
-        .post-image {
-            padding-top: 68%;
-            position: relative;
-    
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center top
-            }
-        }
-    
-        footer {
-            .comments-link {
-                @include visually-hidden;
+            .link-container {
+                margin-top: auto;
             }
         }
     }
-
 }

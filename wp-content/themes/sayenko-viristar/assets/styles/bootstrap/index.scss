@@ -9,10 +9,11 @@
 
 // Layout & components
 @import "~bootstrap/scss/root";
-// @import "accordion";
 @import "~bootstrap/scss/close";
 @import "~bootstrap/scss/modal";
 @import "~bootstrap/scss/offcanvas";
+
+@import "~bootstrap/scss/transitions";
 
 // Helpers
 //@import "helpers";
@@ -21,4 +22,5 @@
 @import "close";
 @import "modal";
 
-
+@import "accordion";
+@import "offcanvas";

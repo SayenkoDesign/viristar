@@ -3,6 +3,70 @@
     "title": "Block: Clients",
     "fields": [
         {
+            "key": "field_672a8ea0e39f8",
+            "label": "Source",
+            "name": "source",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "All": "All",
+                "Category": "Category",
+                "Select": "Select"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_672a8f68f4885",
+            "label": "Category",
+            "name": "category",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_672a8ea0e39f8",
+                        "operator": "==",
+                        "value": "Category"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "client_category",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 1,
+            "return_format": "id",
+            "field_type": "checkbox",
+            "min": "",
+            "max": "",
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_66104642cee54",
             "label": "Clients",
             "name": "posts",
@@ -10,7 +74,15 @@
             "type": "relationship",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_672a8ea0e39f8",
+                        "operator": "==",
+                        "value": "Select"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -32,9 +104,34 @@
             },
             "min": "",
             "max": "",
+            "allow_in_bindings": 1,
             "elements": "",
             "bidirectional": 0,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_672a8ecce39f9",
+            "label": "Order By",
+            "name": "order_by",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Default": "Default",
+                "Random": "Random"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
         }
     ],
     "location": [
@@ -62,5 +159,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1723231680
+    "modified": 1730842544
 }

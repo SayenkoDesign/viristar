@@ -11,9 +11,7 @@
 }
 
 .wp-block-acf-team {
-
     .flex-grid {
-
         &__item {
             margin-bottom: 65px;
             position: relative;
@@ -21,84 +19,73 @@
             @include media-breakpoint-up(lg) {
                 margin-bottom: 65px;
             }
+        }
 
-            h3 {
-                margin-top: 20px;
-                margin-bottom: 10px;
-                font-size: rem-calc(19);
-                font-weight: 700;
-                //color: $heading;
-                padding-right: 42px;
+        img {
+            display: block;
+            object-fit: cover;
+            object-position: center top;
+            aspect-ratio: 1/1;
+            margin-bottom: 0;
+        }
+
+        .item {
+            background-color: var(--navy);
+
+            &__details {
+                padding: 24px;
+
+                h3 {
+                    color: white;
+                    margin-bottom: 8px;
+                }
             }
 
-
+            &__position {
+                color: var(--sky-blue);
+                font-weight: 500;
+                letter-spacing: 0.335px;
+            }
         }
 
         .link-cover {
             @include link-cover();
         }
+    }
 
-        &__thumbnail {
-            position: relative;
+    .modal-header {
+        padding: var(--spacing-sm);
+    }
+
+    .modal-body {
+        padding: var(--spacing-sm);
+        padding-top: 0;
+
+        .team-item {
+            background-color: var(--navy);
 
             img {
                 display: block;
                 object-fit: cover;
                 object-position: center top;
                 aspect-ratio: 1/1;
+                margin-bottom: 0;
             }
 
-            span {
-                display: block;
-                background-color: var(--charcoal);
-                position: absolute;
-                padding: 1rem;
-                bottom: 0;
-                right: 0;
+            &__details {
+                padding: 24px;
 
-                &:before {
-                    content: '';
-                    color: $white;
-                    font-size: 2rem;
-                    font-weight: 700;
-                    line-height: normal;
-                    content: "\002B";
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
+                h4 {
+                    color: white;
+                    margin-bottom: 8px;
                 }
             }
-        }
 
-        &__text {
-            a {
-
-                &:before {
-                    cursor: pointer;
-                }
-
-                
+            &__position {
+                color: var(--sky-blue);
+                font-weight: 500;
+                letter-spacing: 0.335px;
             }
         }
     }
-
-    .credentials {
-        color: var(--charcoal);
-        font-size: rem-calc(15);
-    }
-
-    .text {
-        margin-top: 30px;
-    }
-
-    .modal-header {
-        padding: var(--spacing-md);
-    }
-
-    .modal-body {
-        padding: var(--spacing-md);
-        padding-top: 0;
-    }
-
 }

@@ -11,7 +11,17 @@
 }
 
 .wp-block-acf-product-other-course-dates {
-    
-   
-    
+    &:has(.no-results) {
+        .course-view {
+            display: none;
+        }
+
+        .list-headers {
+            display: none;
+        }
+
+        .grid {
+            border-bottom: none;
+        }
+    }
 }

@@ -1,0 +1,39 @@
+{
+    "name": "acf/footer-wave",
+    "title": "Footer Wave Block",
+    "description": "Footer Wave.",
+    "style": [
+        "file:./style.css"
+    ],
+    "script": [],
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": [
+        "viristar",
+        "footer",
+        "wave"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php",
+        "postTypes": [
+            "gp_elements",
+            "page"
+        ]
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "jsx": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    }
+}

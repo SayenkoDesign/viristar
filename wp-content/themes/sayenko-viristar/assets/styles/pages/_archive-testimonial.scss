@@ -1,46 +1,49 @@
 // Testimonials Archive
 
-
 .post-type-archive-testimonial {
-	.facetwp-template {
-		display: grid;
-		column-gap: 17px;
+    .facetwp-template {
+        display: grid;
+        column-gap: 17px;
 
-		@include media-breakpoint-up(md) {
-			grid-template-columns: repeat(2, 1fr);
-		}
+        @include media-breakpoint-up(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
 
-		@include media-breakpoint-up(lg) {
-			grid-template-columns: repeat(3, 1fr);
+        @include media-breakpoint-up(lg) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 
-			blockquote {
-				grid-column: span 1;  // Default span for all items
+    .facetwp-facet-testimonial_category {
+        .fs-checkbox {
+            top: 0.188em !important;
+        }
 
-				// Single blockquote spans 2 columns
-				&:only-child {
-					grid-column: span 2;
-				}
+        .fs-dropdown .fs-options {
+            max-height: none !important;
+        }
+    }
 
+    .facetwp-type-pager {
+        text-align: center;
+    }
 
-				// Items that span 2 columns
-				&:nth-child(10n+2),
-				&:nth-child(10n+6) {
-					grid-column: span 2;
-				}
-			}
-		}
-	}
+    .facetwp-load-more {
+        @include gb-button;
+        @include gb-button-navy-alt;
+    }
 
-	.facetwp-type-pager {
-		text-align: center;
-	}
+    blockquote {
+        margin-bottom: 30px;
+    }
+}
 
-	.facetwp-load-more {
-		@include gb-button;
-		@include gb-button-navy-alt;
-	}
-
-	blockquote {
-		margin-bottom: 30px;
-	}
+.testimonial {
+    .testimonial__content {
+        p {
+            @include media-breakpoint-down(sm) {
+                line-height: 1.15;
+            }
+        }
+    }
 }

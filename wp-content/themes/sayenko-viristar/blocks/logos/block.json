@@ -1,0 +1,24 @@
+{
+    "name": "acf/logos",
+    "title": "Logos",
+    "description": "Logos Block.",
+    "style": [
+        "file:./style.css"
+    ],
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": [
+        "viristar",
+        "logos"
+    ],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "index.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true
+    }
+}

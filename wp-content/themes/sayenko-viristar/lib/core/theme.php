@@ -1,13 +1,13 @@
 <?php
 // Set the .grid-container to be the --content-width
 
-add_action('wp_head', function() {
-	?>
+add_action('wp_head', function () {
+    ?>
 	<script>
 	document.addEventListener("DOMContentLoaded", function() {
 
 		// Set the width as a custom property
-		document.documentElement.style.setProperty('--container-width', '<?php echo generate_get_option( 'container_width' )?>px');
+		document.documentElement.style.setProperty('--container-width', '<?php echo generate_get_option('container_width') ?>px');
 
 		// get the header height
 		document.documentElement.style.setProperty('--site-header-height', '');
@@ -34,7 +34,7 @@ add_action('wp_head', function() {
 	window.addEventListener('resize', updateHeaderHeight);
 
 
-	
+
 
 
 

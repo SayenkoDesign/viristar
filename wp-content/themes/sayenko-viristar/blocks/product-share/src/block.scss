@@ -1,5 +1,5 @@
 // Styles
-@import 'assets/styles/block';
+@import "assets/styles/block";
 
 .wp-block-acf-product-share.acf-block-preview {
     min-height: 100px;
@@ -11,6 +11,10 @@
 }
 
 .wp-block-acf-product-share {
+    @include media-breakpoint-down(lg) {
+        margin-bottom: var(--spacing-md);
+    }
+
     .social-share {
         .a2a_kit {
             display: flex;
@@ -18,7 +22,7 @@
             margin-top: var(--spacing-sm);
 
             a {
-                background-color: var(--navy)!important;
+                background-color: var(--navy) !important;
                 color: white;
                 border: none;
             }

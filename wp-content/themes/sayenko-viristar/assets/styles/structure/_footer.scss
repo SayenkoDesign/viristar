@@ -1,193 +1,208 @@
 // Footer
 
 .site-footer {
+    &__menus {
+        width: min(1600px - var(--gutter) * 2, 100% - 2 * var(--gutter));
+        max-width: 100%;
+        margin-inline: auto;
 
+        @include media-breakpoint-up(sm) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
 
-	&__menus {
+            align-content: space-around;
+            justify-content: space-between;
+        }
 
-		width: min(1600px - var(--gutter)* 2, 100% - 2* var(--gutter));
-		max-width: 100%;
-		margin-inline: auto;
+        @include media-breakpoint-up(lg) {
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-lg);
+        }
 
-		@include media-breakpoint-up(sm) {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			gap: var(--spacing-md);
+        @include media-breakpoint-up(xxl) {
+            grid-template-columns: 1fr 1fr 2fr 1fr;
+            gap: var(--spacing-lg);
 
-			align-content: space-around;
-			justify-content: space-between;
-		}
+            &-group {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-lg);
+            }
+        }
 
-		@include media-breakpoint-up(lg) {
-			grid-template-columns: repeat(4, 1fr);
-			gap: var(--spacing-lg);
-		}
+        > .gb-container {
+            // border-bottom: 0.5px solid rgba(#d7d5d5, 0.5);
 
-		@include media-breakpoint-up(xxl) {
+            &:last-child {
+                // margin-bottom: 0;
+                // border-bottom: 0;
+            }
 
-			grid-template-columns: 1fr 1fr 2fr 1fr;
-			gap: var(--spacing-lg);
+            @include media-breakpoint-up(sm) {
+                padding-bottom: 0;
+                border-bottom: 0;
+            }
+        }
 
-			&-group {
-			
-				display: grid;
-				grid-template-columns: repeat(2,1fr);
-				gap: var(--spacing-lg);
-			}
-		}
+        nav {
+            @include media-breakpoint-down(sm) {
+                border-bottom: 0.5px solid rgba(#d7d5d5, 0.5);
 
-		> .gb-container {
-			margin-bottom: 32px;
-			padding-bottom: 12px;
-			border-bottom: .5px solid rgba(#D7D5D5,0.5);
+                margin-bottom: 32px;
+                padding-bottom: 12px;
+            }
+        }
+    }
 
-			&:last-child {
-				margin-bottom: 0;
-				border-bottom: 0;
-			}
+    nav {
+        ul {
+            @include list-reset;
+            margin-bottom: var(--spacing-sm);
+        }
 
-			@include media-breakpoint-up(sm) {
-				padding-bottom: 0;
-				border-bottom: 0;
-			}
-		}
-		
-	}
+        li {
+            margin-bottom: 12px;
 
-	nav {
+            a {
+                color: white;
 
-		ul {
-			@include list-reset;
-			margin-bottom: var(--spacing-sm);
-		}
+                &:hover {
+                    color: var(--sky-blue) !important;
+                }
+            }
 
-		li {
-			margin-bottom: 12px;
+            &.menu-item-user {
+                a {
+                    display: inline-flex;
+                    align-items: center;
+                    font-weight: 600;
+                    line-height: 1.625;
 
-			a {
-				color: white;
+                    svg {
+                        order: -1;
+                        margin-right: 5px;
+                    }
 
-				&:hover {
-					color: var(--sky-blue)!important;
-				}
-			}
+                    &:hover {
+                        color: var(--sky-blue) !important;
+                    }
+                }
+            }
 
-			&.menu-item-user {
-				a {
-					display: inline-flex;
-					align-items: center;
-					font-weight: 600;
-					line-height: 1.625; 
+            &.link-title {
+                a {
+                    font-weight: 600;
+                }
+            }
 
-					svg {
-						order: -1;
-						margin-right: 5px;
-					}
+            &.no-link a {
+                pointer-events: none;
+            }
+        }
 
-					&:hover {
-						color: var(--sky-blue)!important;
-					}
-				}
-			}
+        a {
+            color: inherit;
+            font-size: inherit;
 
-			&.link-title {
-				a {
-					font-weight: 600;
-				}
-			}
+            &:hover {
+                color: inherit;
+            }
+        }
+    }
 
-			&.no-link a {
-				pointer-events: none;
-			}
-		}
+    .border-top {
+        @include media-breakpoint-up(sm) {
+            border-top: 0.5px solid rgba(#d7d5d5, 0.5);
+        }
+    }
 
-		a {
-			color: inherit;
-			font-size: inherit;
+    a {
+        text-decoration: none;
+    }
 
-			&:hover {
-				color: inherit;
-			}
-		}
-	}
+    &__grid {
+        @include media-breakpoint-up(sm) {
+            padding-top: 32px;
+        }
 
-	.border-top {
-		border-top: .5px solid rgba(#D7D5D5,0.5);
-	}
+        width: min(1600px - var(--gutter) * 2, 100% - 2 * var(--gutter));
+        max-width: 100%;
+        margin-inline: auto;
 
-	a {
-		text-decoration: none;
-	}
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
+        gap: var(--spacing-md);
+    }
 
-	&__grid {
+    &__copyright {
+        width: min(1600px - var(--gutter) * 2, 100% - 2 * var(--gutter));
+        max-width: 100%;
+        margin-block: var(--spacing-md) 0;
+        margin-inline: auto;
 
-		padding-top: 32px;
+        @include media-breakpoint-up(md) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: var(--spacing-md);
+        }
+    }
 
-		width: min(1600px - var(--gutter)* 2, 100% - 2* var(--gutter));
-		max-width: 100%;
-		margin-inline: auto;
+    &__copyright-right {
+        @include media-breakpoint-up(md) {
+            margin-left: auto;
+        }
 
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
+        .wp-block-navigation {
+            ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-		gap: var(--spacing-md);
-		
-	}
+            @include media-breakpoint-up(sm) {
+                ul {
+                    flex-direction: row;
+                }
 
-	&__copyright {
-		width: min(1600px - var(--gutter)* 2, 100% - 2* var(--gutter));
-		max-width: 100%;
-		margin-block: var(--spacing-md) 0;
-		margin-inline: auto;
-
-		@include media-breakpoint-up(md) {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			grid-gap: var(--spacing-md);
-
-			
-		}
-	}
-
-	&__copyright-right {
-		@include media-breakpoint-up(md) {
-			margin-left: auto;
-		}
-	}
+                li:not(:first-child) {
+                    &::before {
+                        content: "|";
+                        margin: 0 6px 0 2px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .logged-in {
-	.site-footer {
-		nav li.menu-item-login {
-			display: none;
-		}
-	}
+    .site-footer {
+        nav li.menu-item-login {
+            display: none;
+        }
+    }
 }
 
 body:not(.logged-in) {
-	.site-footer {
-		nav li.menu-item-logout {
-			display: none;
-		}
-	}
-
+    .site-footer {
+        nav li.menu-item-logout {
+            display: none;
+        }
+    }
 }
 
-
 .site-footer:has(.footer-wave) {
+    //padding-top: var(--spacing-md);
 
-	//padding-top: var(--spacing-md);
+    @include media-breakpoint-up(sm) {
+        //padding-top: 0;
+    }
 
-	@include media-breakpoint-up(sm) {
-		//padding-top: 0;
-	}
-
-	@media screen and (min-width: 1600px) {
-		//margin-top: -4%;
-	}
-
+    @media screen and (min-width: 1600px) {
+        //margin-top: -4%;
+    }
 }
 
 /* .site:has(.entry-content > .gb-container.bg--dark:last-child) + .site-footer .footer-wave,
@@ -197,17 +212,19 @@ body:not(.logged-in) {
 
 .archive .site-main > *,
 .entry-content > *:last-child > * {
-	position: relative;
-	//z-index: 9;
+    position: relative;
+    //z-index: 9;
 }
 
-.site:has(.entry-content > .gb-container.bg--off-white:last-child) + .site-footer {
-	background-color: var(--off-white);
+.site:has(.entry-content > .gb-container.bg--off-white:last-child)
+    + .site-footer {
+    background-color: var(--off-white);
 }
 
 .site:has(.entry-content > .gb-container.bg--dark:last-child) + .site-footer {
-	background-color: var(--navy);
+    background-color: var(--navy);
 }
-.site:has(.entry-content > .gb-container.bg--ultra-dark:last-child) + .site-footer {
+.site:has(.entry-content > .gb-container.bg--ultra-dark:last-child)
+    + .site-footer {
     background-color: var(--dark-navy);
 }

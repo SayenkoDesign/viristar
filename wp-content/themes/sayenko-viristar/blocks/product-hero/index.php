@@ -13,31 +13,29 @@
  */
 
 /*  echo '<pre>';
- var_dump($block);
- echo '</pre>'; */
-
+var_dump($block);
+echo '</pre>'; */
 
 use \App\ACF_Block;
 
 $block = new ACF_Block($block, $content, $is_preview);
 
-if(!($is_preview)) {
-	$block->add_render_attribute('class', 'frontend');
-	$block->add_render_attribute('class', 'alignfull');
+if (!($is_preview)) {
+    $block->add_render_attribute('class', 'frontend');
+    $block->add_render_attribute('class', 'alignfull');
 }
-
 
 // Open the block
 echo $block->before_render();
 
 $default_blocks = array(
     array('core/heading', array(
-		'level' => 1,
-		'placeholder' => 'Hero Heading',
-	)),
-	array('core/paragraph', array(
-		'placeholder' => 'Hero Text',
-	))
+        'level' => 1,
+        'placeholder' => 'Hero Heading',
+    )),
+    array('core/paragraph', array(
+        'placeholder' => 'Hero Text',
+    )),
 );
 ?>
 <div class="hero">
@@ -47,7 +45,7 @@ get_template_part(sprintf('blocks/%s/components/%s', $block->get_name(), 'image'
 <div class="hero__container">
 	<div class="hero__content">
 <InnerBlocks
-		template="<?php echo esc_attr( wp_json_encode( $default_blocks ) ); ?>"
+		template="<?php echo esc_attr(wp_json_encode($default_blocks)); ?>"
         className=""
     />
 </div>

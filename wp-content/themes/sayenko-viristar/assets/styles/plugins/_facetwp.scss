@@ -1,23 +1,77 @@
 // FacetWP
 
 .facetwp-facet {
-
-    opacity: 1!important;
+    opacity: 1 !important;
 
     select {
         width: 100%;
     }
 }
 
-.facetwp-type-fselect.is-loading .fs-label-wrap, 
-.facetwp-type-fselect.is-loading .fs-search, 
-.facetwp-type-fselect.is-loading .fs-no-results, 
+.facetwp-type-fselect .fs-label > span {
+}
+
+.facetwp-selections {
+    &:not(:empty) {
+        margin-top: var(--spacing-sm);
+    }
+
+    ul {
+        @include list-reset;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+
+        li {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+        }
+    }
+
+    .facetwp-selection-label {
+        @include visually-hidden;
+    }
+
+    .facetwp-selection-value {
+        background-image: none !important;
+        margin-right: 0 !important;
+        padding-right: 24px !important;
+
+        background-color: var(--green);
+        color: white;
+        display: inline-flex;
+        padding: var(--spacing-xs);
+
+        font-size: rem-calc(12);
+        font-weight: 600;
+
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            right: 5px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' xmlns:v='https://vecta.io/nano'%3E%3Cpath d='M14.441 12.294l9.645-9.645a1.48 1.48 0 0 0 0-2.146 1.48 1.48 0 0 0-2.143 0l-9.649 9.649L2.649.503c-.613-.61-1.532-.61-2.146 0s-.61 1.533 0 2.146l9.649 9.645-9.649 9.649a1.48 1.48 0 0 0 0 2.143 1.48 1.48 0 0 0 2.146 0l9.645-9.645 9.649 9.645c.613.613 1.529.613 2.143 0s.613-1.529 0-2.143l-9.645-9.649z' fill='%23ffffff' fill-rule='evenodd'/%3E%3C/svg%3E") !important;
+            background-size: 12px;
+            width: 12px;
+            height: 12px;
+        }
+    }
+}
+
+.facetwp-type-fselect.is-loading .fs-label-wrap,
+.facetwp-type-fselect.is-loading .fs-search,
+.facetwp-type-fselect.is-loading .fs-no-results,
 .facetwp-type-fselect.is-loading .fs-options {
-    opacity: 1!important;
+    opacity: 1 !important;
 }
 
 .facetwp-hidden {
-    display: none!important;
+    display: none !important;
 }
 
 .facetwp-label {
@@ -36,7 +90,6 @@
 .facetwp-label-recertification {
     @include visually-hidden;
 }
-
 
 .facetwp-facet {
     select {
@@ -64,10 +117,7 @@
         background-repeat: no-repeat;
     }
 
-    
-
     .fs-label-wrap {
-        
         border: 1px solid var(--dark-navy);
         .fs-label {
             padding-top: 15px;
@@ -87,24 +137,22 @@
     max-width: 100%;
 
     @include media-breakpoint-up(md) {
-        width: 300px;
+        width: 320px;
     }
 }
 
-
 .facetwp-type-fselect {
+    .fs-label-wrap {
+        border: 1px solid var(--navy);
+    }
 
-	.fs-label-wrap {
-		border: 1px solid var(--navy);
-	}
+    .fs-open .fs-label-wrap {
+        border-bottom: 0;
+    }
 
-	.fs-open .fs-label-wrap {
-		border-bottom: 0;
-	}
-
-	.fs-open .fs-dropdown {
-		border-top: 0;
-	}
+    .fs-open .fs-dropdown {
+        border-top: 0;
+    }
 
     .fs-dropdown {
         // position: relative;
@@ -122,9 +170,8 @@
         .fs-options {
             //overflow: visible;
             //max-height: none;
+            padding-block: var(--spacing-xs) var(--spacing-sm);
         }
-
-		padding-block: var(--spacing-xs) var(--spacing-sm);
     }
 
     .fs-label-wrap {
@@ -142,29 +189,32 @@
     background-color: var(--navy);
 }
 
-.facetwp-type-fselect .fs-option  {
-	padding: 3px 8px 4px 8px; /* compensates for the extra label line-height */
-  }
+.facetwp-type-fselect .fs-option {
+    padding: 3px 8px 4px 8px; /* compensates for the extra label line-height */
+}
 
-  .fs-wrap.multiple .fs-option .fs-checkbox i  {
-	bottom: auto !important;
-	top: 0.25em !important; /* sets the checkbox to the top instead of the middle */
-  }
+.fs-wrap.multiple .fs-option .fs-checkbox i {
+    bottom: auto !important;
+    top: 0.25em !important; /* sets the checkbox to the top instead of the middle */
+}
 
-  .facetwp-type-fselect .fs-option .fs-option-label {
-	white-space: normal !important; /* wraps labels */
-	word-break: normal; /* prevents words from breaking */
-	line-height: 1.3em; /* add line-height to wrapped labels */
+.facetwp-type-fselect .fs-option .fs-option-label {
+    white-space: normal !important; /* wraps labels */
+    word-break: normal; /* prevents words from breaking */
+    line-height: 1.3em; /* add line-height to wrapped labels */
 
-	font-size: rem-calc(12);
-  }
-
+    font-size: rem-calc(16);
+}
 
 .facetwp-type-date_range {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--spacing-sm);
-    margin-bottom: 0!important;
+    margin-bottom: 0 !important;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: 1fr 1fr;
+    }
 
     .facetwp-date {
         width: 100%;
@@ -174,9 +224,9 @@
 }
 
 .facetwp-facet-product_course_date_month {
-    margin-bottom: 0!important;
+    margin-bottom: 0 !important;
+    border: 1px solid var(--navy);
 }
-
 
 .facetwp-facet-product_course_finder .facetwp-checkbox {
     background: transparent;
@@ -195,11 +245,9 @@
     margin-top: var(--spacing-md);
 }
 
-
 .facetwp-wrap:has(.facetwp-facet.is-hidden) {
     display: none;
 }
-
 
 .facetwp-facet-pager_ {
     text-align: center;
@@ -220,9 +268,8 @@
     margin-top: 40px;
 }
 
-.facetwp-facet-product_course_finder {
-    .facetwp-checkbox.checked {
-        background-image: none!important;
-        font-weight: 700!important;
-    }
+.reset {
+    @include gb-button;
+    @include gb-button-sky;
+    display: none;
 }

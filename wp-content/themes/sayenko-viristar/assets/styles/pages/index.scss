@@ -1,16 +1,16 @@
-@import 'home';
-@import 'contact';
-@import 'blog';
-@import 'post';
-@import 'page';
-@import 'find-course';
-@import 'error404';
+@import "home";
+@import "contact";
+@import "blog";
+@import "post";
+@import "page";
+@import "find-course";
+@import "search-results";
+@import "error404";
 
 // CPT's
-@import 'archive-client';
-@import 'archive-testimonial';
+@import "archive-client";
+@import "archive-testimonial";
 
+@import "single-product";
 
-
-
-@import 'single-product';
+@import "cart";

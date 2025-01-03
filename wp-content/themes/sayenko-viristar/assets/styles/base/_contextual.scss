@@ -1,27 +1,68 @@
 // Contextual Colors
 
 .bg {
-	&--dark {
-	  background-color: var(--navy);
-	  
-	  > *:not([class^="wp-block-acf"]) {
-		color: white;
-	  }
-  
-	  [class^="wp-block-acf"] {
-		color: initial;
-	  }
-	}
-  
-	&--ultra-dark {
-	  background-color: var(--dark-navy);
-	  
-	  > *:not([class^="wp-block-acf"]) {
-		color: white;
-	  }
-  
-	  [class^="wp-block-acf"] {
-		color: initial;
-	  }
-	}
-  }
+    &--dark,
+    &--navy {
+        background-color: var(--navy);
+
+        > *:not([class^="wp-block-acf"]) {
+            color: white;
+
+            h3:not([class]) {
+                color: white;
+            }
+            h4:not([class]) {
+                color: white;
+            }
+
+            p:not([class]) {
+                color: white;
+            }
+        }
+
+        [class^="wp-block-acf"] {
+            color: initial;
+        }
+    }
+
+    &--ultra-dark,
+    &--dark-navy {
+        background-color: var(--dark-navy);
+
+        > *:not([class^="wp-block-acf"]) {
+            color: white;
+
+            h3:not([class]) {
+                color: white;
+            }
+            h4:not([class]) {
+                color: white;
+            }
+
+            p:not([class]) {
+                color: white;
+            }
+        }
+
+        [class^="wp-block-acf"] {
+            color: initial;
+        }
+    }
+}
+
+.bg--dark,
+.bg--ultra-dark,
+.bg-navy,
+.bg--dark-navy {
+    .gform_wrapper.gform_wrapper {
+        color: white;
+
+        .gfield_label {
+            color: white;
+        }
+
+        .gfield_required {
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "acf/section-links",
+    "title": "Section Links",
+    "description": "Section Links block",
+    "style": [
+        "file:./style.css"
+    ],
+    "script": [],
+    "category": "sayenko",
+    "icon": "",
+    "apiVersion": 2,
+    "keywords": [
+        "section",
+        "links"
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "index.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false
+    }
+}

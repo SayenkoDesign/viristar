@@ -38,6 +38,39 @@
             "bidirectional_target": [],
             "save_post_type": "",
             "min": ""
+        },
+        {
+            "key": "field_674621d3b8271",
+            "label": "Host Course Link",
+            "name": "host_course_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
+            "key": "field_67462be940f26",
+            "label": "Scholarships Link",
+            "name": "scholarships_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
@@ -65,5 +98,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1727449028
+    "modified": 1732652049
 }

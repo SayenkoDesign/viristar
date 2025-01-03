@@ -3,6 +3,25 @@
     "title": "Testimonial Details",
     "fields": [
         {
+            "key": "field_675b6088a5d3a",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_628b1b84534e8",
             "label": "Details",
             "name": "details",
@@ -67,6 +86,27 @@
             },
             "default_value": "",
             "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_673796c999138",
+            "label": "Logo Name",
+            "name": "logo_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -157,5 +197,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1726523204
+    "modified": 1734041823
 }

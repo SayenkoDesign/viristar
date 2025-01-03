@@ -1,17 +1,25 @@
 {
     "name": "acf/product-details",
-    "title": "Product Details",
+    "title": "Course Details Sidebar",
     "description": "Product Details block",
-    "style": "",
+    "style": [
+        "file:./style.css"
+    ],
     "script": "",
     "category": "sayenko",
     "icon": "",
     "apiVersion": 2,
-    "keywords": ["viristar", "product", "details"],
+    "keywords": [
+        "viristar",
+        "product",
+        "details"
+    ],
     "acf": {
-        "mode": "edit",
-		"renderTemplate": "index.php",
-        "postTypes": ["product"]
+        "mode": "preview",
+        "renderTemplate": "index.php",
+        "postTypes": [
+            "product"
+        ]
     },
     "styles": [],
     "supports": {
@@ -26,6 +34,5 @@
         "alignText": false,
         "fullHeight": false
     },
-    "attributes": {
-    }
+    "attributes": {}
 }

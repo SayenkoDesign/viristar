@@ -1,7 +1,29 @@
 {
     "key": "group_66abf66ce6be7",
     "title": "Block: Other Course Dates",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_671beef96560a",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
     "location": [
         [
             {
@@ -27,5 +49,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1727447958
+    "modified": 1729883907
 }

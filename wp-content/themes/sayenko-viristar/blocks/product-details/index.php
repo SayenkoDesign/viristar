@@ -14,14 +14,16 @@
 
 // Placeholder
 if ($is_preview) {
-	printf('<div class="acf-block-placeholder"><h3>%s</h3></div>', 'Product Details - view the product live to see the fields');
-	return;
+    printf('<div class="acf-block-placeholder"><h3>%s</h3></div>', 'Product Details - view the product live to see the fields');
+    return;
 }
 
 /* $course = new \App\Course( get_the_ID() );
-    
+
 $course_category = $course->get_category('slug'); */
 
 // wc_get_template_part('single-product/details/' . $course_category);
 
-wc_get_template_part('single-product/details');
+if (is_product()) {
+    wc_get_template_part('single-product/details');
+}

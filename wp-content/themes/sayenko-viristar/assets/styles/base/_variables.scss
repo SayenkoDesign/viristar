@@ -6,6 +6,9 @@
 
 :root {
 
+	--mobile-header-height: 50px;
+    --wp-admin-bar-height: 0px;
+
 	--viewport-width: calc(100vw - var(--scrollbarWidth));
 
 	--image-border-radius: 15%;

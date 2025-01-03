@@ -2,68 +2,70 @@
  * Forms
  * ======================================== */
 
- $form-border-color: #979797;
- $form-border-color-hover: var(--sky-blue);
- // Forms
+$form-border-color: #979797;
+$form-border-color-hover: var(--sky-blue);
+// Forms
 
+body .entry-content:not(:has(.woocommerce)) form {
+    input[type="text"],
+    input[type="url"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="password"],
+    input[type="file"],
+    textarea,
+    select {
+        font-size: rem-calc(16);
+        font-weight: 500;
+    }
 
- body form {
-	input[type="text"],
-	input[type="url"],
-	input[type="email"],
-	input[type="tel"],
-	input[type="number"],
-	input[type="password"],
-	input[type="file"],
-	textarea,
-	select {
-		font-size: rem-calc(16);
-		font-weight: 500;
-	}
+    input[type="text"],
+    input[type="url"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="password"] {
+        border: solid 1px $form-border-color;
+        padding: 16px !important;
 
-	input[type="text"],
-	input[type="url"],
-	input[type="email"],
-	input[type="tel"],
-	input[type="number"],
-	input[type="password"] {
-		border: solid 1px $form-border-color;
-		padding: 16px !important;
+        &:focus {
+            border-color: $form-border-color-hover !important;
+        }
+    }
 
-		&:focus {
-			border-color: $form-border-color-hover !important;
-		}
-	}
+    textarea {
+        border: 1px solid $form-border-color;
+        padding: 16px !important;
+        width: 100%;
 
-	textarea {
-		border: 1px solid $form-border-color;
-		padding: 16px !important;
-		width: 100%;
+        &:focus {
+            border-color: $form-border-color-hover !important;
+        }
+    }
 
-		&:focus {
-			border-color: $form-border-color-hover !important;
-		}
-	}
-
-	select {
+    select {
         padding: 16px 30px 16px 16px !important;
 
         -webkit-appearance: none;
 
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='11' viewBox='0 0 19 11' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.818542 0.373934C0.60998 0.594597 0.5 0.896848 0.5 1.1872C0.5 1.47754 0.60998 1.77921 0.818542 1.99973L8.97954 10.6291C9.18811 10.8497 9.46271 10.9659 9.74858 10.9659C10.0339 10.9659 10.3085 10.8497 10.5177 10.6291L18.6786 1.99973C19.1071 1.54664 19.1071 0.82702 18.6786 0.373934C18.2501 -0.0791529 17.5695 -0.0791529 17.141 0.373934L9.74858 8.19007L2.3562 0.373934C1.92767 -0.0672487 1.23581 -0.0672487 0.818542 0.373934Z' fill='%23003C71'/%3E%3C/svg%3E");
 
-		background-size: 19px 11px;
-		background-size: 16px 10px;
-        background-position:  calc(100% - 14px) 50%;
+        background-size: 19px 11px;
+        background-size: 16px 10px;
+        background-position: calc(100% - 14px) 50%;
         background-repeat: no-repeat;
     }
 
-	::placeholder {
+    ::placeholder {
         color: inherit !important;
         font-size: rem-calc(16) !important;
         line-height: 1.25 !important;
         padding-left: 0;
-		font-weight: 500;
+        font-weight: 500;
     }
 
- }
+    button {
+        border-radius: var(--btn-border-radius);
+    }
+}

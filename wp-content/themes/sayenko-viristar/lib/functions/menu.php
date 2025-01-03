@@ -1,22 +1,9 @@
 <?php
 // Menu
 
-add_filter( 'generate_search_placeholder', function() {
-    return '';
+add_filter('generate_search_placeholder', function () {
+    return 'Search Viristar';
 });
-
-add_filter('wp_nav_menu_items', 'so68759013_add_menu_item', 10, 2);
-
-function so68759013_add_menu_item($items, $args)
-{   
-    if( $args->theme_location == 'primary' ) {
-        $form = get_search_form(false);
-        // Remove the placeholder attribute from the form
-        $items = sprintf('<li class="menu-item mobile-menu-search-form">%s</li>', $form) . $items;
-    }
-
-    return $items;
-}
 
 /**
  *
@@ -30,7 +17,8 @@ function so68759013_add_menu_item($items, $args)
  */
 add_filter('walker_nav_menu_start_el', 'wrap_menu_item_text_in_span', 10, 4);
 
-function wrap_menu_item_text_in_span($item_output, $item, $depth, $args) {
+function wrap_menu_item_text_in_span($item_output, $item, $depth, $args)
+{
     // Check if this is the primary menu. Adjust 'primary' to your specific theme location
     if ($args->theme_location == 'primary' || $args->theme_location == 'secondary') {
         // Use regex to find the menu link text and wrap it in a span
@@ -39,7 +27,6 @@ function wrap_menu_item_text_in_span($item_output, $item, $depth, $args) {
 
     return $item_output;
 }
-
 
 /**
  * Adds an SVG icon to a specific menu item.
@@ -55,7 +42,8 @@ function wrap_menu_item_text_in_span($item_output, $item, $depth, $args) {
  */
 add_filter('walker_nav_menu_start_el', 'add_svg_to_specific_menu_item', 10, 4);
 
-function add_svg_to_specific_menu_item($item_output, $item, $depth, $args) {
+function add_svg_to_specific_menu_item($item_output, $item, $depth, $args)
+{
     // Define your SVG icon
     $svg_icon = '<svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 	<g id="Group">
@@ -68,7 +56,7 @@ function add_svg_to_specific_menu_item($item_output, $item, $depth, $args) {
     // Check if the current item has the class 'special'
     if (in_array('menu-item-user', $item->classes)) {
         // Append the SVG icon to the item
-        $item_output = str_replace( '</a>', $svg_icon . '</a>', $item_output);
+        $item_output = str_replace('</a>', $svg_icon . '</a>', $item_output);
     }
 
     return $item_output;

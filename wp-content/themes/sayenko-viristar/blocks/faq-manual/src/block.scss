@@ -1,9 +1,16 @@
 // Styles
-@import 'assets/styles/block';
+@import "assets/styles/block";
+
+.wp-block-acf-faq.acf-block-preview {
+    min-height: 100px;
+    background-color: var(--light-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 .wp-block-acf-faq-manual {
-
-
     .wrap {
         margin: 0 auto;
         max-width: 1000px;
@@ -14,19 +21,17 @@
         height: auto !important;
 
         &-item {
-
             background-color: white;
             border-radius: 5px;
             box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.25);
-            
+
             font-weight: normal;
             margin-bottom: 1rem;
-            
 
             .accordion-header {
                 margin-bottom: 0;
             }
-            
+
             button {
                 background-color: transparent;
                 color: var(--navy);
@@ -53,7 +58,7 @@
                     content: "\002B";
                 }
 
-                &[aria-expanded=true]:before {
+                &[aria-expanded="true"]:before {
                     content: "\2212";
                 }
 
@@ -63,12 +68,11 @@
                 } */
             }
 
-            &:has(.accordion-button[aria-expanded=true]) {
+            &:has(.accordion-button[aria-expanded="true"]) {
                 margin-bottom: 2rem;
                 outline: 2px solid var(--navy);
             }
         }
-
 
         &-body {
             max-width: 1100px;
@@ -79,7 +83,6 @@
             }
         }
     }
-
 
     .filter-button-group {
         list-style-type: none;
@@ -118,15 +121,14 @@
             }
 
             &.active {
-
                 span {
                     padding: 6px 20px;
                 }
             }
 
             a {
-                color: #252B33;
-                
+                color: #252b33;
+
                 font-size: 1rem;
                 letter-spacing: 0;
                 line-height: 1.1875;

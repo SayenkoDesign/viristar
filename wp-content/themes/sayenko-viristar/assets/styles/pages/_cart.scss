@@ -1,0 +1,10 @@
+// Cart
+
+
+@media screen and (max-width: 768px) {
+	.woocommerce table.cart td.actions .coupon .input-text, 
+	.woocommerce table.cart td.actions .coupon input,
+	.woocommerce table.cart td.actions .coupon button {
+		width: 100%!important;
+	}
+}

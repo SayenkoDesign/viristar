@@ -16,6 +16,22 @@ use \App\ACF_Block;
 
 $block = new ACF_Block($block, $content, $is_preview);
 
+$layout = get_field('layout') ?: 'Default';
+$layout = strtolower($layout);
+$layout = 'layout-' . $layout;
+
+$block->add_render_attribute('class', $layout);
+
+$arrows = get_field('arrows') ?: 'Show';
+$arrows = strtolower($arrows);
+
+$block->add_render_attribute('class', 'arrows-' . $arrows);
+
+$pagination_color = get_field('pagination_color') ?: 'Dark';
+$pagination_color = strtolower($pagination_color);
+
+$block->add_render_attribute('class', 'pagination-' . $pagination_color);
+
 // Open the block
 echo $block->before_render();
 

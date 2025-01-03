@@ -2,6 +2,7 @@
 /*
 Header customization
  */
+
 add_filter('body_class', function ($classes) {
     // Sticky Header
     $sticky_header = get_field('sticky_header');
@@ -16,23 +17,20 @@ add_filter('body_class', function ($classes) {
     return $classes;
 }, 99);
 
-
-add_action( 'wp_enqueue_scripts', 'generate_dequeue_secondary_nav_mobile', 999 );
-function generate_dequeue_secondary_nav_mobile() {
-    wp_dequeue_style( 'generate-secondary-nav-mobile' );
+add_action('wp_enqueue_scripts', 'generate_dequeue_secondary_nav_mobile', 999);
+function generate_dequeue_secondary_nav_mobile()
+{
+    wp_dequeue_style('generate-secondary-nav-mobile');
 }
 
-
 /* add_action('generate_before_header', function() {
-	echo '<div class="site-header-wrapper">';
+echo '<div class="site-header-wrapper">';
 }, 1);
 
 add_action('generate_after_header', function() {
-	echo '</div>';
+echo '</div>';
 });
  */
-
-
 
 add_action('wp', function () {
     if (generate_get_option('nav_search_modal')) {
@@ -41,11 +39,11 @@ add_action('wp', function () {
     }
 }, 20);
 
-add_filter('wp_nav_menu_items', function($nav, $args) {
-	// If our primary menu is set, add the search icon.
+add_filter('wp_nav_menu_items', function ($nav, $args) {
+    // If our primary menu is set, add the search icon.
     if ('secondary' === $args->theme_location && generatepress_wc_get_setting('cart_menu_item')) {
-       
-		if (!class_exists('WooCommerce')) {
+
+        if (!class_exists('WooCommerce')) {
             return;
         }
 

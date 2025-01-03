@@ -1,6 +1,6 @@
 {
     "key": "group_6229fbdbd88fb",
-    "title": "Product (Course Instance)",
+    "title": "Product (CI)",
     "fields": [
         {
             "key": "field_66a4207f48983",
@@ -125,6 +125,27 @@
             "min": ""
         },
         {
+            "key": "field_6740cd595fdf7",
+            "label": "Course Title (Override)",
+            "name": "course_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "If empty defaults to the name of the Course Type",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6229fd5d670ba",
             "label": "Mode",
             "name": "mode",
@@ -159,165 +180,8 @@
             "min": ""
         },
         {
-            "key": "field_66a3effd67a49",
-            "label": "Start Date",
-            "name": "start_date",
-            "aria-label": "",
-            "type": "date_time_picker",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "display_format": "F j, Y g:i a",
-            "return_format": "Y-m-d H:i:s",
-            "first_day": 1,
-            "placeholder": "",
-            "min_date": "",
-            "max_date": "",
-            "min_time": "",
-            "max_time": "",
-            "no_weekends": 0,
-            "min_hour": "",
-            "max_hour": "",
-            "min_min": "",
-            "max_min": "",
-            "min_sec": "",
-            "max_sec": "",
-            "required_message": ""
-        },
-        {
-            "key": "field_66a3f01c67a4a",
-            "label": "End Date",
-            "name": "end_date",
-            "aria-label": "",
-            "type": "date_time_picker",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "display_format": "F j, Y g:i a",
-            "return_format": "Y-m-d H:i:s",
-            "first_day": 1,
-            "placeholder": "",
-            "min_date": "",
-            "max_date": "",
-            "min_time": "",
-            "max_time": "",
-            "no_weekends": 0,
-            "min_hour": "",
-            "max_hour": "",
-            "min_min": "",
-            "max_min": "",
-            "min_sec": "",
-            "max_sec": "",
-            "required_message": ""
-        },
-        {
-            "key": "field_66a3f02c67a4b",
-            "label": "Registration Deadline",
-            "name": "registration_deadline",
-            "aria-label": "",
-            "type": "date_time_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_66e4b47a53825",
-                        "operator": "!=",
-                        "value": "Risk Management"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "display_format": "F j, Y g:i a",
-            "return_format": "d\/m\/Y g:i a",
-            "first_day": 1,
-            "placeholder": "",
-            "min_date": "",
-            "max_date": "",
-            "min_time": "",
-            "max_time": "",
-            "no_weekends": 0,
-            "min_hour": "",
-            "max_hour": "",
-            "min_min": "",
-            "max_min": "",
-            "min_sec": "",
-            "max_sec": "",
-            "allow_in_bindings": 1
-        },
-        {
-            "key": "field_66aac66533d56",
-            "label": "Language",
-            "name": "language",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_66a3ef9e32d8a",
-            "label": "Location",
-            "name": "location",
-            "aria-label": "",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "location"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 0,
-            "max": "",
-            "save_custom": 0,
-            "save_post_status": "publish",
-            "acfe_add_post": 0,
-            "acfe_edit_post": 0,
-            "acfe_bidirectional": {
-                "acfe_bidirectional_enabled": "0"
-            },
-            "allow_null": 0,
-            "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": [],
-            "save_post_type": "",
-            "min": ""
-        },
-        {
             "key": "field_652df6f05172d",
-            "label": "Timezone",
+            "label": "Reference Time Zone",
             "name": "timezone",
             "aria-label": "",
             "type": "select",
@@ -758,6 +622,7 @@
             "append": "",
             "required_message": "",
             "allow_null": 0,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ajax": 0,
             "placeholder": "",
@@ -766,33 +631,44 @@
             "min": ""
         },
         {
-            "key": "field_66aac414edbb2",
-            "label": "Live Sessions",
-            "name": "live_sessions",
+            "key": "field_66a3effd67a49",
+            "label": "Start Date (in Reference Time Zone)",
+            "name": "start_date",
             "aria-label": "",
-            "type": "textarea",
+            "type": "date_time_picker",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "acfe_textarea_code": 0,
-            "maxlength": "",
-            "rows": "",
+            "display_format": "F j, Y g:i a",
+            "return_format": "Y-m-d H:i:s",
+            "first_day": 1,
             "placeholder": "",
-            "new_lines": "wpautop"
+            "min_date": "",
+            "max_date": "",
+            "min_time": "",
+            "max_time": "",
+            "no_weekends": 0,
+            "min_hour": "",
+            "max_hour": "",
+            "min_min": "",
+            "max_min": "",
+            "min_sec": "",
+            "max_sec": "",
+            "required_message": "",
+            "allow_in_bindings": 1
         },
         {
-            "key": "field_66a3f2a167a4c",
-            "label": "Sessions",
-            "name": "sessions",
+            "key": "field_6733bb93c18c9",
+            "label": "Start Date Unix Timestamp",
+            "name": "start_date_unix_timestamp",
             "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
+            "type": "text",
+            "instructions": "This field is dynamically populated based on the \"Disable buy now Button and Start Date field. This can't be edited and does not need to be.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -801,19 +677,51 @@
                 "id": ""
             },
             "default_value": "",
-            "acfe_textarea_code": 0,
             "maxlength": "",
-            "rows": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
-            "new_lines": ""
+            "prepend": "",
+            "append": ""
         },
         {
-            "key": "field_66aacd6e2879c",
-            "label": "Session Details",
-            "name": "session_details",
+            "key": "field_66a3f01c67a4a",
+            "label": "End Date (in Reference Time Zone)",
+            "name": "end_date",
             "aria-label": "",
-            "type": "textarea",
+            "type": "date_time_picker",
             "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y g:i a",
+            "return_format": "Y-m-d H:i:s",
+            "first_day": 1,
+            "placeholder": "",
+            "min_date": "",
+            "max_date": "",
+            "min_time": "",
+            "max_time": "",
+            "no_weekends": 0,
+            "min_hour": "",
+            "max_hour": "",
+            "min_min": "",
+            "max_min": "",
+            "min_sec": "",
+            "max_sec": "",
+            "required_message": "",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_6733b40a8aba7",
+            "label": "Registration Deadline (in Reference Time Zone)",
+            "name": "registration_deadline",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "This is displayed on Course Instance, but does not provide any logic.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -821,16 +729,124 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "acfe_textarea_code": 0,
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": "wpautop"
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large",
+            "sub_fields": [
+                {
+                    "key": "field_6733b40a8aba8",
+                    "label": "When",
+                    "name": "when",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Never": "Never",
+                        "Before": "Before",
+                        "After": "After"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "max": "",
+                    "prepend": "",
+                    "append": "",
+                    "allow_null": 0,
+                    "allow_in_bindings": 1,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": "",
+                    "min": ""
+                },
+                {
+                    "key": "field_6733b40a8aba9",
+                    "label": "Time",
+                    "name": "time",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6733b40a8aba8",
+                                "operator": "!=",
+                                "value": "Never"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 24,
+                    "min": "",
+                    "max": "",
+                    "allow_in_bindings": 1,
+                    "placeholder": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6733b40a8abaa",
+                    "label": "Units",
+                    "name": "units",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6733b40a8aba8",
+                                "operator": "!=",
+                                "value": "Never"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Hours": "Hours",
+                        "Days": "Days"
+                    },
+                    "default_value": "Hours",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "max": "",
+                    "prepend": "",
+                    "append": "",
+                    "allow_null": 0,
+                    "allow_in_bindings": 1,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "allow_custom": 0,
+                    "search_placeholder": "",
+                    "min": ""
+                }
+            ]
         },
         {
             "key": "field_62566bef9334d",
-            "label": "Disable Buy Now",
+            "label": "Disable Buy Now (in Reference Time Zone)",
             "name": "disable_buy_now",
             "aria-label": "",
             "type": "group",
@@ -845,6 +861,9 @@
             "layout": "block",
             "acfe_seamless_style": 0,
             "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large",
             "sub_fields": [
                 {
                     "key": "field_62a81af54f155",
@@ -887,7 +906,15 @@
                     "type": "number",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_62a81af54f155",
+                                "operator": "!=",
+                                "value": "Never"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -896,6 +923,7 @@
                     "default_value": 24,
                     "min": "",
                     "max": "",
+                    "allow_in_bindings": 1,
                     "placeholder": "",
                     "step": "",
                     "prepend": "",
@@ -909,7 +937,15 @@
                     "type": "select",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_62a81af54f155",
+                                "operator": "!=",
+                                "value": "Never"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -926,6 +962,7 @@
                     "prepend": "",
                     "append": "",
                     "allow_null": 0,
+                    "allow_in_bindings": 1,
                     "ui": 0,
                     "ajax": 0,
                     "placeholder": "",
@@ -933,10 +970,129 @@
                     "search_placeholder": "",
                     "min": ""
                 }
+            ]
+        },
+        {
+            "key": "field_66aac66533d56",
+            "label": "Language",
+            "name": "language",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66a3ef9e32d8a",
+            "label": "Location",
+            "name": "location",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "location"
             ],
-            "acfe_group_modal_close": 0,
-            "acfe_group_modal_button": "",
-            "acfe_group_modal_size": "large"
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "max": "",
+            "save_custom": 0,
+            "save_post_status": "publish",
+            "acfe_add_post": 0,
+            "acfe_edit_post": 0,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": [],
+            "save_post_type": "",
+            "min": ""
+        },
+        {
+            "key": "field_66aac414edbb2",
+            "label": "Live Sessions",
+            "name": "live_sessions",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "This is the Session time: Example: 11:00 am Singapore time UTC+8. Times and dates based on Singapore time, UTC+8",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "acfe_textarea_code": 0,
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_66a3f2a167a4c",
+            "label": "Sessions",
+            "name": "sessions",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "This is a list of individual sessions. Example:\r\n\r\nWednesday, Feb 5, 11:00 a.m. UTC+8\r\nWednesday, Feb 12, 11:00 a.m. UTC+8\r\nWednesday, Feb 19, 11:00 a.m. UTC+8\r\nWednesday, Feb 26, 11:00 a.m. UTC+8\r\nWednesday, Mar 5 11:00 a.m. UTC+8",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "acfe_textarea_code": 0,
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_66aacd6e2879c",
+            "label": "Session Details",
+            "name": "session_details",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "acfe_textarea_code": 0,
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": "",
+            "placeholder": "",
+            "new_lines": "wpautop"
         },
         {
             "key": "field_6238199479974",
@@ -1003,15 +1159,7 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_66e4b47a53825",
-                        "operator": "==",
-                        "value": "Wilderness Medicine"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -1032,15 +1180,7 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_66e4b47a53825",
-                        "operator": "==",
-                        "value": "Wilderness Medicine"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -1059,7 +1199,7 @@
             "name": "cost",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "The cost field overrides the WooCommerce price field. This field does not format currency and requires you to provide the \"USD\" as other currencies can be displayed.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1069,9 +1209,49 @@
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_67462a1912abc",
+            "label": "Show Scholarships Link",
+            "name": "show_scholarships_link",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "style": ""
+        },
+        {
+            "key": "field_67462b8412abd",
+            "label": "Scholarship Link Override",
+            "name": "scholarship_link_override",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_66a3f3b267a50",
@@ -1121,7 +1301,7 @@
             "name": "external_product_url",
             "aria-label": "",
             "type": "url",
-            "instructions": "",
+            "instructions": "This field will remove the on site purchase and redirect \"enroll now\" to an external URL.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1130,6 +1310,7 @@
                 "id": ""
             },
             "default_value": "",
+            "allow_in_bindings": 1,
             "placeholder": ""
         },
         {
@@ -1174,6 +1355,23 @@
             "style": ""
         },
         {
+            "key": "field_674621762fd88",
+            "label": "Host Link Override",
+            "name": "host_course_link_override",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Requires show host link be checked, let's you override the default page URL",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 1
+        },
+        {
             "key": "field_66eb46ef25d48",
             "label": "Product Lat",
             "name": "product_lat",
@@ -1206,6 +1404,24 @@
             },
             "default_value": "",
             "allow_in_bindings": 0
+        },
+        {
+            "key": "field_6740cd025fdf6",
+            "label": "Full course Details (Override)",
+            "name": "full_course_details",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "If empty links to the Course",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "placeholder": ""
         },
         {
             "key": "field_66eb0d0933557",
@@ -1251,5 +1467,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1727448354
+    "modified": 1734027934
 }

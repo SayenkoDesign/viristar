@@ -4,10 +4,10 @@
     "fields": [
         {
             "key": "field_669f30dba2231",
-            "label": "Category",
-            "name": "category",
+            "label": "Course Type",
+            "name": "course_type",
             "aria-label": "",
-            "type": "acfe_taxonomies",
+            "type": "post_object",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,25 +16,28 @@
                 "class": "",
                 "id": ""
             },
-            "taxonomy": [
-                "product_cat"
+            "post_type": [
+                "course"
             ],
-            "field_type": "select",
-            "default_value": [],
-            "return_format": "name",
-            "allow_null": 0,
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
             "multiple": 0,
-            "ui": 0,
-            "choices": [],
-            "ajax": 0,
-            "placeholder": "",
-            "search_placeholder": "",
-            "layout": "",
-            "toggle": 0,
-            "allow_custom": 0,
-            "other_choice": 0,
-            "min": "",
-            "max": ""
+            "max": "",
+            "save_custom": 0,
+            "save_post_status": "publish",
+            "acfe_add_post": 0,
+            "acfe_edit_post": 0,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": [],
+            "save_post_type": "",
+            "min": ""
         }
     ],
     "location": [
@@ -62,5 +65,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1723231689
+    "modified": 1730323214
 }

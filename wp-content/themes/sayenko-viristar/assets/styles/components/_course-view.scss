@@ -1,37 +1,39 @@
 // Course View
 
 .course-view-wrap {
-	
-	display: inline-grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 18px;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
 
-	> span {
+    > span {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
 
-		cursor: pointer;
-		display: flex;
-		align-items: center;
+        color: var(--disabled);
+        font-weight: 700;
+        letter-spacing: 1.02px;
+        font-size: rem-calc(16);
+        text-transform: uppercase;
 
-		color: var(--disabled);
-		font-weight: 700;
-		letter-spacing: 1.02px;
-		font-size: rem-calc(20);
-		text-transform: uppercase;
-		
-		&.active {
-			color: var(--action);
-		}
-	}
+        @include media-breakpoint-up(lg) {
+            font-size: rem-calc(20);
+        }
 
-	svg {
-		margin-right: 10px;
-	}
+        &.active {
+            color: var(--action);
+        }
+    }
 
-	.course-view__list.active {
-		color: #D86E2E;
+    svg {
+        margin-right: 10px;
+    }
 
-		svg {
-			color: var(--action);
-		}
-	}
+    .course-view__list.active {
+        color: #d86e2e;
+
+        svg {
+            color: var(--action);
+        }
+    }
 }

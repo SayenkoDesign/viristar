@@ -17,25 +17,23 @@ use \App\ACF_Block;
 $block = new ACF_Block($block, $content, $is_preview, $context);
 
 /* $block->add_render_attribute(
-	'block', 'class', [
-	   'alignfull',
-		]
-	);
+'block', 'class', [
+'alignfull',
+]
+);
  */
 
 // Placeholder
 if ($is_preview) {
-	printf('<div class="acf-block-placeholder"><div id="map"><h3>%s</h3><p>Click to Edit</p></div></div>', $block->get_title());
-	return;
+    printf('<div class="acf-block-placeholder"><div id="map"><h3>%s</h3><p>Click to Edit</p></div></div>', $block->get_title());
+    return;
 }
 
-
 $block->add_render_attribute(
-	'class', [
-	   'frontend',
-		]
-	);
-
+    'class', [
+        'frontend',
+    ]
+);
 
 // Open the block
 echo $block->before_render();
@@ -66,6 +64,22 @@ if ($location_id) {
             var marker = new google.maps.Marker({
                 position: location,
                 map: map
+            });
+
+            // Add click event listener to the map
+            /* map.addListener('click', function() {
+                // Create Google Maps directions URL
+                var googleMapsUrl = 'https://www.google.com/maps/dir/?api=1&destination=' +
+                    location.lat + ',' + location.lng;
+                // Open in new tab
+                window.open(googleMapsUrl, '_blank');
+            }); */
+
+            // Add click event listener to the marker
+            marker.addListener('click', function() {
+                var googleMapsUrl = 'https://www.google.com/maps/dir/?api=1&destination=' +
+                    location.lat + ',' + location.lng;
+                window.open(googleMapsUrl, '_blank');
             });
         }
         </script>

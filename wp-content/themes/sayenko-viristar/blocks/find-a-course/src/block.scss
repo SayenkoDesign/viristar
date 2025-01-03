@@ -10,11 +10,25 @@
     text-align: center;
 }
 
-.wp-block-acf-find-a-course {
-    .filters {
+.wp-block-acf-find-a-course .courses {
+    display: none;
+}
+.wp-block-acf-find-a-course.facetwp-visible .courses {
+    display: block;
+}
 
+.wp-block-acf-find-a-course {
+    .filters-wrapper {
+        text-align: center;
+    }
+
+    .filters {
         margin-inline: auto;
-        
+
+        .facetwp-label {
+            @include visually-hidden;
+        }
+
         .fwp-submit {
             background-color: var(--action);
 
@@ -44,7 +58,7 @@
             }
         }
         @include media-breakpoint-up(lg) {
-            display: flex;
+            display: inline-flex;
             justify-content: space-between;
             gap: 18px;
             padding: 0 18px;
@@ -59,6 +73,7 @@
                 margin-bottom: 0;
                 flex: 0 1 auto;
                 padding: 11px 0 11px 0;
+                margin-top: 0;
             }
 
             .facetwp-dropdown {
@@ -71,10 +86,10 @@
             }
 
             .facetwp-facet-product_course {
-                width: 14ch;
+                width: 19ch;
             }
 
-            .facetwp-facet-product_course_mode {
+            .facetwp-facet-product_course_mode_select {
                 width: 19ch;
             }
 
@@ -90,7 +105,6 @@
 }
 
 .find-a-course {
-
     position: relative;
 
     img {
@@ -104,7 +118,11 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(180deg, #FDFCFA 0.27%, rgba(255, 255, 255, 0.00) 87.51%);
+        background: linear-gradient(
+            180deg,
+            #fdfcfa 0.27%,
+            rgba(255, 255, 255, 0) 87.51%
+        );
     }
 
     .view-all {

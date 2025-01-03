@@ -1,72 +1,71 @@
 // Post
 
-body:not(.single-post) {
+body:not(.single-post):not(.search-results) article.post,
+.single-post .related-posts article {
+    background-color: white;
+    box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.25);
 
-    article.post {
+    .inside-article {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 
-		background-color: white;
-			box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.25);
+    .post-image {
+        margin: 0;
 
-		.inside-article {
-			
-			height: 100%;
-			display: flex;
-			flex-direction: column;
-		}
+        img {
+            aspect-ratio: 1.33;
+            object-fit: cover;
+            object-position: center top;
+            width: 100%;
+            display: block;
+        }
 
-
-        .post-image {
-			margin: 0;
+        // fallback
+        @supports not (aspect-ratio: auto) {
+            padding-top: 75%;
+            height: 0;
+            position: relative;
+            overflow: hidden;
 
             img {
-				aspect-ratio: 1.33;
-				object-fit: cover;
-				object-position: center top;
-				width: 100%;
-				display: block;
-			}
-	
-			// fallback
-			@supports not (aspect-ratio: auto) {
-				padding-top: 75%;
-				height: 0;
-				position: relative;
-				overflow: hidden;
-	
-				img {
-					position: absolute;
-					transform: translate(-50%, -50%);
-					left: 50%;
-					top: 50%;
-					width: auto;
-					max-width: 100%;
-					height: auto;
-				}
-			}
+                position: absolute;
+                transform: translate(-50%, -50%);
+                left: 50%;
+                top: 50%;
+                width: auto;
+                max-width: 100%;
+                height: auto;
+            }
         }
+    }
 
-        .post-content {
-            padding-block: 42px 26px;
-			padding-inline: 24px;
-			height: 100%;
-			
+    .post-content {
+        padding-block: 42px 26px;
+        padding-inline: 24px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .entry-title {
+        a {
+            color: var(--navy);
         }
+    }
 
-		.entry-title {
-			a {
-				color: var(--navy);
-			}
-		}
+    .entry-header {
+        width: auto !important;
+    }
 
-		.link-container {
-			margin-top: auto;
-			padding-top: 30px;
+    .link-container {
+        margin-top: auto;
+        padding-top: 30px;
 
-			.gb-button-link {
-				font-size: rem-calc(16);
-				font-weight: 400;
-			}
-		}
-		
+        .gb-button-link {
+            font-size: rem-calc(16);
+            font-weight: 400;
+        }
     }
 }

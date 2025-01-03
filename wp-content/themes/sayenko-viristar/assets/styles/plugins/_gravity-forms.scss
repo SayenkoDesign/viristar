@@ -1,18 +1,13 @@
 // Gravity Forms
-@use '../utilities/functions' as *;
-@use '../utilities/mixins' as *;
-
+@use "../utilities/functions" as *;
+@use "../utilities/mixins" as *;
 
 body img.gform_ajax_spinner {
-	display: none !important;
+    display: none !important;
 }
 
 body .gform_wrapper.gform_wrapper {
-
     --gf-local-bg-color: transparent;
-
-    margin: 0 auto;
-    max-width: 660px;
 
     .gfield_label {
         font-size: 1rem;
@@ -30,6 +25,26 @@ body .gform_wrapper.gform_wrapper {
         }
     }
 
+    .gform_next_button,
+    .gform_previous_button {
+        @include gb-button;
+        --btn-background: var(--action) !important;
+        --btn-text-color: white !important;
+
+        &:hover,
+        &:focus,
+        &:active {
+            --btn-background-hover: var(--accent) !important;
+            --btn-text-color-hover: white !important;
+        }
+        min-width: 0;
+    }
+
+    .gform_save_link {
+        border-radius: 8px;
+        margin-left: 8px !important;
+    }
+
     .gform_confirmation_wrapper {
         margin-bottom: 20px;
     }
@@ -41,7 +56,7 @@ body .gform_wrapper.gform_wrapper {
             text-align: center;
 
             a {
-                color: var(--green);
+                // color: var(--green);
                 text-decoration: none;
             }
         }
@@ -49,7 +64,6 @@ body .gform_wrapper.gform_wrapper {
 }
 
 body .gform_wrapper .newsletter {
-
     .ginput_container_email input {
         background: white;
         border: none;
@@ -58,36 +72,17 @@ body .gform_wrapper .newsletter {
     }
 
     .gform_footer {
-        padding: 0!important;
-        margin: 0!important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     .gform-button {
         padding-block: 15.5px;
     }
-
 }
 
 body .gform_wrapper.gform_validation_error .newsletter {
-   #field_submit {
+    #field_submit {
         align-self: flex-start;
-   }
-}
-
-.bg--ultra-dark, 
-.bg--ultra-dark {
-
-    .gform_wrapper.gform_wrapper {
-        color: white;
-
-        .gfield_label {
-            color: white;
-        }
-
-        .gfield_required {
-            color: white;
-        }
-
     }
-
 }

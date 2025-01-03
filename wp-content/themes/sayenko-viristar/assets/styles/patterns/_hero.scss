@@ -1,0 +1,8 @@
+// Hero
+
+.hero {
+    h1,
+    p {
+        color: white; // needs to be outside of blocks so that it can be overwritten by GB inline styles
+    }
+}

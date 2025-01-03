@@ -1,0 +1,50 @@
+// Woocommerce
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+    border-radius: var(--btn-border-radius) !important;
+}
+
+.woocommerce {
+    button[name="update_cart"] {
+        color: white !important;
+    }
+}
+
+.checkout_coupon.woocommerce-form-coupon {
+    max-width: 500px;
+}
+
+.woocommerce-error {
+    li::before {
+        display: none !important;
+    }
+
+    a {
+        color: white;
+    }
+}
+
+.woocommerce-input-wrapper {
+    .select2-selection__rendered {
+        line-height: 42px !important;
+    }
+    .select2-container .select2-selection--single {
+        height: 46px !important;
+    }
+    .select2-selection__arrow {
+        height: 45px !important;
+    }
+}
+
+.woocommerce-cart .return-to-shop {
+    display: none !important;
+}
+
+.woocommerce-checkout {
+    .woocommerce-billing-fields__field-wrapper {
+        margin-bottom: 40px;
+    }
+}

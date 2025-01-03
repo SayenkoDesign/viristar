@@ -1,8 +1,8 @@
 <?php
-$image = get_post_thumbnail_id( get_the_ID());
+$image = get_post_thumbnail_id(get_the_ID());
 
-if(empty($image)) {
-	return;
+if (empty($image)) {
+    return;
 }
 
 $image_position = [];
@@ -26,15 +26,12 @@ if (!empty($image_position)) {
     $image_styles = ' style="' . join(' ', $image_position) . '"';
 }
 
-
-
-
 ?>
 <div class="hero">
-<div class="hero__background"<?php echo $image_styles;?>>
-<figure class="hero-image"> 
-<?php	
-	echo wp_get_attachment_image( $image, 'wide');
+<div class="hero__background"<?php echo $image_styles; ?>>
+<figure class="hero-image">
+<?php
+echo wp_get_attachment_image($image, 'image-1920');
 ?>
 </figure>
 </div>

@@ -1,56 +1,66 @@
 <?php
 /*
  * Course Finder
-*/
+ */
 
 namespace App;
 
-class Course_Finder {
+class Course_Finder
+{
 
-    function init() {
+    function init()
+    {
         // Do some initial things here
-        
+
     }
 
-    function render() {
+    function render()
+    {
 
         ?>
         <div class="courses">
-            <div class="courses__sidebar sidebar">
-                <div class="sidebar__title" aria-hidden="true">
-                    <h3>Find a Course</h3>
+            <div class="courses__sidebar sidebar offcanvas-lg offcanvas-start" data-bs-scroll="true" id="left-sidebar" tabindex="-1" aria-labelledby="offcanvasLeftsidebar">
+                <div class="offcanvas-header">
+                    <h3 class="offcanvas-title" id="offcanvasLeftsidebar">Filters</h3>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#left-sidebar" aria-label="Close"></button>
                 </div>
+
+                <div class="sidebar__title">
+                    <h3 aria-hidden="true">Find a Course</h3>
+                </div>
+
                 <div class="sidebar__content">
                 <?php
 
-                    $this->get_facets();
-                ?>
+        $this->get_facets();
+        ?>
                 </div>
             </div>
             <div class="courses__list">
             <?php
 
-            get_template_part('template-parts/course-view');
-            get_template_part('template-parts/course-grid');
+        get_template_part('template-parts/course-view');
 
-            if(function_exists('facetwp_display')) {
-                echo facetwp_display('facet', 'pager_');
-            }
-            ?>
+        echo facetwp_display('selections');
+
+        get_template_part('template-parts/course-grid');
+
+        if (function_exists('facetwp_display')) {
+            echo facetwp_display('facet', 'pager_');
+        }
+        ?>
             </div>
         </div>
         <?php
-    }
+}
 
+    function get_facets()
+    {
 
-    function get_facets() {
-
-        if(! function_exists('facetwp_display')) {
+        if (!function_exists('facetwp_display')) {
             return;
 
         }
-        
-        // echo facetwp_display('facet', 'product_course_category');
 
         echo facetwp_display('facet', 'product_course_finder');
 
@@ -59,43 +69,40 @@ class Course_Finder {
         $items = [];
 
         $items[] = [
-			'title' => 'By Range',
-			'content' => facetwp_display('facet', 'product_course_date_range')
-		];
+            'title' => 'By Range',
+            'content' => facetwp_display('facet', 'product_course_date_range'),
+        ];
 
         $items[] = [
-			'title' => 'By Month',
-			'content' => facetwp_display('facet', 'product_course_date_month')
-		];
+            'title' => 'By Month',
+            'content' => '<p style="font-size: 13px;">Choose the month in which the course begins. <span id="clear-by-range-facet" class="facetwp-clear-button">Clear By Range</span>
+</p>' . facetwp_display('facet', 'product_course_date_month'),
+        ];
 
         $tabs = new \App\Tabs($items);
 
         $tabs->render();
 
-
         echo facetwp_display('facet', 'product_course_location');
-
 
         echo facetwp_display('facet', 'recertification');
 
         echo '<a class="reset" href="javascript:;" onclick="FWP.reset()">Reset</a>';
-                
+
     }
 
-    function get_facet_misc() {
+    function get_facet_misc()
+    {
 
-        if(! function_exists('facetwp_display')) {
+        if (!function_exists('facetwp_display')) {
             return;
 
         }
 
         echo facetwp_display('selections');
-        echo '<a class="facetwp-reset" href="javascript:;" onclick="FWP.reset()">Clear</a>';
+        echo '<button class="reset">Clear</button>';
     }
 
-
-    
-    
 }
 
 new Course_Finder();

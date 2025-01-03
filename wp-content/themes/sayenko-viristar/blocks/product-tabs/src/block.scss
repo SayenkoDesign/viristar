@@ -1,12 +1,11 @@
 // Styles
 @use "assets/styles/block" as *;
 
-.wp-block-acf-product-tabs.acf-block-preview  {
+.wp-block-acf-product-tabs.acf-block-preview {
     min-height: 100px;
     position: relative;
-    margin-left: auto!important;
-    margin-right: auto!important;
-
+    margin-left: auto !important;
+    margin-right: auto !important;
 
     &:before {
         border: 1px dashed #000;
@@ -22,12 +21,11 @@
     }
 
     .tab-container {
-
         .tab-title {
             background-color: var(--navy);
             padding: 10px 30px;
             color: white;
-            margin-bottom: 0!important;
+            margin-bottom: 0 !important;
         }
     }
 
@@ -42,12 +40,29 @@
     }
 }
 
-.wp-block-acf-product-tabs.acf-block-preview .wp-block-acf-product-tab:not(.is-selected):not(.has-child-selected) *:not(.tab-title) {
+.wp-block-acf-product-tabs.acf-block-preview
+    .wp-block-acf-product-tab:not(.is-selected):not(.has-child-selected)
+    *:not(.tab-title) {
     display: none;
 }
 
+.wp-block-acf-product-tabs {
+    @media screen and (min-width: 1024px) {
+        scroll-behavior: smooth;
+
+        /* Disable smooth scrolling for users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            scroll-behavior: auto;
+        }
+    }
+}
 
 .wp-block-acf-product-tabs {
+    margin-top: 1.5rem;
+
+    @media (min-width: 1024px) {
+        scroll-padding-top: 150px;
+    }
 
     .tab-add-to-cart {
         width: min(var(--content-width), 100% - 2 * var(--gutter));
@@ -64,93 +79,95 @@
             flex-direction: column;
             justify-content: center;
 
-           form {
-            > * {
-                margin-bottom: 0;
+            form {
+                > * {
+                    margin-bottom: 0;
+                }
             }
-           }
         }
 
-        @media screen and (max-width: 1279px) {
+        @media screen and (max-width: 1023px) {
             display: none;
+        }
+
+        @media screen and (max-width: 1259px) {
+            > div {
+                transform: scale(0.75);
+                transform-origin: center right;
+            }
         }
     }
 
     > .accordion {
-
         width: min(var(--content-width), 100% - 2 * var(--gutter));
         margin-inline: auto;
 
-        overflow-x: hidden;
-    
-        
-        .accordion-body {
-            
-            padding-bottom: var(--spacing-md);
-        }
+        // overflow-x: hidden;
 
-        button {
-            background-color: var(--navy);
-            width: 100%;
-            text-align: left;
-            display: block;
-            padding: 12px 48px 12px 28px;
-            position: relative;
-            font-size: rem-calc(19);
-            text-align: left;
-            font-weight: 700;
-            letter-spacing: 0.335px;
-            text-decoration: none;
-            text-transform: inherit;
-            width: 100%;
+        > .accordion-item {
+            > .accordion-header button {
+                background-color: var(--navy);
+                width: 100%;
+                text-align: left;
+                display: block;
+                padding: 12px 48px 12px 28px;
+                position: relative;
+                font-size: rem-calc(19);
+                text-align: left;
+                font-weight: 700;
+                letter-spacing: 0.335px;
+                text-decoration: none;
+                text-transform: inherit;
+                width: 100%;
 
-            &:before {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                right: 20px;
-                margin-top: 0 !important;
-                color: white;
-                font-weight: 600;
-                font-size: 2rem;
-                content: "\002B";
+                &:before {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 20px;
+                    margin-top: 0 !important;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 2rem;
+                    content: "\002B";
+                }
+
+                &[aria-expanded="true"]:before {
+                    content: "\2212";
+                }
+
+                /* &:hover,
+                &[aria-expanded=true] {
+                    //color: $button-hover;
+                } */
             }
 
-            &[aria-expanded=true]:before {
-                content: "\2212";
+            &:has(.accordion-button[aria-expanded="true"]) {
+                // margin-bottom: 2rem;
             }
 
-            /* &:hover,
-            &[aria-expanded=true] {
-                //color: $button-hover;
-            } */
-        }
-
-        &:has(.accordion-button[aria-expanded=true]) {
-            // margin-bottom: 2rem;
+            .accordion-collapse {
+                .accordion-body {
+                    padding-bottom: var(--spacing-md);
+                }
+            }
         }
     }
 
-    .tabs {
+    .tabs,
+    .navigation-links,
+    .content-sections {
         display: none;
-
-        nav {
-            max-width: calc(100% - 352px);
-        }
     }
 
-    > .accordion,
-    .tabs {
-        margin-top: 1.5rem;
-    }
-
-    @include media-breakpoint-up(lg) {
-
+    @media screen and (min-width: 1024px) {
         > .accordion {
             display: none;
         }
 
-        .tabs {
+        .tabs,
+        .navigation-links,
+        .content-sections {
             display: block;
         }
     }
@@ -161,7 +178,6 @@
         margin-inline: auto;
     }
 
-
     .nav-tabs {
         background-color: var(--navy);
         position: relative;
@@ -170,7 +186,7 @@
         //gap: 10px;
 
         &:before {
-            content: '';
+            content: "";
             background-color: inherit;
             position: absolute;
             left: 50%;
@@ -194,7 +210,7 @@
                 padding: 20px 12px;
 
                 &.active {
-                    border-top: 3px solid var(--sky-dark)
+                    border-top: 3px solid var(--sky-dark);
                 }
 
                 &:hover {
@@ -206,5 +222,79 @@
 
     .tab-content {
         padding-block: var(--gutter-lg);
+    }
+}
+
+.wp-block-acf-product-tabs {
+    margin-top: var(--spacing-md);
+
+    .navigation-links {
+        background-color: var(--navy);
+        position: sticky;
+        top: var(--wp-admin-bar-height);
+        z-index: 3;
+
+        .nav-links {
+            @include list-reset;
+            width: min(var(--content-width), 100% - 2 * var(--gutter));
+            margin-inline: auto;
+
+            display: flex;
+            //gap: 10px;
+
+            li {
+                margin: 0;
+                padding-inline: 0;
+
+                a {
+                    background: transparent;
+
+                    border-top: 3px solid transparent;
+                    text-decoration: none;
+
+                    color: white;
+
+                    display: inline-flex;
+
+                    padding: 20px 12px;
+
+                    @media screen and (max-width: 1259px) {
+                        padding: 20px 6px;
+                        font-size: 0.875rem;
+                        padding: 20px 6px;
+                    }
+
+                    &.active {
+                        border-top: 3px solid var(--sky-dark);
+                    }
+
+                    &:hover {
+                        color: var(--sky-dark);
+                    }
+                }
+            }
+        }
+    }
+
+    .content-sections {
+        width: min(var(--content-width), 100% - 2 * var(--gutter));
+        margin-inline: auto;
+    }
+
+    .content-section {
+        padding-top: var(--spacing-md);
+
+        @media (min-width: 768px) {
+            padding-top: var(--spacing-lg);
+        }
+
+        @media (min-width: 1024px) {
+            padding-top: var(--spacing-xl);
+
+            &:first-child {
+                padding-top: var(--spacing-lg);
+                scroll-margin-top: calc(var(--spacing-xl) - var(--spacing-lg));
+            }
+        }
     }
 }

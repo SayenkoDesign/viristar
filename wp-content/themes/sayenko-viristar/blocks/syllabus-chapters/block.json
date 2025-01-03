@@ -2,15 +2,21 @@
     "name": "acf/syllabus-chapters",
     "title": "Syllabus Chapters",
     "description": "syllabus chapters",
-    "style": "syllabus-chapters",
+    "style": [
+        "file:./style.css"
+    ],
     "script": "",
     "category": "sayenko",
     "icon": "",
     "apiVersion": 2,
-    "keywords": ["viristar", "syllabus", "chapters"],
+    "keywords": [
+        "viristar",
+        "syllabus",
+        "chapters"
+    ],
     "acf": {
         "mode": "auto",
-		"renderTemplate": "index.php"
+        "renderTemplate": "index.php"
     },
     "styles": [],
     "supports": {
@@ -25,6 +31,5 @@
         "alignText": false,
         "fullHeight": false
     },
-    "attributes": {
-    }
+    "attributes": {}
 }

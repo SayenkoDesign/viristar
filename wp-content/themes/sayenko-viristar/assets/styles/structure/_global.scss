@@ -1,0 +1,9 @@
+// Global
+
+body.admin-bar {
+    --wp-admin-bar-height: 32px;
+
+    @media screen and (max-width: 782px) {
+        --wp-admin-bar-height: 46px;
+    }
+}

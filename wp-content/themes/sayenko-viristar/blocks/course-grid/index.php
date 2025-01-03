@@ -12,20 +12,29 @@
  * @param   array $context The context provided to the block by the post or it's parent block.
  */
 
-
 use \App\ACF_Block;
 
 $block = new ACF_Block($block, $content, $is_preview);
 
-if($is_preview) {
-	echo '<h3>course Grid</h3>';	
-	return;
+if ($is_preview) {
+    printf('<div class="acf-block-placeholder"><h3>%s</h3><p>Click to Edit</p></div>', $block->get_title());
+    return;
 }
 
-// Open the block
-echo $block->before_render();
+// Start output buffering
+ob_start();
 
 get_template_part('template-parts/course-grid');
 
-// close the block
-echo $block->after_render();
+// Get the buffered content and clean the buffer
+$content = ob_get_clean();
+
+// Check if both title and content exist before outputting
+if (!empty($content)) {
+    echo $block->before_render();
+    echo '<div class="courses courses--grid">';
+    get_template_part('template-parts/course-view');
+    echo $content;
+    echo '</div>';
+    echo $block->after_render();
+}

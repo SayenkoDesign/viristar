@@ -16,29 +16,27 @@
         margin-left: 24px;
 
         li {
-                margin-bottom: 1.2em;
+            margin-bottom: 1.2em;
         }
     }
-
 
     ul {
         list-style-type: none;
 
         li:not([class]):not([role]) {
             padding-left: 1.5em; /* Adjust padding to make space for the bullet */
-			position: relative;
+            position: relative;
 
             &::before {
-				background-color: var(--navy);
+                background-color: var(--navy);
                 content: ""; /* Unicode for bullet */
                 position: absolute;
                 left: 0;
-				top: 0.575em;
-				display: block;
-                width: 0.50em;
-				height: 0.50em;
-				border-radius: 50%;
-                
+                top: 0.575em;
+                display: block;
+                width: 0.5em;
+                height: 0.5em;
+                border-radius: 50%;
             }
         }
     }
@@ -46,22 +44,20 @@
 
 .bg--dark,
 .bg--ultra-dark {
-	ul li::before {
-		background-color: white!important;
-	}
+    ul li::before {
+        background-color: white !important;
+    }
 }
 
 ul.is-style-columns-2 {
-
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
         columns: 2;
         column-gap: 1.5em;
     }
 }
 
 ul.is-style-columns-3 {
-
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
         columns: 2;
         column-gap: 1.5em;
     }

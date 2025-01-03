@@ -1,27 +1,28 @@
 // Colors
 
 :root {
+    --dark-navy: #0b2543;
+    --navy: #003c71;
+    --sky-dark: #87a7ce;
+    --sky-blue: #69afe0;
+    --sky-dark-hover: #7a98bc;
+    --light-blue: #f3f7f8;
+    --muted-blue: #e7edf3;
+    --green: #0a8543;
+    --dark-green: #09763c;
+    --off-white: #fdfcfa;
+    // Theme Colors
+    --base: var(--dark-navy);
+    --primary: var(--navy);
+    --secondary: var(--sky-dark);
+    --secondary-alt: var(--sky-blue);
+    --action: var(--green);
+    --accent: var(--dark-green);
+    --accent-alt: var(--sky-dark);
 
-	--dark-navy: #0B2543;
-	--navy: #003C71;
-	--sky-dark: #87A7CE;
-	--sky-blue: #69AFE0;
-	--sky-dark-hover: #7A98BC;
-	--light-blue: #f3f7f8;
-	--muted-blue: #E7EDF3;
-	--green: #0A8543;
-	--dark-green: #09763C;
-	--off-white: #FDFCFA;
-	// Theme Colors
-	--base: var(--dark-navy);
-	--primary: var(--navy);
-	--secondary: var(--sky-dark);
-	--secondary-alt: var(--sky-blue);
-	--action: var(--green);
-	--accent: var(--dark-green);
-	--accent-alt: var(--sky-dark);
-	
-	--background: var(--off-white);
+    --background: var(--off-white);
 
-	--disabled: #9d9d9d;
+    --disabled: #9d9d9d;
+
+    --light-grey: #f9f9f9;
 }

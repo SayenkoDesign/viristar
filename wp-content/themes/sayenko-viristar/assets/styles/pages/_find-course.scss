@@ -1,14 +1,53 @@
 // Find Course
 
 .page-template-find-course {
+    .filter-button {
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
 
+        background-color: var(--navy);
+        font-weight: 600;
+        line-height: 1;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        position: fixed;
+        z-index: 3;
+        right: -34px;
+        top: calc(
+            80px + var(--wp-admin-bar-height) + var(--mobile-header-height)
+        );
 
-    .site-main:has(.entry-content:empty) {
+        rotate: 90deg;
+    }
+
+    #left-sidebar {
+        @include media-breakpoint-down(lg) {
+            top: calc(var(--wp-admin-bar-height) + var(--mobile-header-height));
+
+            .offcanvas-header {
+                background-color: var(--base);
+
+                h3 {
+                    color: white;
+                    margin-bottom: 0;
+                }
+            }
+
+            .sidebar__content {
+                padding-inline: var(--bs-offcanvas-padding-x);
+                overflow-y: auto;
+            }
+        }
+    }
+
+    .site-main:has(.entry-content:empty) .entry-content {
         display: none;
     }
 
     .entry-header {
-        @include visually-hidden;
+        @include media-breakpoint-up(lg) {
+            @include visually-hidden;
+        }
     }
 
     .courses {
@@ -35,11 +74,16 @@
         .sidebar {
             &__title {
                 background-color: var(--base);
+                display: none;
                 padding: 20px 30px;
 
                 h3 {
                     color: white;
                     margin-bottom: 0;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    display: block;
                 }
             }
 
@@ -48,7 +92,7 @@
                 padding: 30px;
             }
 
-            margin-bottom: var(--spacing-md);
+            // margin-bottom: var(--spacing-md);
         }
 
         &__sidebar {
@@ -74,26 +118,80 @@
                 }
 
                 .fs-dropdown {
-                   position: relative;
-                }   
+                    position: relative;
+                }
+
+                .fs-label-wrap {
+                    .fs-arrow {
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='6' viewBox='0 0 14 6' fill='none'%3E%3Cpath d='M7 6L0.937822 -1.88258e-07L13.0622 8.71687e-07L7 6Z' fill='%23003C71'/%3E%3C/svg%3E");
+
+                        background-size: 14px 8px;
+                        background-position: 50% 50%;
+                        background-repeat: no-repeat;
+
+                        transform: none;
+                    }
+                }
+            }
+
+            .facetwp-facet-product_course_mode {
+                .fs-checkbox {
+                    top: 0.188em !important;
+                }
+            }
+
+            /* .facetwp-facet-product_course_finder {
+
+                .fs-dropdown {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                }
+
+                .fs-options {
+                    /* display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 0 var(--spacing-xs);
+                    columns: 2;
+                    padding: 0 var(--spacing-xs);
+
+                    > .fs-option {
+                        margin-bottom: 3px;
+                        padding: 5px;
+                        .fs-checkbox {
+                            @include visually-hidden;
+
+                        }
+
+                        &.selected {
+                            background-color: var(--sky-dark);
+                            font-weight: 700;
+                        }
+                    }
+                }
+            } */
+
+            .facetwp-facet-product_course_finder {
+                .facetwp-checkbox {
+                    padding-left: 24px;
+                    position: relative;
+
+                    .icon {
+                        position: absolute;
+                        left: 0;
+                        top: 0; // 2px
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    &.checked {
+                        background-image: none !important;
+                        font-weight: 700 !important;
+                    }
+                }
             }
 
             .tabs {
                 margin-bottom: 40px;
-            }
-
-            .facetwp-type-proximity {
-                display: flex;
-
-                input,
-                select {
-                    border: 0;
-                    font-size: rem-calc(11);
-                }
-
-                .facetwp-radius {
-                    background-color: #d9d9d9;
-                }
             }
 
             .facetwp-facet-product_course_category,
@@ -124,16 +222,32 @@
                 min-width: 0;
             }
 
-            @include media-breakpoint-up(lg) {
-                .facetwp-facet input.facetwp-location {
-                    max-width: 160px;
+            .facetwp-type-proximity {
+                .facetwp-input-wrap {
+                    width: 100%;
+                }
+
+                input {
+                    width: 100%;
+                }
+
+                input,
+                select {
+                    border: 0;
+                    font-size: rem-calc(11);
+                }
+
+                .facetwp-radius {
+                    background-color: #d9d9d9;
+                    margin-top: 2px;
+                    width: 100px;
                 }
             }
 
             .facetwp-checkbox {
                 color: white;
 
-                font-size: rem-calc(11);
+                font-size: rem-calc(12);
                 font-style: normal;
                 font-weight: 500;
                 line-height: 1.5;
@@ -142,23 +256,23 @@
                 margin-bottom: 12px;
             }
 
-            .reset {
-                @include gb-button;
-                @include gb-button-sky;
+            .facetwp-clear-button {
+                background-color: transparent;
+                color: var(--base);
+                padding: 0;
+                cursor: pointer;
+                text-decoration: underline;
             }
         }
     }
 }
 
 .courses__sidebar .tabs {
-
     .nav-tabs {
         display: flex;
         align-items: center;
-       
-        width: 100%;
 
-        
+        width: 100%;
 
         &:before {
             content: "Dates";
@@ -174,8 +288,12 @@
             justify-content: flex-end;
 
             &:before {
-                left: -30px;
+                left: 0; // -30px;
             }
+        }
+
+        li {
+            flex: 1 1 auto;
         }
 
         button {
@@ -185,6 +303,7 @@
             color: black;
             padding: 5px 10px;
             min-height: 32px;
+            width: 100%;
 
             &.active {
                 background-color: var(--sky-dark);

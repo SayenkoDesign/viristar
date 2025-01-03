@@ -1,0 +1,52 @@
+// Styles
+@import "assets/styles/block";
+@import "assets/styles/utilities/mixins/flexbox";
+
+.wp-block-acf-logos {
+    margin-top: 3rem;
+
+    .grid-logos {
+        > * {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+    }
+
+    &--align-center {
+        .grid-logos {
+            justify-content: center;
+        }
+    }
+
+    &--layout-auto {
+        .grid-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            column-gap: 2rem;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &--layout-grid {
+        .grid-logos {
+            @include flex-grid();
+            align-items: center;
+            // justify-content: center;
+            --cols: 2;
+            --gap: 2rem;
+
+            @include media-breakpoint-up(md) {
+                --cols: 3;
+            }
+
+            @include media-breakpoint-up(lg) {
+                --cols: 5;
+            }
+        }
+    }
+}

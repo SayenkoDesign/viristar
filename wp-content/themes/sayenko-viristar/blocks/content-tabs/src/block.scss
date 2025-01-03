@@ -1,11 +1,11 @@
 // Styles
 @use "assets/styles/block" as *;
 
-.wp-block-acf-content-tabs.acf-block-preview  {
+.wp-block-acf-content-tabs.acf-block-preview {
     min-height: 100px;
     position: relative;
-    margin-left: auto!important;
-    margin-right: auto!important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 
     &:before {
         border: 1px dashed #000;
@@ -21,12 +21,11 @@
     }
 
     .tab-container {
-
         .tab-title {
             background-color: var(--navy);
             padding: 10px 30px;
             color: white;
-            margin-bottom: 0!important;
+            margin-bottom: 0 !important;
         }
     }
 
@@ -41,13 +40,13 @@
     }
 }
 
-.wp-block-acf-content-tabs.acf-block-preview .wp-block-acf-content-tab:not(.is-selected):not(.has-child-selected) *:not(.tab-title) {
+.wp-block-acf-content-tabs.acf-block-preview
+    .wp-block-acf-content-tab:not(.is-selected):not(.has-child-selected)
+    *:not(.tab-title) {
     display: none;
 }
 
-
-.wp-block-acf-content-tabs  {
-
+.wp-block-acf-content-tabs {
     .tabs {
         display: none;
 
@@ -60,19 +59,48 @@
         @include media-breakpoint-up(lg) {
             @include visually-hidden;
         }
+    }
 
-        .accordion-button {
-            background-color: transparent;
-            border: none;
-            color: #9d9d9d;
-            font-weight: 700;
-            text-align: left;
-            width: 100%;
-            border-bottom: 3px solid #979797;
+    .accordion {
+        // overflow-x: hidden;
 
-            &[aria-expanded="true"] {
-                border-bottom-color: var(--navy);
-                color: var(--navy);
+        .accordion-item {
+            .accordion-header button {
+                background-color: var(--navy);
+                width: 100%;
+                text-align: left;
+                display: block;
+                padding: 12px 48px 12px 28px;
+                position: relative;
+                font-size: rem-calc(19);
+                text-align: left;
+                font-weight: 700;
+                letter-spacing: 0.335px;
+                text-decoration: none;
+                text-transform: inherit;
+                width: 100%;
+
+                &:before {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 20px;
+                    margin-top: 0 !important;
+                    color: white;
+                    font-weight: 600;
+                    font-size: 2rem;
+                    content: "\002B";
+                }
+
+                &[aria-expanded="true"]:before {
+                    content: "\2212";
+                }
+            }
+
+            .accordion-collapse {
+                .accordion-body {
+                    padding-bottom: var(--spacing-md);
+                }
             }
         }
     }
@@ -80,23 +108,22 @@
     .nav-tabs {
         position: relative;
         display: grid;
-        
+
         gap: 30px;
 
         margin-bottom: 60px;
 
         @for $i from 1 through 10 {
             &--count-#{$i} {
-            --nav-tab-count: #{$i};
+                --nav-tab-count: #{$i};
             }
         }
 
         grid-template-columns: repeat(var(--nav-tab-count), 1fr);
 
         li {
-
             margin-bottom: 0;
-            
+
             &::before {
                 display: none;
             }
@@ -109,6 +136,15 @@
             display: block;
             width: 100%;
             height: 100%;
+            padding-bottom: 1.5rem;
+
+            &:hover {
+                color: var(--sky-blue);
+            }
+
+            &.active {
+                color: var(--navy);
+            }
         }
 
         border-bottom: 3px solid #979797;
@@ -132,5 +168,4 @@
             transform: translate(-50%, -50%);
         }
     }
-    
 }
